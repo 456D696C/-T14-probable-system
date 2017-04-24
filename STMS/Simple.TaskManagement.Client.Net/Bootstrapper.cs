@@ -30,9 +30,10 @@ using Simple.TaskManagement.Common;
 using Simple.Rebus.Routing.TypeBased;
 using Simple.Rebus.Configuration;
 using Simple.Contract.Conventions;
-
+using Simple.TaskManagement.Events.Tasks;
 
 using Simple.TaskManagement.Handlers;
+using Simple.TaskManagement.Handlers.Tasks;
 
 namespace Simple.TaskManagement
 {
@@ -54,13 +55,15 @@ namespace Simple.TaskManagement
                 WithName.Default,
                 WithLifetime.ContainerControlled)
                 .RegisterType(typeof(IHandleMessages<>), typeof(BridgeMessageHandler<>), "bridge")
+                .RegisterType<IHandleMessages<TasksSearchOnCommentsReport>, TasksSearchOnCommentsReportMessageHandler>()
+
                 ;
 
 
             Configure.With(new UnityContainerAdapter(container))
                .Logging(l => l.ColoredConsole(minLevel: LogLevel.Debug))
-               .UseFilesystem(Config.FileSystem.BaseDirectory, Config.Queues.MiddleEnd)
-               .Options(b => b.EnableMessageAuditing(Config.Queues.AuditMiddleEnd))
+               .UseFilesystem(Config.FileSystem.BaseDirectory, Config.Queues.FrontEnd)
+               .Options(b => b.EnableMessageAuditing(Config.Queues.AuditFrontEnd))
                .Routing(r => r.TypeBased()
                                 .MapAssemblyOf<Simple.TaskManagement.Contract>(a => a.CommandAndQueryTypes(), Config.Queues.MiddleEnd)
                                 .MapAssemblyOf<Simple.TaskManagement.Contract>(a => a.ResultTypes(), Config.Queues.FrontEnd)

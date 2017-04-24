@@ -22,7 +22,14 @@ namespace Simple.TaskManagement.Services.Tasks
 
         public TasksSearchOnCommentsReport Handle(TasksSearchOnCommentsQuery query)
         {
-            throw new NotImplementedException();
+            var found = TaskStorage.Get().Result;
+
+            return new TasksSearchOnCommentsReport()
+            {
+                Query = query.Query,
+                Reference = query.Reference,
+                Tasks = found.ToList(),
+            };
         }
     }
 }

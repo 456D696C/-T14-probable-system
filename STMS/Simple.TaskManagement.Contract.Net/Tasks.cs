@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Simple.TaskManagement
 {
     namespace Commands.Tasks
@@ -16,14 +18,27 @@ namespace Simple.TaskManagement
     namespace Queries.Tasks
     {
         partial class TasksQuery { }
-        partial class TasksSearchOnCommentsQuery { }
+        partial class TasksSearchOnCommentsQuery
+        {
+            public string Reference { get; set; }
+            public string Query { get; set; }
+            public override string ToString() => new { Query, Reference }.ToString();
+          
+        }
         partial class TaskStatusQuery { }
     }
 
     namespace Events.Tasks
     {
         partial class TasksReport { }
-        partial class TasksSearchOnCommentsReport { }
+        partial class TasksSearchOnCommentsReport
+        {
+            public string Reference { get; set; }
+            public string Query { get; set; }
+            public List<DataTypes.Task> Tasks { get; set; }
+            public override string ToString() => new { Query, Reference }.ToString();
+
+        }
         partial class TasksStatusReport { }
     }
 }

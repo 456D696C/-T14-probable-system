@@ -52,6 +52,10 @@
       <Project>{c5726bc9-1a53-4f5e-94a7-fbf6fd6a7fb7}</Project>
       <Name>Simple.Query.Net</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Simple.TaskManagement.DataTypes.Net\Simple.TaskManagement.DataTypes.Net.csproj">
+      <Project>{de84db9e-2911-4af9-9fe9-010927376845}</Project>
+      <Name>Simple.TaskManagement.DataTypes.Net</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,6 +17,7 @@ namespace Simple.TaskManagement
     {
         public AboutThisViewModel AboutThis { get; }
         public TaskListViewModel TaskList { get; }
+        public TextSearchViewModel TextSearch { get; }
         public SearchResultViewModel SearchResult { get; }
         public VisualNotificationSystemViewModel VisualNotifications { get; }
 
@@ -26,6 +27,7 @@ namespace Simple.TaskManagement
 
             AboutThis = container.Resolve<AboutThisViewModel>();
             TaskList = container.Resolve<TaskListViewModel>();
+            TextSearch = container.Resolve<TextSearchViewModel>();
             SearchResult = container.Resolve<SearchResultViewModel>();
             VisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
 
