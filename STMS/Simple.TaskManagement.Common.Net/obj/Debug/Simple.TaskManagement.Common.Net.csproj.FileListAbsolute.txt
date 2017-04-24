@@ -1,4 +1,0 @@
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Common.Net\bin\Debug\Simple.TaskManagement.Common.dll
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Common.Net\bin\Debug\Simple.TaskManagement.Common.pdb
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Common.Net\obj\Debug\Simple.TaskManagement.Common.dll
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Common.Net\obj\Debug\Simple.TaskManagement.Common.pdb
