@@ -202,6 +202,9 @@
       <Name>Simple.TaskManagement.DataTypes.Net</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
   <Import Project="..\..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.projitems" Label="Shared" />
   <Import Project="..\..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems" Label="Shared" />
   <Import Project="..\..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems" Label="Shared" />
