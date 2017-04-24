@@ -127,6 +127,8 @@
     </ApplicationDefinition>
     <Compile Include="ClientService.cs" />
     <Compile Include="DesignTimeData\Tasks.cs" />
+    <Compile Include="Events\Search.cs" />
+    <Compile Include="Events\Selection.cs" />
     <Compile Include="Handlers\BridgeMessageHandler.cs" />
     <Compile Include="IClientService.cs" />
     <Compile Include="ViewModels\AboutThisViewModel.cs" />
@@ -202,9 +204,7 @@
       <Name>Simple.TaskManagement.DataTypes.Net</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Events\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="..\..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.projitems" Label="Shared" />
   <Import Project="..\..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems" Label="Shared" />
   <Import Project="..\..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems" Label="Shared" />
