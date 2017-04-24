@@ -1,0 +1,4 @@
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.Query.Net\bin\Debug\Simple.Query.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.Query.Net\bin\Debug\Simple.Query.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.Query.Net\obj\Debug\Simple.Query.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.Query.Net\obj\Debug\Simple.Query.pdb

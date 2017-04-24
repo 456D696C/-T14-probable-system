@@ -1,0 +1,8 @@
+Scope,Project,Namespace,Type,Member,Maintainability Index,Cyclomatic Complexity,Depth of Inheritance,Class Coupling,Lines of Code
+Project,Simple.Query.Net (Debug), , , ,100,2,0,1,0
+Project,Simple.TaskManagement.Messages.Net (Debug), , , ,100,2,1,0,2
+Project,Simple.TaskManagement.DataTypes.Net (Debug), , , ,97,33,1,2,33
+Project,Simple.TaskManagement.Abstractions.Net (Debug), , , ,88,8,1,9,7
+Project,Simple.TaskManagement.Contract.Net (Debug), , , ,99,26,1,9,26
+Project,Simple.TaskManagement.Service.Point.Net (Debug), , , ,80,171,1,109,195
+Project,Simple.TaskManagement.Coordinator.Net (Debug), , , ,100,3,1,0,2

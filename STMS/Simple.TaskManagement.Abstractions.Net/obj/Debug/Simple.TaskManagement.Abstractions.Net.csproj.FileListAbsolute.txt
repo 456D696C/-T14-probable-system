@@ -1,0 +1,7 @@
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Abstractions.Net\bin\Debug\Simple.TaskManagement.Abstractions.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Abstractions.Net\bin\Debug\Simple.TaskManagement.Abstractions.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Abstractions.Net\obj\Debug\Simple.TaskManagement.Abstractions.Net.csprojResolveAssemblyReference.cache
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Abstractions.Net\obj\Debug\Simple.TaskManagement.Abstractions.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Abstractions.Net\obj\Debug\Simple.TaskManagement.Abstractions.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Abstractions.Net\bin\Debug\Simple.TaskManagement.DataTypes.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Abstractions.Net\bin\Debug\Simple.TaskManagement.DataTypes.pdb

@@ -1,0 +1,7 @@
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Contract.Net\bin\Debug\Simple.TaskManagement.Contract.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Contract.Net\bin\Debug\Simple.TaskManagement.Contract.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Contract.Net\bin\Debug\Simple.Query.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Contract.Net\bin\Debug\Simple.Query.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Contract.Net\obj\Debug\Simple.TaskManagement.Contract.Net.csprojResolveAssemblyReference.cache
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Contract.Net\obj\Debug\Simple.TaskManagement.Contract.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Contract.Net\obj\Debug\Simple.TaskManagement.Contract.pdb

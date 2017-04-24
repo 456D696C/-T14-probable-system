@@ -1,0 +1,126 @@
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.Client.exe.config
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.Client.exe
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.Client.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\MainWindow.g.cs
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\App.g.cs
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client_MarkupCompile.cache
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client_MarkupCompile.lref
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\MainWindow.baml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.g.resources
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Properties.Resources.resources
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.Net.csproj.GenerateResource.Cache
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.exe
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.Net.csprojResolveAssemblyReference.cache
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\MaterialDesignColors.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.NET46.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Rebus.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Rebus.Unity.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Core.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Linq.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.NET46.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Rebus.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Rebus.Unity.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Core.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Linq.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.PlatformServices.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Windows.Threading.xml
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.DataTypes.dll
+C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.DataTypes.pdb
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.Client.exe.config
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.exe
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.pdb
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.Client.exe
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.Client.pdb
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\MaterialDesignColors.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.NET46.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Rebus.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Rebus.Unity.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.DataTypes.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Core.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Linq.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Simple.TaskManagement.DataTypes.pdb
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.pdb
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ReactiveProperty.NET46.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Rebus.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\Rebus.Unity.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Core.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Linq.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.PlatformServices.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\System.Reactive.Windows.Threading.xml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.Net.csprojResolveAssemblyReference.cache
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\MainWindow.g.cs
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\App.g.cs
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client_MarkupCompile.cache
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client_MarkupCompile.lref
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\MainWindow.baml
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.g.resources
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Properties.Resources.resources
+C:\Users\user-pc\Source\Repos\T14-probable-system\STMS\Simple.TaskManagement.Client.Net\obj\Debug\Simple.TaskManagement.Client.Net.csproj.GenerateResource.Cache

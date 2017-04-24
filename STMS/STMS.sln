@@ -1,0 +1,152 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedCode", "SharedCode", "{7BA37DA3-A661-4451-925C-EE16FE3DC308}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.Query", "..\SharedCode\Simple.Query\Simple.Query.shproj", "{48BB6ABB-E182-49B9-8186-1F475FC79027}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{CD78811A-DCCE-419D-A96F-19FAAF94A9B8}"
+	ProjectSection(SolutionItems) = preProject
+		Notes\summary.txt = Notes\summary.txt
+		Notes\the.making.of.txt = Notes\the.making.of.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmark", "Benchmark", "{7D161B8D-F385-43EE-9F51-B745C613F275}"
+	ProjectSection(SolutionItems) = preProject
+		Benchmark\Simple.Projects.csv = Benchmark\Simple.Projects.csv
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Query.Net", "Simple.Query.Net\Simple.Query.Net.csproj", "{C5726BC9-1A53-4F5E-94A7-FBF6FD6A7FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.DataTypes.Net", "Simple.TaskManagement.DataTypes.Net\Simple.TaskManagement.DataTypes.Net.csproj", "{DE84DB9E-2911-4AF9-9FE9-010927376845}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TaskManagement", "TaskManagement", "{3191F09A-6E20-4294-9261-BF8B10D1027A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{33B1FD04-36F7-48BA-908A-A6D814FDBCC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Contract.Net", "Simple.TaskManagement.Contract.Net\Simple.TaskManagement.Contract.Net.csproj", "{DB517919-1D6C-4E89-A9ED-BB7BED058B4E}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.TaskManagement.DataTypes", "..\SharedCode\TaskManagement\Simple.TaskManagement.DataTypes\Simple.TaskManagement.DataTypes.shproj", "{E23043D1-D8C9-4404-96C5-D0983D9236D5}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.Logging", "..\SharedCode\Simple.Logging\Simple.Logging.shproj", "{D96F5A86-C3B1-4303-B5EC-C9CAEDF7E5C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Common.Net", "Simple.TaskManagement.Common.Net\Simple.TaskManagement.Common.Net.csproj", "{21A7D785-4B91-457A-9EDB-3472CDCCCECE}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.Rebus.Extensions", "..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.shproj", "{C35BE814-3114-464C-8AE8-BA3B67F25483}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.Contract.Conventions", "..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.shproj", "{50E7A8C0-77B2-45FC-A174-3A7830ABBEA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Logging.Net", "Simple.Logging.Net\Simple.Logging.Net.csproj", "{8EECE07A-9C35-4F6A-B22A-1275D034EA75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Service.Point.Net", "Simple.TaskManagement.Service.Point.Net\Simple.TaskManagement.Service.Point.Net.csproj", "{3B0CEDDD-4F94-45E3-90FC-4D95C6DA0EC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Abstractions.Net", "Simple.TaskManagement.Abstractions.Net\Simple.TaskManagement.Abstractions.Net.csproj", "{6B91A3A7-1351-427D-B5A0-9DC62E642D3C}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.TaskManagement.Abstractions", "..\SharedCode\TaskManagement\Simple.TaskManagement.Abstractions\Simple.TaskManagement.Abstractions.shproj", "{FEA580A0-3314-41D3-9218-72F2C12C6040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Messages.Net", "Simple.TaskManagement.Messages.Net\Simple.TaskManagement.Messages.Net.csproj", "{74D71F4E-CDD9-4D20-83CF-7DE38BD681C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Coordinator.Net", "Simple.TaskManagement.Coordinator.Net\Simple.TaskManagement.Coordinator.Net.csproj", "{481D0CDA-429F-4C56-8FB8-E2011AF4DA32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Client.Net", "Simple.TaskManagement.Client.Net\Simple.TaskManagement.Client.Net.csproj", "{071F0F4B-AFF6-4854-ABAD-18794BB8CE5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Coordinator.NetTests", "Simple.TaskManagement.Coordinator.NetTests\Simple.TaskManagement.Coordinator.NetTests.csproj", "{5852626F-7A69-4542-913E-AA1D0DFA0733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Service.Point.NetTests", "Simple.TaskManagement.Service.Point.NetTests\Simple.TaskManagement.Service.Point.NetTests.csproj", "{9447009D-6BBE-4896-AA67-8A7CABEE6942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Launcher.Net", "Simple.TaskManagement.Launcher.Net\Simple.TaskManagement.Launcher.Net.csproj", "{536AE0BD-5C2A-4C26-92E1-3895718D3258}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.Reactive.EventAggregator", "..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.shproj", "{3AF64F84-526C-4587-82A0-3CB3657C5F61}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.projitems*{071f0f4b-aff6-4854-abad-18794bb8ce5e}*SharedItemsImports = 4
+		..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.projitems*{3af64f84-526c-4587-82a0-3cb3657c5f61}*SharedItemsImports = 13
+		..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems*{3b0ceddd-4f94-45e3-90fc-4d95c6da0ec5}*SharedItemsImports = 4
+		..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems*{3b0ceddd-4f94-45e3-90fc-4d95c6da0ec5}*SharedItemsImports = 4
+		..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems*{481d0cda-429f-4c56-8fb8-e2011af4da32}*SharedItemsImports = 4
+		..\SharedCode\Simple.Query\Simple.Query.projitems*{48bb6abb-e182-49b9-8186-1f475fc79027}*SharedItemsImports = 13
+		..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems*{50e7a8c0-77b2-45fc-a174-3a7830abbea6}*SharedItemsImports = 13
+		..\SharedCode\TaskManagement\Simple.TaskManagement.Abstractions\Simple.TaskManagement.Abstractions.projitems*{6b91a3a7-1351-427d-b5a0-9dc62e642d3c}*SharedItemsImports = 4
+		..\SharedCode\Simple.Logging\Simple.Logging.projitems*{8eece07a-9c35-4f6a-b22a-1275d034ea75}*SharedItemsImports = 4
+		..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems*{c35be814-3114-464c-8ae8-ba3b67f25483}*SharedItemsImports = 13
+		..\SharedCode\Simple.Query\Simple.Query.projitems*{c5726bc9-1a53-4f5e-94a7-fbf6fd6a7fb7}*SharedItemsImports = 4
+		..\SharedCode\Simple.Logging\Simple.Logging.projitems*{d96f5a86-c3b1-4303-b5ec-c9caedf7e5c8}*SharedItemsImports = 13
+		..\SharedCode\TaskManagement\Simple.TaskManagement.DataTypes\Simple.TaskManagement.DataTypes.projitems*{de84db9e-2911-4af9-9fe9-010927376845}*SharedItemsImports = 4
+		..\SharedCode\TaskManagement\Simple.TaskManagement.DataTypes\Simple.TaskManagement.DataTypes.projitems*{e23043d1-d8c9-4404-96c5-d0983d9236d5}*SharedItemsImports = 13
+		..\SharedCode\TaskManagement\Simple.TaskManagement.Abstractions\Simple.TaskManagement.Abstractions.projitems*{fea580a0-3314-41d3-9218-72f2c12c6040}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5726BC9-1A53-4F5E-94A7-FBF6FD6A7FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5726BC9-1A53-4F5E-94A7-FBF6FD6A7FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5726BC9-1A53-4F5E-94A7-FBF6FD6A7FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5726BC9-1A53-4F5E-94A7-FBF6FD6A7FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE84DB9E-2911-4AF9-9FE9-010927376845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE84DB9E-2911-4AF9-9FE9-010927376845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE84DB9E-2911-4AF9-9FE9-010927376845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE84DB9E-2911-4AF9-9FE9-010927376845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB517919-1D6C-4E89-A9ED-BB7BED058B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB517919-1D6C-4E89-A9ED-BB7BED058B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB517919-1D6C-4E89-A9ED-BB7BED058B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB517919-1D6C-4E89-A9ED-BB7BED058B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A7D785-4B91-457A-9EDB-3472CDCCCECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A7D785-4B91-457A-9EDB-3472CDCCCECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A7D785-4B91-457A-9EDB-3472CDCCCECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A7D785-4B91-457A-9EDB-3472CDCCCECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EECE07A-9C35-4F6A-B22A-1275D034EA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EECE07A-9C35-4F6A-B22A-1275D034EA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EECE07A-9C35-4F6A-B22A-1275D034EA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EECE07A-9C35-4F6A-B22A-1275D034EA75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0CEDDD-4F94-45E3-90FC-4D95C6DA0EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0CEDDD-4F94-45E3-90FC-4D95C6DA0EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0CEDDD-4F94-45E3-90FC-4D95C6DA0EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0CEDDD-4F94-45E3-90FC-4D95C6DA0EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B91A3A7-1351-427D-B5A0-9DC62E642D3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B91A3A7-1351-427D-B5A0-9DC62E642D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B91A3A7-1351-427D-B5A0-9DC62E642D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B91A3A7-1351-427D-B5A0-9DC62E642D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D71F4E-CDD9-4D20-83CF-7DE38BD681C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D71F4E-CDD9-4D20-83CF-7DE38BD681C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D71F4E-CDD9-4D20-83CF-7DE38BD681C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D71F4E-CDD9-4D20-83CF-7DE38BD681C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{481D0CDA-429F-4C56-8FB8-E2011AF4DA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481D0CDA-429F-4C56-8FB8-E2011AF4DA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481D0CDA-429F-4C56-8FB8-E2011AF4DA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481D0CDA-429F-4C56-8FB8-E2011AF4DA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071F0F4B-AFF6-4854-ABAD-18794BB8CE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071F0F4B-AFF6-4854-ABAD-18794BB8CE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071F0F4B-AFF6-4854-ABAD-18794BB8CE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071F0F4B-AFF6-4854-ABAD-18794BB8CE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5852626F-7A69-4542-913E-AA1D0DFA0733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5852626F-7A69-4542-913E-AA1D0DFA0733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5852626F-7A69-4542-913E-AA1D0DFA0733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5852626F-7A69-4542-913E-AA1D0DFA0733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9447009D-6BBE-4896-AA67-8A7CABEE6942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9447009D-6BBE-4896-AA67-8A7CABEE6942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9447009D-6BBE-4896-AA67-8A7CABEE6942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9447009D-6BBE-4896-AA67-8A7CABEE6942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536AE0BD-5C2A-4C26-92E1-3895718D3258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536AE0BD-5C2A-4C26-92E1-3895718D3258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536AE0BD-5C2A-4C26-92E1-3895718D3258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536AE0BD-5C2A-4C26-92E1-3895718D3258}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48BB6ABB-E182-49B9-8186-1F475FC79027} = {7BA37DA3-A661-4451-925C-EE16FE3DC308}
+		{3191F09A-6E20-4294-9261-BF8B10D1027A} = {7BA37DA3-A661-4451-925C-EE16FE3DC308}
+		{E23043D1-D8C9-4404-96C5-D0983D9236D5} = {3191F09A-6E20-4294-9261-BF8B10D1027A}
+		{D96F5A86-C3B1-4303-B5EC-C9CAEDF7E5C8} = {7BA37DA3-A661-4451-925C-EE16FE3DC308}
+		{C35BE814-3114-464C-8AE8-BA3B67F25483} = {7BA37DA3-A661-4451-925C-EE16FE3DC308}
+		{50E7A8C0-77B2-45FC-A174-3A7830ABBEA6} = {7BA37DA3-A661-4451-925C-EE16FE3DC308}
+		{FEA580A0-3314-41D3-9218-72F2C12C6040} = {3191F09A-6E20-4294-9261-BF8B10D1027A}
+		{3AF64F84-526C-4587-82A0-3CB3657C5F61} = {7BA37DA3-A661-4451-925C-EE16FE3DC308}
+	EndGlobalSection
+EndGlobal
