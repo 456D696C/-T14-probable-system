@@ -24,11 +24,11 @@ namespace Simple.TaskManagement.ViewModels
 {
     public class SearchResultViewModel
     {
-        private readonly IEventAggregator Events;
+        private readonly IEventAggregator EventAggregator;
 
-        public SearchResultViewModel(IEventAggregator events)
+        public SearchResultViewModel(IEventAggregator eventAggregator)
         {
-            Events = events;
+            EventAggregator = eventAggregator;
         }
     }
 }

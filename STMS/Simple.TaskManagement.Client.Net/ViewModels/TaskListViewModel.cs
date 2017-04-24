@@ -24,11 +24,11 @@ namespace Simple.TaskManagement.ViewModels
 {
     public class TaskListViewModel
     {
-        private readonly IEventAggregator Events;
+        private readonly IEventAggregator EventAggregator;
 
-        public TaskListViewModel(IEventAggregator events)
+        public TaskListViewModel(IEventAggregator eventAggregator)
         {
-            Events = events;
+            EventAggregator = eventAggregator;
 
             Tasks = new ReactiveProperty<DataTypes.Task[]>(new DesignTimeData.Tasks().TaskList);
         }
