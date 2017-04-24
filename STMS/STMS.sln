@@ -62,7 +62,9 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.Reactive.EventAggreg
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems*{071f0f4b-aff6-4854-abad-18794bb8ce5e}*SharedItemsImports = 4
 		..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.projitems*{071f0f4b-aff6-4854-abad-18794bb8ce5e}*SharedItemsImports = 4
+		..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems*{071f0f4b-aff6-4854-abad-18794bb8ce5e}*SharedItemsImports = 4
 		..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.projitems*{3af64f84-526c-4587-82a0-3cb3657c5f61}*SharedItemsImports = 13
 		..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems*{3b0ceddd-4f94-45e3-90fc-4d95c6da0ec5}*SharedItemsImports = 4
 		..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems*{3b0ceddd-4f94-45e3-90fc-4d95c6da0ec5}*SharedItemsImports = 4
