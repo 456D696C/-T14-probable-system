@@ -1,4 +1,0 @@
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Messages.Net\bin\Debug\Simple.TaskManagement.Messages.dll
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Messages.Net\bin\Debug\Simple.TaskManagement.Messages.pdb
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Messages.Net\obj\Debug\Simple.TaskManagement.Messages.dll
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.Messages.Net\obj\Debug\Simple.TaskManagement.Messages.pdb

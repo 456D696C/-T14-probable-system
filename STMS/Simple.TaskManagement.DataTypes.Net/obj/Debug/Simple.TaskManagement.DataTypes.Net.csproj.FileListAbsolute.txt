@@ -1,5 +1,0 @@
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.DataTypes.Net\bin\Debug\Simple.TaskManagement.DataTypes.dll
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.DataTypes.Net\bin\Debug\Simple.TaskManagement.DataTypes.pdb
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.DataTypes.Net\obj\Debug\Simple.TaskManagement.DataTypes.dll
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.DataTypes.Net\obj\Debug\Simple.TaskManagement.DataTypes.pdb
-C:\Users\user-pc\Documents\Visual Studio 2015\Projects\Tax-Back-Group\STMS\Simple.TaskManagement.DataTypes.Net\obj\Debug\Simple.TaskManagement.DataTypes.Net.csprojResolveAssemblyReference.cache

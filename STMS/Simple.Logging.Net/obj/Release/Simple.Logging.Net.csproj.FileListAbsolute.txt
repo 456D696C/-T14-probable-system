@@ -1,4 +1,0 @@
-E:\VS2015\B2W\Stages\Staging\Simple.Logging.Net\bin\Release\Simple.Logging.dll
-E:\VS2015\B2W\Stages\Staging\Simple.Logging.Net\bin\Release\Simple.Logging.pdb
-E:\VS2015\B2W\Stages\Staging\Simple.Logging.Net\obj\Release\Simple.Logging.dll
-E:\VS2015\B2W\Stages\Staging\Simple.Logging.Net\obj\Release\Simple.Logging.pdb
