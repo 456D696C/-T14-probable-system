@@ -57,9 +57,9 @@ namespace Simple.TaskManagement
             Events.GetEvent<Search<TasksSearchOnCommentsQuery>>()
                    .Select(q =>
                    {
-                       var result = Events.GetEvent<Selection<TasksSearchOnCommentsReport>>()
+                       var result = Events.GetEvent<Result<TasksSearchOnCommentsReport>>()
                             .Where(selection => selection.Object?.Reference == q.Object?.Reference)
-                            .Timeout(TimeSpan.FromSeconds(7), Observable.Empty<Selection<TasksSearchOnCommentsReport>>())
+                            .Timeout(TimeSpan.FromSeconds(7), Observable.Empty<Result<TasksSearchOnCommentsReport>>())
                             .FirstAsync()
                             .Publish()
                             .RefCount()
@@ -77,7 +77,7 @@ namespace Simple.TaskManagement
                              Events.Publish(item);
                              return item;
                          })
-                         .Catch(Observable.Empty<Selection<TasksSearchOnCommentsReport>>())
+                         .Catch(Observable.Empty<Result<TasksSearchOnCommentsReport>>())
                       )).Concat()
                    .Subscribe();
             #endregion
