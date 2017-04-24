@@ -21,7 +21,7 @@ namespace Simple.TaskManagement.Common
             public const string FrontEnd = "front-end";
             public const string AuditFrontEnd = "audit-front-end";
             public const string MiddleEnd = "middle-end";
-            public const string AuditMiddleEnd = "middle-end";
+            public const string AuditMiddleEnd = "audit-middle-end";
             public const string BackEnd = "back-end";
             public const string AuditBackEnd = "audit-back-end";
         }

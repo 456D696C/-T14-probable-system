@@ -27,7 +27,7 @@ namespace Simple.TaskManagement
         {
             container
                 .RegisterType<ISimpleLoggerFactory, ConsoleLoggerFactory>(new ContainerControlledLifetimeManager())
-                .RegisterType<ITaskStorage, InMemoryTaskStorage>(new ContainerControlledLifetimeManager())
+                .RegisterType<ITaskStorage, InMemoryTaskStorageMockup>(new ContainerControlledLifetimeManager())
                 .RegisterType<IQueryProcessor, QueryProcessor>()
                 .RegisterTypes(
                         types:typeof(Bootstrapper).Assembly.GetTypes()

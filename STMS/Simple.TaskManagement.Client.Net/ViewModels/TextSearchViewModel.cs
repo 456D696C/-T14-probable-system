@@ -13,6 +13,7 @@ using Reactive.Bindings;
 using Reactive.Bindings.Notifiers;
 using Reactive.Bindings.Extensions;
 
+using Simple.TaskManagement.Queries.Tasks;
 
 namespace Simple.TaskManagement.ViewModels
 {
@@ -23,6 +24,69 @@ namespace Simple.TaskManagement.ViewModels
         public TextSearchViewModel(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
+
+
+
+            // Notifier of network connecitng status/count
+            var connect = new CountNotifier();
+            // Notifier of network progress report
+            var progress = new ScheduledNotifier<Tuple<long, long>>(); // current, total
+
+            // skip initialValue on subscribe
+            InputTerm = new ReactiveProperty<string>(mode: ReactivePropertyMode.DistinctUntilChanged);
+
+            // Search asynchronous & result direct bind
+            // if network error, use OnErroRetry
+            // that catch exception and do action and resubscript.
+            Term =
+            InputTerm
+            .Do(x => System.Diagnostics.Debug.WriteLine($"{nameof(InputTerm)}->[{x}]"))
+                .Throttle(TimeSpan.FromMilliseconds(100))
+                .Select(async term =>
+                {
+                    using (connect.Increment()) // network open
+                    {
+
+                        var query = Events.Search.Create(new TasksSearchOnCommentsQuery()
+                        {
+                            Reference = Guid.NewGuid().ToString("N"),
+                            Query = term,
+                        });
+
+                        await Task.Run(()=>eventAggregator.Publish(query));
+
+                        return query?.ToString();
+                    }
+                })
+                .Switch() // flatten
+                .OnErrorRetry((Exception ex) => ProgressStatus.Value = $"Error occured {ex?.Message}")
+                .ToReactiveProperty()
+                ;
+
+            // CountChangedStatus : Increment(network open), Decrement(network close), Empty(all complete)
+            SearchingStatus = connect
+                .Select(x => (x != CountChangedStatus.Empty) ? "loading..." : "complete")
+                .ToReactiveProperty()
+                ;
+
+            ProgressStatus = progress
+                .Select(x => string.Format("{0}/{1} {2}%", x.Item1, x.Item2, ((double)x.Item1 / x.Item2) * 100))
+                .ToReactiveProperty();
+
+
+            Start.Subscribe(async _ =>
+            {
+                var term = InputTerm.Value;
+
+                var query = Events.Search.Create(new TasksSearchOnCommentsQuery()
+                {
+                    Reference = Guid.NewGuid().ToString("N"),
+                    Query = term,
+                });
+
+                await Task.Run(()=>eventAggregator.Publish(query));
+            });
+
         }
 
         public ReactiveProperty<object> Keywords { get; } = new ReactiveProperty<object>();
