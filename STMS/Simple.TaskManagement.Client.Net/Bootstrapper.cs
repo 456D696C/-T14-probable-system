@@ -8,6 +8,32 @@ using Microsoft.Practices.Unity;
 
 using Reactive.EventAggregator;
 
+using Rebus.Handlers;
+using Rebus.Auditing.Messages;
+using Rebus.Config;
+using Rebus.DataBus;
+using Rebus.DataBus.FileSystem;
+using Rebus.Logging;
+using Rebus.Persistence.FileSystem;
+using Rebus.Persistence.InMem;
+using Rebus.Routing.TypeBased;
+using Rebus.Transport.FileSystem;
+using Rebus.Unity;
+
+
+using Rebus.Sagas;
+using Rebus.Subscriptions;
+
+
+using Simple.TaskManagement.Common;
+
+using Simple.Rebus.Routing.TypeBased;
+using Simple.Rebus.Configuration;
+using Simple.Contract.Conventions;
+
+
+using Simple.TaskManagement.Handlers;
+
 namespace Simple.TaskManagement
 {
     static partial class Bootstrapper
@@ -17,6 +43,7 @@ namespace Simple.TaskManagement
 
             container
                 .RegisterInstance<IEventAggregator>(new EventAggregator())
+                .RegisterType<IClientService, ClientService>(new ContainerControlledLifetimeManager())
                 .RegisterTypes(AllClasses
                 .FromAssemblies(typeof(ViewModels.AboutThisViewModel).Assembly)
                 .Where(t => t.Namespace == typeof(ViewModels.AboutThisViewModel).Namespace)
@@ -25,8 +52,21 @@ namespace Simple.TaskManagement
                 .Where(t => t.IsInterface == false),
                 WithMappings.None,
                 WithName.Default,
-                WithLifetime.ContainerControlled);
-            ;
+                WithLifetime.ContainerControlled)
+                .RegisterType(typeof(IHandleMessages<>), typeof(BridgeMessageHandler<>), "bridge")
+                ;
+
+
+            Configure.With(new UnityContainerAdapter(container))
+               .Logging(l => l.ColoredConsole(minLevel: LogLevel.Debug))
+               .UseFilesystem(Config.FileSystem.BaseDirectory, Config.Queues.MiddleEnd)
+               .Options(b => b.EnableMessageAuditing(Config.Queues.AuditMiddleEnd))
+               .Routing(r => r.TypeBased()
+                                .MapAssemblyOf<Simple.TaskManagement.Contract>(a => a.CommandAndQueryTypes(), Config.Queues.MiddleEnd)
+                                .MapAssemblyOf<Simple.TaskManagement.Contract>(a => a.ResultTypes(), Config.Queues.FrontEnd)
+                               )
+               .Start();
+            
 
             return container;
         }

@@ -127,6 +127,7 @@
     </ApplicationDefinition>
     <Compile Include="ClientService.cs" />
     <Compile Include="DesignTimeData\Tasks.cs" />
+    <Compile Include="Handlers\BridgeMessageHandler.cs" />
     <Compile Include="IClientService.cs" />
     <Compile Include="ViewModels\AboutThisViewModel.cs" />
     <Compile Include="ViewModels\SearchResultViewModel.cs" />
@@ -180,12 +181,30 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Simple.Logging.Net\Simple.Logging.Net.csproj">
+      <Project>{8eece07a-9c35-4f6a-b22a-1275d034ea75}</Project>
+      <Name>Simple.Logging.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.Query.Net\Simple.Query.Net.csproj">
+      <Project>{c5726bc9-1a53-4f5e-94a7-fbf6fd6a7fb7}</Project>
+      <Name>Simple.Query.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.TaskManagement.Common.Net\Simple.TaskManagement.Common.Net.csproj">
+      <Project>{21a7d785-4b91-457a-9edb-3472cdcccece}</Project>
+      <Name>Simple.TaskManagement.Common.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.TaskManagement.Contract.Net\Simple.TaskManagement.Contract.Net.csproj">
+      <Project>{db517919-1d6c-4e89-a9ed-bb7bed058b4e}</Project>
+      <Name>Simple.TaskManagement.Contract.Net</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Simple.TaskManagement.DataTypes.Net\Simple.TaskManagement.DataTypes.Net.csproj">
       <Project>{de84db9e-2911-4af9-9fe9-010927376845}</Project>
       <Name>Simple.TaskManagement.DataTypes.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.projitems" Label="Shared" />
+  <Import Project="..\..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems" Label="Shared" />
+  <Import Project="..\..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

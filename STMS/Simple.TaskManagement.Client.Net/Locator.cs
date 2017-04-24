@@ -29,6 +29,9 @@ namespace Simple.TaskManagement
             SearchResult = container.Resolve<SearchResultViewModel>();
             VisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
 
+
+            container.Resolve<IClientService>().StartAsync().Wait();
+  
         }
     }
 }
