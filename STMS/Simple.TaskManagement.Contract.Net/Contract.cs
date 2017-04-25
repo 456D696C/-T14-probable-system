@@ -46,7 +46,7 @@ namespace Simple.TaskManagement
 
     namespace Queries.Contacts
     {
-        public partial class StaffStatusQuery : IQuery<Events.Contacts.StaffStatusReport> { }
+        public partial class ContactStatusQuery : IQuery<Events.Contacts.ContactStatusReport> { }
     }
 
     namespace Queries.Comments
@@ -73,7 +73,7 @@ namespace Simple.TaskManagement
 
     namespace Events.Contacts
     {
-        public partial class StaffStatusReport { }
+        public partial class ContactStatusReport { }
 
     }
 
