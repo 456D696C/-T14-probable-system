@@ -14,11 +14,13 @@ namespace Simple.TaskManagement
 
     namespace Queries.Contacts
     {
-        partial class ContactStatusQuery  { }
+        partial class ContactStatusQuery { }
+        partial class ContactListQuery { }
     }
 
     namespace Events.Contacts
     {
         partial class ContactStatusReport { }
+        partial class ContactListReport { }
     }
 }
