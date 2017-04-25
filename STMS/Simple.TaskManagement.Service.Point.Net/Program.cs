@@ -85,8 +85,6 @@ namespace Simple.TaskManagement.Service.Point
             }
 
             Console.WriteLine();
-            Console.WriteLine("Press any key to continue");
-            Console.ReadLine();
 
         }
     }
