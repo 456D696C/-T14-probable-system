@@ -15,7 +15,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         TaskId = "1",
                         TaskDescription = "Remember The Milk",
-                        RequiredByDate = "2017-06-06",
+                        
 
                         Comments = new Dictionary<string, Comment>()
                         {
@@ -28,7 +28,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         TaskId = "2",
                         TaskDescription = "Everyday",
-                        RequiredByDate = "2017-07-07",
+                        
                         Comments = new Dictionary<string, Comment>()
                         {
                             { "2.1", new Comment() { ReminderDate = "2017-05-05",  Commentary="for quickly swiping through projects"} }
@@ -40,7 +40,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         TaskId = "3",
                         TaskDescription = "Clear",
-                        RequiredByDate = "2017-06-06",
+                        
 
                         Comments = new Dictionary<string, Comment>()
                         {
@@ -53,7 +53,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         TaskId = "4",
                         TaskDescription = "Swipes",
-                        RequiredByDate = "2017-07-07",
+                       
                         Comments = new Dictionary<string, Comment>()
                         {
                             { "4.1", new Comment() { ReminderDate = "2017-05-05",  Commentary="snoozing your tasks until you're ready to do them"} }
@@ -61,5 +61,8 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                         },
                     }
                 };
+
+
+       
     }
 }

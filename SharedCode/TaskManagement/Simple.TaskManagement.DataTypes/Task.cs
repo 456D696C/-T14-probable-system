@@ -6,8 +6,8 @@ namespace Simple.TaskManagement.DataTypes
 {
     public class Task
     {
-        public string CreatedDate { get; set; }
-        public string RequiredByDate { get; set; }
+        public DateTimeOffset? CreatedDate { get; set; }
+        public DateTimeOffset? RequiredByDate { get; set; }
         public string TaskDescription { get; set; }
         public string TaskStatus { get; set; }
         public string TaskType { get; set; }
