@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simple.TaskManagement
 {
-    namespace Commands.Staff
+    namespace Commands.Conacts
     {
         public partial class AddOrUpdateStaffMemberCommand { }
         public partial class DeleteStaffMemberCommand { }

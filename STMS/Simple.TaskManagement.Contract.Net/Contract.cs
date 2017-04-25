@@ -19,7 +19,7 @@ namespace Simple.TaskManagement
         public partial class RemovePeopleFromTaskCommand { }
     }
 
-    namespace Commands.Staff
+    namespace Commands.Conacts
     {
         public partial class AddOrUpdateStaffMemberCommand { }
         public partial class DeleteStaffMemberCommand { }
