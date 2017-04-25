@@ -93,9 +93,9 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "The concept of T14 was born",
 
-            AssignedTo = new Dictionary<string, StaffMember>()
+            AssignedTo = new Dictionary<string, Contact>()
             {
-                { "applicant@abv.bg", new StaffMember() }
+                { "applicant@abv.bg", new Contact() }
             },
 
             Comments = new Dictionary<string, Comment>()
@@ -163,9 +163,9 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "Research, Research, Research existing solutions.",
 
-            AssignedTo = new Dictionary<string, StaffMember>()
+            AssignedTo = new Dictionary<string, Contact>()
             {
-                { "applicant@abv.bg", new StaffMember() }
+                { "applicant@abv.bg", new Contact() }
             },
 
             Comments = new Dictionary<string, Comment>()
@@ -237,9 +237,9 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "Developed prototypes.",
 
-            AssignedTo = new Dictionary<string, StaffMember>()
+            AssignedTo = new Dictionary<string, Contact>()
             {
-                { "applicant@abv.bg", new StaffMember() }
+                { "applicant@abv.bg", new Contact() }
             },
 
             Comments = new Dictionary<string, Comment>()
@@ -276,9 +276,9 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "Developed Project.",
 
-            AssignedTo = new Dictionary<string, StaffMember>()
+            AssignedTo = new Dictionary<string, Contact>()
             {
-                { "applicant@abv.bg", new StaffMember() }
+                { "applicant@abv.bg", new Contact() }
             },
 
             Comments = new Dictionary<string, Comment>()
@@ -316,9 +316,9 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "Invent a good name for the product.",
 
-            AssignedTo = new Dictionary<string, StaffMember>()
+            AssignedTo = new Dictionary<string, Contact>()
             {
-                { "applicant@abv.bg", new StaffMember() }
+                { "applicant@abv.bg", new Contact() }
             },
 
             Comments = new Dictionary<string, Comment>()

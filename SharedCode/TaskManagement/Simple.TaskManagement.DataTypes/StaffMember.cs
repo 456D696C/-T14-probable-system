@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Simple.TaskManagement.DataTypes
 {
-    public class StaffMember
+    public class Contact
     {
         public string Id { get; set; }
     }
