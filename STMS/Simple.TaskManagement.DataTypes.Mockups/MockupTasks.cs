@@ -327,7 +327,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         CommentType = CommentType.SubTaks,
                         ReminderDate = DateTime.Now.AddDays(-3),
-                        Commentary = @"The цode name T14 comes from а game of words
+                        Commentary = @"The code name T14 comes from а game of words
                                             Task for Tasking
                                             аnd
                                             the popular T4 template feature."
