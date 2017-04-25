@@ -75,7 +75,10 @@
             <GridSplitter x:Name="gridSplitter1" Grid.Row="1" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
 
             <Grid Grid.Row="2" x:Name="_TASK_SERACH_RESULT_AREA">
-                <ListView x:Name="_TASK_SERACH_RESULT" HorizontalContentAlignment="Stretch" ItemsSource="{Binding TaskList.Tasks.Value}">
+                <ListView x:Name="_TASK_SERACH_RESULT_LIST" 
+                          HorizontalContentAlignment="Stretch" 
+                          SelectedValue="{Binding SearchResult.SelectedItem}"
+                          ItemsSource="{Binding SearchResult.TaskList.Value}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Expander Header="{Binding TaskDescription}">
