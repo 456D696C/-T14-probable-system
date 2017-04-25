@@ -9,7 +9,6 @@
     <Import_RootNamespace>Simple.TaskManagement.DataTypes.Mockups</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Class1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MockupTasks.cs" />
   </ItemGroup>
 </Project>

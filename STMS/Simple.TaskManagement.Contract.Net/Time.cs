@@ -23,7 +23,7 @@ namespace Simple.TaskManagement
         {
             public string Reference { get; set; }
             public DateTimeOffset Now { get; set; }
-            public override string ToString() => new { Reference, Now }.ToString();
+            public override string ToString() => new { Now, Reference }.ToString();
 
         }
     }

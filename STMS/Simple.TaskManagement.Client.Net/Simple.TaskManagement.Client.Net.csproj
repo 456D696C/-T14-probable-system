@@ -126,7 +126,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClientService.cs" />
-    <Compile Include="DesignTimeData\Tasks.cs" />
     <Compile Include="Events\Result.cs" />
     <Compile Include="Events\Search.cs" />
     <Compile Include="Events\Selection.cs" />
