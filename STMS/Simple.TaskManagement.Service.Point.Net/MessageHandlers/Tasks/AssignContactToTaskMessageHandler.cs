@@ -13,18 +13,18 @@ using Simple.TaskManagement.Events.Tasks;
 
 namespace Simple.TaskManagement.MessageHandlers.Tasks
 {
-    class RemovePeopleFromTaskMessageHandler : IHandleMessages<RemovePeopleFromTaskCommand>
+    class AssignContactToTaskMessageHandler : IHandleMessages<AssignContactToTaskCommand>
     {
         private readonly IBus Bus;
         private readonly ITaskStorage TaskStorage;
 
-        public RemovePeopleFromTaskMessageHandler(IBus bus, ITaskStorage taskStorage)
+        public AssignContactToTaskMessageHandler(IBus bus, ITaskStorage taskStorage)
         {
             Bus = bus;
             TaskStorage = taskStorage;
         }
 
-        public Task Handle(RemovePeopleFromTaskCommand message)
+        public Task Handle(AssignContactToTaskCommand message)
         {
             return Bus.SendLocal(new AddOrUpdateTaskCommand());
         }

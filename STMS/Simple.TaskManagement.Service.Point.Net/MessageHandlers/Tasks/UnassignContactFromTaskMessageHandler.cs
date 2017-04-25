@@ -11,20 +11,21 @@ using Simple.TaskManagement.Tasks;
 using Simple.TaskManagement.Commands.Tasks;
 using Simple.TaskManagement.Events.Tasks;
 
+
 namespace Simple.TaskManagement.MessageHandlers.Tasks
 {
-    class AddPeopleToTaskMessageHandler : IHandleMessages<AddPeopleToTaskCommand>
+    class UnassignContactFromTaskMessageHandler : IHandleMessages<UnassignContactFromTaskCommand>
     {
         private readonly IBus Bus;
         private readonly ITaskStorage TaskStorage;
 
-        public AddPeopleToTaskMessageHandler(IBus bus, ITaskStorage taskStorage)
+        public UnassignContactFromTaskMessageHandler(IBus bus, ITaskStorage taskStorage)
         {
             Bus = bus;
             TaskStorage = taskStorage;
         }
 
-        public Task Handle(AddPeopleToTaskCommand message)
+        public Task Handle(UnassignContactFromTaskCommand message)
         {
             return Bus.SendLocal(new AddOrUpdateTaskCommand());
         }
