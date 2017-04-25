@@ -30,7 +30,7 @@ namespace Simple.TaskManagement.ViewModels
         {
             EventAggregator = eventAggregator;
 
-            Tasks = new ReactiveProperty<DataTypes.Task[]>(new DesignTimeData.Tasks().TaskList);
+            Tasks = new ReactiveProperty<DataTypes.Task[]>(new DataTypes.Mockups.MockupTasks().TaskList);
         }
 
         public ReactiveProperty<DataTypes. Task[]> Tasks { get; }

@@ -12,7 +12,7 @@ namespace Simple.TaskManagement.Persistence.InMemory
     {
         public InMemoryTaskStorageMockup()
         {
-            var mockups = new DataTypes.Mockups.MockupTasks().Tasks;
+            var mockups = new DataTypes.Mockups.MockupTasks().TaskList;
 
             foreach (var item in mockups)
             {
