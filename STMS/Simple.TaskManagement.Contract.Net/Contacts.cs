@@ -8,8 +8,8 @@ namespace Simple.TaskManagement
 {
     namespace Commands.Conacts
     {
-        public partial class AddOrUpdateStaffMemberCommand { }
-        public partial class DeleteStaffMemberCommand { }
+        public partial class AddOrUpdateContactCommand { }
+        public partial class DeleteContactCommand { }
     }
 
     namespace Queries.Contacts

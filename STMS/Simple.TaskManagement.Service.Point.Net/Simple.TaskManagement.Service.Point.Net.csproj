@@ -76,8 +76,8 @@
     <Compile Include="MessageHandlers\Comments\DeleteCommentMessageHandler.cs" />
     <Compile Include="MessageHandlers\Queries\QueryMessageHandler.cs" />
     <Compile Include="MessageHandlers\Tasks\AddOrUpdateTaskMessageHandler.cs" />
-    <Compile Include="MessageHandlers\Tasks\AddPeopleToTaskMessageHandler.cs" />
-    <Compile Include="MessageHandlers\Tasks\RemovePeopleFromTaskMessageHandler.cs" />
+    <Compile Include="MessageHandlers\Tasks\AssignContactToTaskMessageHandler.cs" />
+    <Compile Include="MessageHandlers\Tasks\UnassignContactFromTaskMessageHandler.cs" />
     <Compile Include="Persistence\InMemory\InMemoryTaskStorage.cs" />
     <Compile Include="Persistence\InMemory\InMemoryTaskStorageMockup.cs" />
     <Compile Include="Program.cs" />

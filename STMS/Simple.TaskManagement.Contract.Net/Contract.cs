@@ -15,14 +15,16 @@ namespace Simple.TaskManagement
     namespace Commands.Tasks
     {
         public partial class AddOrUpdateTaskCommand { }
-        public partial class AddPeopleToTaskCommand { }
-        public partial class RemovePeopleFromTaskCommand { }
+        public partial class AssignContactToTaskCommand { }
+        public partial class UnassignContactFromTaskCommand { }
+
+
     }
 
     namespace Commands.Conacts
     {
-        public partial class AddOrUpdateStaffMemberCommand { }
-        public partial class DeleteStaffMemberCommand { }
+        public partial class AddOrUpdateContactCommand { }
+        public partial class DeleteContactCommand { }
     }
 
     namespace Commands.Comments

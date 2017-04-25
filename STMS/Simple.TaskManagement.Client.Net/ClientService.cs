@@ -36,6 +36,10 @@ using Rebus.Transport.FileSystem;
 
 using Simple.TaskManagement.Queries.Tasks;
 using Simple.TaskManagement.Events.Tasks;
+using Simple.TaskManagement.Commands.Tasks;
+using Simple.TaskManagement.Commands.Comments;
+using Simple.TaskManagement.Commands.Conacts;
+
 using Simple.TaskManagement.Events;
 
 namespace Simple.TaskManagement
@@ -52,6 +56,38 @@ namespace Simple.TaskManagement
             Bus = bus;
             Container = container;
 
+            #region Commands processing
+
+            Events.GetEvent<AddOrUpdateTaskCommand>()
+              .Select(async command => await Bus.Send(command))
+              .Subscribe();
+
+            Events.GetEvent<AssignContactToTaskCommand>()
+             .Select(async command => await Bus.Send(command))
+             .Subscribe();
+
+            Events.GetEvent<UnassignContactFromTaskCommand>()
+            .Select(async command => await Bus.Send(command))
+            .Subscribe();
+
+            Events.GetEvent<AddOrUpdateCommentCommand>()
+            .Select(async command => await Bus.Send(command))
+            .Subscribe();
+
+            Events.GetEvent<DeleteCommentCommand>()
+            .Select(async command => await Bus.Send(command))
+            .Subscribe();
+
+
+            Events.GetEvent<AddOrUpdateContactCommand>()
+            .Select(async command => await Bus.Send(command))
+            .Subscribe();
+
+            Events.GetEvent<DeleteContactCommand>()
+            .Select(async command => await Bus.Send(command))
+            .Subscribe();
+
+            #endregion
 
             #region Text searh 
             Events.GetEvent<Search<TasksSearchOnCommentsQuery>>()

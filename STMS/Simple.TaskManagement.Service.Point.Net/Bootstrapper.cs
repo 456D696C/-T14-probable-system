@@ -63,8 +63,8 @@ namespace Simple.TaskManagement
                         )
 
                  .RegisterType<IHandleMessages<AddOrUpdateTaskCommand>,AddOrUpdateTaskMessageHandler>(name:nameof(AddOrUpdateTaskMessageHandler))
-                 .RegisterType<IHandleMessages<AddPeopleToTaskCommand>, AddPeopleToTaskMessageHandler>(name: nameof(AddPeopleToTaskMessageHandler))
-                 .RegisterType<IHandleMessages<RemovePeopleFromTaskCommand>, RemovePeopleFromTaskMessageHandler>(name: nameof(RemovePeopleFromTaskMessageHandler))
+                 .RegisterType<IHandleMessages<AssignContactToTaskCommand>, AssignContactToTaskMessageHandler>(name: nameof(AssignContactToTaskCommand))
+                 .RegisterType<IHandleMessages<UnassignContactFromTaskCommand>, UnassignContactFromTaskMessageHandler>(name: nameof(UnassignContactFromTaskCommand))
                  .RegisterType<IHandleMessages<AddOrUpdateCommentCommand>, AddOrUpdateCommentMessageHandler>(name: nameof(AddOrUpdateCommentMessageHandler))
                  .RegisterType<IHandleMessages<DeleteCommentCommand>, DeleteCommentMessageHandler>(name: nameof(DeleteCommentMessageHandler))
 

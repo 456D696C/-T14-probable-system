@@ -11,8 +11,8 @@ namespace Simple.TaskManagement
     namespace Commands.Tasks
     {
         partial class AddOrUpdateTaskCommand { }
-        partial class AddPeopleToTaskCommand { }
-        partial class RemovePeopleFromTaskCommand { }
+        partial class AssignContactToTaskCommand { }
+        
     }
 
     namespace Queries.Tasks
