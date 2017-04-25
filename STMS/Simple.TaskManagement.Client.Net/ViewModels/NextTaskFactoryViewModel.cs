@@ -31,7 +31,9 @@ namespace Simple.TaskManagement.ViewModels
         {
             EventAggregator = eventAggregator;
 
-            Next = new ReactiveProperty<IEnumerable<ViewModels.NextTaskManagerViewModel>>();
+            Next = new ReactiveProperty<IEnumerable<ViewModels.NextTaskManagerViewModel>>(
+                new NextTaskManagerViewModel[] { new NextTaskManagerViewModel(EventAggregator)
+                } );
 
             StartAsyncCommand = ShareSource.ToAsyncReactiveCommand();
             StartAsyncCommand.Subscribe(async _ =>
@@ -41,7 +43,7 @@ namespace Simple.TaskManagement.ViewModels
                 {
                     Next.Value = new NextTaskManagerViewModel[]
                     {
-                        new NextTaskManagerViewModel()
+                        new NextTaskManagerViewModel(EventAggregator)
                     };
                 });
             });

@@ -57,17 +57,25 @@
                                             <RowDefinition/>
                                             <RowDefinition/>
                                             <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Row="0" Grid.Column="0" Text="Task Name:"/>
-                                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Task.Value.TaskId}" />
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Current.Value.TaskId}" />
                                         <TextBlock Grid.Row="1" Grid.Column="0" Text="Description:"/>
-                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Task.Value.TaskDescription}"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Current.Value.TaskDescription}"/>
                                         <TextBlock Grid.Row="2" Grid.Column="0" Text="Task Type:"/>
-                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Task.Value.TaskType}"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Current.Value.TaskType}"/>
+                                        <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                                            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                                                <Button Content="Save"   Command="{Binding SaveAsyncCommand}"    />
+                                                <Button Content="Cancel" Command="{Binding CancelAsyncCommand}"   />
+                                            </StackPanel>
+                                        </Grid>
                                     </Grid>
                                 </Border>
                             </Grid>
