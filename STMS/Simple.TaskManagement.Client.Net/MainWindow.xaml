@@ -31,7 +31,7 @@
                 <TextBox  Text="{Binding TextSearch.InputTerm.Value, UpdateSourceTrigger=PropertyChanged}" />
             </Border>
             <Border Grid.Column="2">
-                <Button Content=" -> " Command="{Binding Start}"/>
+                <Button Content=" -> " Command="{Binding TextSearch.Start}"/>
             </Border>
         </Grid>
         <Grid
