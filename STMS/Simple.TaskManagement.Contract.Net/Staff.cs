@@ -12,12 +12,12 @@ namespace Simple.TaskManagement
         public partial class DeleteStaffMemberCommand { }
     }
 
-    namespace Queries.Staff
+    namespace Queries.Contacts
     {
         partial class StaffStatusQuery  { }
     }
 
-    namespace Events.Staff
+    namespace Events.Contacts
     {
         partial class StaffStatusReport { }
     }
