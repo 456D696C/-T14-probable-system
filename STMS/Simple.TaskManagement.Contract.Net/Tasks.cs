@@ -17,20 +17,31 @@ namespace Simple.TaskManagement
 
     namespace Queries.Tasks
     {
-        partial class TasksQuery { }
+        partial class TasksQuery
+        {
+            public string Reference { get; set; }
+            public string Query { get; set; }
+            public override string ToString() => new { Query, Reference }.ToString();
+        }
+
         partial class TasksSearchOnCommentsQuery
         {
             public string Reference { get; set; }
             public string Query { get; set; }
             public override string ToString() => new { Query, Reference }.ToString();
-          
         }
         partial class TaskStatusQuery { }
     }
 
     namespace Events.Tasks
     {
-        partial class TasksReport { }
+        partial class TasksReport
+        {
+            public string Reference { get; set; }
+            public string Query { get; set; }
+            public List<DataTypes.Task> Tasks { get; set; }
+            public override string ToString() => new { Query, Reference, Tasks.Count }.ToString();
+        }
         partial class TasksSearchOnCommentsReport
         {
             public string Reference { get; set; }

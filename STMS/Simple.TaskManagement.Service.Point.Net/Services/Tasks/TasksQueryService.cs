@@ -22,7 +22,14 @@ namespace Simple.TaskManagement.Services.Tasks
 
         public TasksReport Handle(TasksQuery query)
         {
-            throw new NotImplementedException();
+            var found = TaskStorage.Get().Result;
+
+            return new TasksReport()
+            {
+                Query = query.Query,
+                Reference = query.Reference,
+                Tasks = found.ToList(),
+            };
         }
     }
 }
