@@ -30,6 +30,7 @@ namespace Simple.TaskManagement
             TaskList = container.Resolve<TaskListViewModel>();
             TextSearch = container.Resolve<TextSearchViewModel>();
             SearchResult = container.Resolve<SearchResultViewModel>();
+            Factory = container.Resolve<NextTaskFactoryViewModel>();
             VisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
 
 

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple.TaskManagement"
+        xmlns:domain="clr-namespace:Simple.TaskManagement.ViewModels"
         mc:Ignorable="d"
         Title="{Binding AboutThis.Title}" Height="350" Width="525">
     <Window.DataContext>
@@ -14,6 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid 
              x:Name="_APP_BAR">
@@ -45,31 +47,32 @@
 
 
             <Grid  x:Name="_NEW_LIST_AREA">
-                <ListView  x:Name="_NEW_TASK_LIST" HorizontalContentAlignment="Stretch" ItemsSource="{Binding TaskList.Tasks.Value}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Expander Header="{Binding TaskDescription}">
-                                <ListView 
-                                HorizontalContentAlignment="Stretch"
-                                ItemsSource="{Binding Comments}">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                </Grid.ColumnDefinitions>
-                                                <TextBlock Text="{Binding Key}" Margin="8 0 8 0"/>
-                                                <TextBlock Grid.Column="1" Text="{Binding Value.Commentary}" Padding="4 0 4 0"/>
-                                                <TextBlock Grid.Column="2" Text="{Binding Value.ReminderDate}" />
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </Expander>
+                <ListView  x:Name="_NEW_TASK_LIST" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Factory.Next.Value}">
+                    <ListView.Resources>
+                        <DataTemplate DataType="{x:Type domain:NextTaskManagerViewModel}">
+                            <Grid>
+                                <Border Name="border" BorderBrush="Navy" BorderThickness="1" Padding="5" Margin="5">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Task Name:"/>
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Task.Value.TaskId}" />
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Description:"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Task.Value.TaskDescription}"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Task Type:"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Task.Value.TaskType}"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
+                    </ListView.Resources>
                 </ListView>
             </Grid>
 
@@ -139,6 +142,14 @@
                 </ListView>
             </Grid>
 
+        </Grid>
+        <Grid Grid.Row="2" 
+              HorizontalAlignment="Center" >
+            <Button Command="{Binding Factory.StartAsyncCommand}">
+                <TextBlock Text="+" MinWidth="50"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Button>
         </Grid>
     </Grid>
 </Window>

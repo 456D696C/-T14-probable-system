@@ -12,19 +12,39 @@ using Reactive.Bindings.Notifiers;
 using Reactive.Bindings.Extensions;
 
 
+
 namespace Simple.TaskManagement.ViewModels
 {
     public class NextTaskFactoryViewModel  : INotifyPropertyChanged
     {
         private readonly IEventAggregator EventAggregator;
+        private ReactiveProperty<bool> ShareSource { get; } = new ReactiveProperty<bool>(true);
 
-        public ReadOnlyReactiveProperty<IEnumerable<NextTaskManagerViewModel>> Next { get; }
+
+        public ReactiveProperty<IEnumerable<NextTaskManagerViewModel>> Next { get; }
+
+
         public AsyncReactiveCommand StartAsyncCommand { get; }
 
 
         public NextTaskFactoryViewModel(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
+
+            Next = new ReactiveProperty<IEnumerable<ViewModels.NextTaskManagerViewModel>>();
+
+            StartAsyncCommand = ShareSource.ToAsyncReactiveCommand();
+            StartAsyncCommand.Subscribe(async _ =>
+            {
+                
+                await Task.Run(() =>
+                {
+                    Next.Value = new NextTaskManagerViewModel[]
+                    {
+                        new NextTaskManagerViewModel()
+                    };
+                });
+            });
         }
 
        
