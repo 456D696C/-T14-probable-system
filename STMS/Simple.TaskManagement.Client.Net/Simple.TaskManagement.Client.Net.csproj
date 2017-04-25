@@ -133,6 +133,8 @@
     <Compile Include="Handlers\Tasks\TasksSearchOnCommentsReportMessageHandler.cs" />
     <Compile Include="IClientService.cs" />
     <Compile Include="ViewModels\AboutThisViewModel.cs" />
+    <Compile Include="ViewModels\NextTaskFactoryViewModel.cs" />
+    <Compile Include="ViewModels\NextTaskManagerViewModel.cs" />
     <Compile Include="ViewModels\SearchResultViewModel.cs" />
     <Compile Include="ViewModels\TaskListViewModel.cs" />
     <Compile Include="ViewModels\TextSearchViewModel.cs" />

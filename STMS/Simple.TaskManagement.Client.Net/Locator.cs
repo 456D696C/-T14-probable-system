@@ -19,6 +19,7 @@ namespace Simple.TaskManagement
         public TaskListViewModel TaskList { get; }
         public TextSearchViewModel TextSearch { get; }
         public SearchResultViewModel SearchResult { get; }
+        public NextTaskFactoryViewModel Factory { get; }
         public VisualNotificationSystemViewModel VisualNotifications { get; }
 
         public Locator()
