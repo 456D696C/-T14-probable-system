@@ -36,9 +36,13 @@ using Rebus.Transport.FileSystem;
 
 using Simple.TaskManagement.Queries.Tasks;
 using Simple.TaskManagement.Events.Tasks;
+
 using Simple.TaskManagement.Commands.Tasks;
+
 using Simple.TaskManagement.Commands.Comments;
+
 using Simple.TaskManagement.Commands.Conacts;
+using Simple.TaskManagement.Events.Contacts;
 
 using Simple.TaskManagement.Events;
 
@@ -116,12 +120,12 @@ namespace Simple.TaskManagement
                          .Catch(Observable.Empty<Result<TasksSearchOnCommentsReport>>())
                       )).Concat()
                    .Subscribe();
-            #endregion
+            #endregion          
         }
 
         public Task StartAsync()
         {
-            return Task.CompletedTask;
+            return  Bus.Send(new TasksQuery());
         }
     }
 }
