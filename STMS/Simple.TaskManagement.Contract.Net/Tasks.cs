@@ -36,7 +36,7 @@ namespace Simple.TaskManagement
             public string Reference { get; set; }
             public string Query { get; set; }
             public List<DataTypes.Task> Tasks { get; set; }
-            public override string ToString() => new { Query, Reference }.ToString();
+            public override string ToString() => new { Query, Reference, Tasks.Count }.ToString();
 
         }
         partial class TasksStatusReport { }

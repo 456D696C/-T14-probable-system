@@ -77,7 +77,7 @@
             <Grid Grid.Row="2" x:Name="_TASK_SERACH_RESULT_AREA">
                 <ListView x:Name="_TASK_SERACH_RESULT_LIST" 
                           HorizontalContentAlignment="Stretch" 
-                          SelectedValue="{Binding SearchResult.SelectedItem}"
+                          SelectedValue="{Binding SearchResult.SelectedItem.Value}"
                           ItemsSource="{Binding SearchResult.TaskList.Value}">
                     <ListView.ItemTemplate>
                         <DataTemplate>

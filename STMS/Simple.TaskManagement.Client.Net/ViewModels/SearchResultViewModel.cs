@@ -39,7 +39,7 @@ namespace Simple.TaskManagement.ViewModels
                            );
 
 
-            TaskList = EventAggregator.GetEvent<Selection<TasksSearchOnCommentsReport>>()
+            TaskList = EventAggregator.GetEvent<Result<TasksSearchOnCommentsReport>>()
                 .ObserveOnDispatcher()
                 .Select(found => found.Object.Tasks.OfType<DataTypes.Task>().ToArray())
                 .ToReactiveProperty();
