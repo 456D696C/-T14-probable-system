@@ -83,11 +83,6 @@ namespace Simple.TaskManagement.Service.Point
                 lifetime = lifetime.Substring(0, lifetime.Length - "LifetimeManager".Length);
                 Console.WriteLine("+ {0}{1}  '{2}'  {3}", regType, mapTo, regName, lifetime);
             }
-
-            Console.WriteLine();
-            Console.WriteLine("Press any key to continue");
-            Console.ReadLine();
-
         }
     }
 }
