@@ -55,7 +55,7 @@ namespace Simple.TaskManagement
                 WithName.Default,
                 WithLifetime.ContainerControlled)
                 .RegisterType(typeof(IHandleMessages<>), typeof(BridgeMessageHandler<>), "bridge")
-                .RegisterType<IHandleMessages<TasksSearchOnCommentsReport>, TasksSearchOnCommentsReportMessageHandler>()
+                .RegisterType<IHandleMessages<TasksSearchOnCommentsReport>, TasksSearchOnCommentsReportMessageHandler>(name:nameof(TasksSearchOnCommentsReportMessageHandler))
 
                 ;
 
