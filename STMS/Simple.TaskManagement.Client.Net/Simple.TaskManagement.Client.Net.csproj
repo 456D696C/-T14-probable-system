@@ -126,6 +126,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClientService.cs" />
+    <Compile Include="Events\Result.cs" />
     <Compile Include="Events\Search.cs" />
     <Compile Include="Events\Selection.cs" />
     <Compile Include="Handlers\BridgeMessageHandler.cs" />

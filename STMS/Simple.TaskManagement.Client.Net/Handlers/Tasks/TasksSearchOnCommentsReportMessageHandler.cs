@@ -24,7 +24,7 @@ namespace Simple.TaskManagement.Handlers.Tasks
 
         public Task Handle(TasksSearchOnCommentsReport message)
         {
-            return Task.Run(()=> EventAggregator.Publish(Selection.Create(message)));
+            return Task.Run(()=> EventAggregator.Publish(Result.Create(message)));
         }
     }
 }
