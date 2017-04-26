@@ -31,16 +31,13 @@ namespace Simple.TaskManagement.ViewModels
         {
             EventAggregator = eventAggregator;
 
-            Tasks = new ReactiveProperty<DataTypes.Task[]>(new DataTypes.Mockups.MockupTasks().TaskList);
+
 
             Tasks = EventAggregator.GetEvent<TasksReport>()
                 .ObserveOnDispatcher()
                 .Select(found => found?.Tasks.OfType<DataTypes.Task>().ToArray())
-                .ToReactiveProperty();
+                .ToReactiveProperty(new DataTypes.Mockups.MockupTasks().TaskList);
 
-#if DEBUG //&& designdimedata
-            Tasks.Value = new DataTypes.Mockups.MockupTasks().TaskList;
-#endif
         }
 
         public ReactiveProperty<DataTypes. Task[]> Tasks { get; }

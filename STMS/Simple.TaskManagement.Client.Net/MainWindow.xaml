@@ -116,12 +116,16 @@
                 <Grid  x:Name="_TASK_LIST_AREA" Grid.Row="2">
                     <StackPanel>
                         <TextBlock Text="TASK LIST AREA"/>
-                        <ListView  x:Name="_TASK_LIST" HorizontalContentAlignment="Stretch" ItemsSource="{Binding TaskList.Tasks.Value}">
+                        <ListView  x:Name="_TASK_LIST" 
+                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                          HorizontalContentAlignment="Stretch"  
+                                   ItemsSource="{Binding TaskList.Tasks.Value}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Expander Header="{Binding TaskDescription}">
                                         <ListView 
-                                HorizontalContentAlignment="Stretch"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                          HorizontalContentAlignment="Stretch"
                                 ItemsSource="{Binding Comments}">
                                             <ListView.ItemTemplate>
                                                 <DataTemplate>
@@ -132,7 +136,7 @@
                                                             <ColumnDefinition Width="Auto"/>
                                                         </Grid.ColumnDefinitions>
                                                         <TextBlock Text="{Binding Key}" Margin="8 0 8 0"/>
-                                                        <TextBlock Grid.Column="1" Text="{Binding Value.Commentary}" Padding="4 0 4 0"/>
+                                                        <TextBlock Grid.Column="1" Text="{Binding Value.Commentary}" Padding="4 0 4 0" TextWrapping="Wrap"/>
                                                         <TextBlock Grid.Column="2" Text="{Binding Value.ReminderDate}" />
                                                     </Grid>
                                                 </DataTemplate>
@@ -151,14 +155,16 @@
                     <StackPanel>
                         <TextBlock Text="SEARCH RESULTS"/>
                         <ListView x:Name="_TASK_SERACH_RESULT_LIST" 
-                          HorizontalContentAlignment="Stretch" 
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          HorizontalContentAlignment="Stretch"
                           SelectedValue="{Binding SearchResult.SelectedItem.Value}"
                           ItemsSource="{Binding SearchResult.TaskList.Value}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Expander Header="{Binding TaskDescription}">
                                         <ListView 
-                                HorizontalContentAlignment="Stretch"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                          HorizontalContentAlignment="Stretch"
                                 ItemsSource="{Binding Comments}">
                                             <ListView.ItemTemplate>
                                                 <DataTemplate>
@@ -169,7 +175,7 @@
                                                             <ColumnDefinition Width="Auto"/>
                                                         </Grid.ColumnDefinitions>
                                                         <TextBlock Text="{Binding Key}" Margin="8 0 8 0"/>
-                                                        <TextBlock Grid.Column="1" Text="{Binding Value.Commentary}" Padding="4 0 4 0"/>
+                                                        <TextBlock Grid.Column="1" Text="{Binding Value.Commentary}" Padding="4 0 4 0" TextWrapping="Wrap"/>
                                                         <TextBlock Grid.Column="2" Text="{Binding Value.ReminderDate}" />
                                                     </Grid>
                                                 </DataTemplate>
@@ -183,7 +189,7 @@
                 </Grid>
 
             </Grid>
-            <GridSplitter x:Name="gridSplitter0" Grid.Column="1" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <GridSplitter x:Name="gridSplitter0" Grid.Column="1" Width="5" Height="21"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
             <Grid x:Name="_REGION_MISC" Grid.Column="2">
                 <TabControl x:Name="_FEATURES_TABS">
                     <TabItem x:Name="_COOL_FEATURE_TAB_ITEM">
