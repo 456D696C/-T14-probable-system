@@ -15,11 +15,10 @@ WHY?
 
 
  - Because I did not find widely accepted receipt how to do it .
- -  Because it is  possible today with tool and technologies we have.
+ - Because it is  possible today with tool and technologies we have.
  - Because I want have set of known compatible packages in one place
    along with basic project structure.  
- - Because Because The basic 3-layer project
-   structure is made of just 200 lines of code.
+ - Because The basic 3-layer project structure is made of just 200 lines of code.
  - Because I hate to write excuses.
  - Because people calling me when i.e. the USB stack of camera driver
    return device specific error code or asynchronous exception leaks out
