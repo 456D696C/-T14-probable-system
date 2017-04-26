@@ -62,6 +62,16 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.Reactive.EventAggreg
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Simple.TaskManagement.DataTypes.Mockups", "Simple.TaskManagement.DataTypes.Mockups\Simple.TaskManagement.DataTypes.Mockups.shproj", "{8661E8FF-6F00-4418-9938-8CCD87BE7931}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 front end", "1 front end", "{BB178FD6-AA0B-45DB-AE31-6C290E8AC997}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 midle end", "2 midle end", "{464B395C-578B-476C-882B-28E4095981EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 backend", "3 backend", "{3808A66E-FEB5-4515-9ADE-3050A1EAE14F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 stuff", "4 stuff", "{0E902339-F85B-4C69-A41D-25EBFB3E9E07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 contracts", "0 contracts", "{2F214C42-ACC4-445A-A778-2071BDFB200A}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems*{071f0f4b-aff6-4854-abad-18794bb8ce5e}*SharedItemsImports = 4
