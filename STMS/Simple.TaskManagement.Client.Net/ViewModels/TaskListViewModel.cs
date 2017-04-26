@@ -38,7 +38,7 @@ namespace Simple.TaskManagement.ViewModels
                 .Select(found => found?.Tasks.OfType<DataTypes.Task>().ToArray())
                 .ToReactiveProperty();
 
-#if DEBUG && designdimedata
+#if DEBUG //&& designdimedata
             Tasks.Value = new DataTypes.Mockups.MockupTasks().TaskList;
 #endif
         }
