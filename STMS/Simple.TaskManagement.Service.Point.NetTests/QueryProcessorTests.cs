@@ -20,27 +20,32 @@ namespace Simple.TaskManagement.Tests
         [TestMethod()]
         public void QueryProcessorTest()
         {
-            var container = FakeServicePoint.Start();
+            using (var container = FakeServicePoint.Start())
+            {
+                var processor = container.Resolve<Simple.Query.IQueryProcessor>();
 
-            var processor = container.Resolve<Simple.Query.IQueryProcessor>();
+                Assert.IsNotNull(processor, $"Check the Boostapper.cs");
 
-            Assert.IsNotNull(processor,$"Check the Boostapper.cs");
+                container.Dispose();
+            }
         }
 
         [TestMethod()]
         public void ProcessTest()
         {
-            var container = FakeServicePoint.Start();
+            using (var container = FakeServicePoint.Start())
+            {
 
-            var processor = container.Resolve<Simple.Query.IQueryProcessor>();
+                var processor = container.Resolve<Simple.Query.IQueryProcessor>();
 
-            Assert.IsNotNull(processor, "Check the Boostapper.cs");
+                Assert.IsNotNull(processor, "Check the Boostapper.cs");
 
-            var time = processor.Process(new TimeQuery());
+                var time = processor.Process(new TimeQuery());
 
-            Assert.IsNotNull(time, "Check the Boostapper.cs");
+                Assert.IsNotNull(time, "Check the Boostapper.cs");
 
-
+                container.Dispose();
+            }
         }
     }
 }
