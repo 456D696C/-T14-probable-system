@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 
 
+using Simple.TaskManagement.Coordinator;
 
 namespace Simple.TaskManagement.Testing
 {
-    public class FakeServicePoint
+    public class FakeTaskCoordinator
     {
         public static IUnityContainer Start()
         {
-            return Simple.TaskManagement.Coordinator.Bootstrapper.Start();
+            return Bootstrapper.Start();
         }
     }
 }
