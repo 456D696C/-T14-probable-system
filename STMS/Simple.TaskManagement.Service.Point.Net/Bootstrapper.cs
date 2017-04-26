@@ -8,6 +8,8 @@ using System.Reflection;
 
 using Microsoft.Practices.Unity;
 
+using System.IO;
+
 using Rebus.Handlers;
 using Simple.Query;
 using Simple.Logging;
@@ -19,6 +21,34 @@ using Simple.TaskManagement.MessageHandlers.Tasks;
 using Simple.TaskManagement.MessageHandlers.Comments;
 using Simple.TaskManagement.Persistence.InMemory;
 
+
+
+
+using Rebus.Auditing.Messages;
+using Rebus.Config;
+using Rebus.DataBus;
+using Rebus.DataBus.FileSystem;
+using Rebus.Logging;
+using Rebus.Persistence.FileSystem;
+using Rebus.Persistence.InMem;
+using Rebus.Routing.TypeBased;
+using Rebus.Transport.FileSystem;
+using Rebus.Unity;
+
+
+using Rebus.Sagas;
+using Rebus.Subscriptions;
+
+
+using Simple.TaskManagement.Common;
+
+using Simple.Rebus.Routing.TypeBased;
+using Simple.Rebus.Configuration;
+using Simple.Contract.Conventions;
+
+
+
+
 namespace Simple.TaskManagement
 {
     class Bootstrapper
@@ -26,7 +56,7 @@ namespace Simple.TaskManagement
         public static IUnityContainer RegisterTypes(IUnityContainer container)
         {
             container
-                .RegisterType<ISimpleLoggerFactory, ConsoleLoggerFactory>(new ContainerControlledLifetimeManager())
+                .RegisterType<ISimpleLoggerFactory, Simple.Logging.ConsoleLoggerFactory>(new ContainerControlledLifetimeManager())
                 .RegisterType<ITaskStorage, InMemoryTaskStorageMockup>(new ContainerControlledLifetimeManager())
                 .RegisterType<IQueryProcessor, QueryProcessor>()
                 .RegisterTypes(
@@ -70,6 +100,55 @@ namespace Simple.TaskManagement
 
                 ;
             return container;
+        }
+
+
+        public static IUnityContainer Start()
+        {
+            var container = Bootstrapper.RegisterTypes(new UnityContainer());
+            
+
+            DisplayContainerRegistrations(container);
+
+            var bus = 
+                Configure.With(new UnityContainerAdapter(container))
+               .Logging(l => l.ColoredConsole(minLevel: LogLevel.Debug))
+               .UseFilesystem(Config.FileSystem.BaseDirectory, Config.Queues.MiddleEnd)
+               .Options(b => b.EnableMessageAuditing(Config.Queues.AuditMiddleEnd))
+               .Routing(r => r.TypeBased()
+                                .MapAssemblyOf<Simple.TaskManagement.Contract>(a => a.CommandAndQueryTypes(), Config.Queues.MiddleEnd)
+                                .MapAssemblyOf<Simple.TaskManagement.Contract>(a => a.ResultTypes(), Config.Queues.FrontEnd)
+                               )
+           .Start();
+
+           return container;
+        }
+
+        static void DisplayContainerRegistrations(IUnityContainer theContainer)
+        {
+            string regName, regType, mapTo, lifetime;
+            Console.WriteLine("Container has {0} Registrations:",
+                    theContainer.Registrations.Count());
+            foreach (ContainerRegistration item in theContainer.Registrations)
+            {
+                regType = item.RegisteredType.Name;
+                mapTo = item.MappedToType.Name;
+                regName = item.Name ?? "[default]";
+                lifetime = item.LifetimeManagerType.Name;
+                if (mapTo != regType)
+                {
+                    mapTo = " -> " + mapTo;
+                }
+                else
+                {
+                    mapTo = string.Empty;
+                }
+                lifetime = lifetime.Substring(0, lifetime.Length - "LifetimeManager".Length);
+                Console.WriteLine("+ {0}{1}  '{2}'  {3}", regType, mapTo, regName, lifetime);
+            }
+
+            Console.WriteLine();
+
         }
     }
 }

@@ -32,28 +32,33 @@ using Simple.Rebus.Configuration;
 
 namespace Simple.TaskManagement.Coordinator
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            using (var container = Bootstrapper.RegisterTypes(new UnityContainer()))
+            using (Bootstrapper.Start())
             {
-
-                DisplayContainerRegistrations(container);
-
-                using (var bus = Configure.With(new UnityContainerAdapter(container))
-               .Logging(l => l.ColoredConsole(minLevel: LogLevel.Debug))
-               .UseFilesystem(Config.FileSystem.BaseDirectory, Config.Queues.BackEnd)
-               .Options(b => b.EnableMessageAuditing(Config.Queues.AuditBackEnd))
-
-               .Start())
-                {
-                    Task.Run(async () => { await Task.Delay(TimeSpan.FromSeconds(3)); await Console.Out.WriteLineAsync($@"
+                Console.WriteLine($@"
                     {typeof(Program).Namespace} up and runnig.
-                    Press any key to stop"); });
-                    Console.ReadLine();
-                };
+                    Press any key to stop!
+                    "
+                    );
+
+                Console.ReadLine();
+
+                Console.WriteLine($@"
+                    {typeof(Program).Namespace} stopping...
+                    "
+                   );
             }
+
+            Console.WriteLine($@"
+                    {typeof(Program).Namespace} stopped.
+                    Press any key to quit!
+                    "
+                    );
+
+            Console.ReadLine();
         }
 
 
@@ -81,8 +86,6 @@ namespace Simple.TaskManagement.Coordinator
             }
 
             Console.WriteLine();
-            Console.WriteLine("Press any key to continue");
-            Console.ReadLine();
 
         }
     }

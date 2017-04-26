@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Rebus.Testing;
+using Simple.TaskManagement.Messages;
 using Simple.TaskManagement.MessageHandlers;
 using System;
 using System.Collections.Generic;
@@ -14,31 +16,31 @@ namespace Simple.TaskManagement.MessageHandlers.Tests
         [TestMethod()]
         public void TaskCreatedSagaTest()
         {
-            Assert.Fail();
+            var bus = new FakeBus();
+            using (var fixture = SagaFixture.For(() => new TaskCreatedSaga(bus)))
+            {
+                // perform test in here
+                Assert.IsNotNull(fixture);
+            }
         }
 
         [TestMethod()]
-        public void HandleTest()
+        public void HandleTaskCreatedTest()
         {
-            Assert.Fail();
-        }
+            var taskid = "task-id";
+            var bus = new FakeBus();
+            using (var fixture = SagaFixture.For(() => new TaskCreatedSaga(bus)))
+            {
+                // perform test in here
+                fixture.Deliver(new TaskCreated()
+                {
+                    TaskId = taskid,
+                });
 
-        [TestMethod()]
-        public void HandleTest1()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void HandleTest2()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void HandleTest3()
-        {
-            Assert.Fail();
+                var myInstance = fixture.Data
+                .OfType<TaskCreatedSaga.TaskCreatedSagaData>()
+                .First(d => d.TaskId == taskid);
+            }
         }
     }
 }

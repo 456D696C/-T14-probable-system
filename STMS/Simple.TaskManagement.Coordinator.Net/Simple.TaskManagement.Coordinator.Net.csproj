@@ -80,6 +80,7 @@
     <Compile Include="Messages\TaskSagaTimeout.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testing\FakeTaskCoordinator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
