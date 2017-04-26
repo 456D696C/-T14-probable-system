@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:Simple.TaskManagement"
         xmlns:domain="clr-namespace:Simple.TaskManagement.ViewModels"
         mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{StaticResource MaterialDesignFont}"
         Title="{Binding AboutThis.Title}" Height="800" Width="1100">
     <Window.DataContext>
         <local:Locator/>
