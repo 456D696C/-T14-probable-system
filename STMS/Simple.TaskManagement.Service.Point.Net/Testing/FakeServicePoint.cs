@@ -14,7 +14,7 @@ namespace Simple.TaskManagement.Testing
     {
         public static IUnityContainer Start()
         {
-            return Simple.TaskManagement.Coordinator.Bootstrapper.Start();
+            return Bootstrapper.Start();
         }
     }
 }
