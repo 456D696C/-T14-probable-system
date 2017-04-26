@@ -166,7 +166,7 @@
 
             </Grid>
             <GridSplitter x:Name="gridSplitter0" Grid.Column="1" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-            <Grid x:Name="_REGION_MISC" Grid.Column="1">
+            <Grid x:Name="_REGION_MISC" Grid.Column="2">
                 <TabControl x:Name="_FEATURES_TABS">
                     <TabItem x:Name="_COOL_FEATURE_TAB_ITEM">
                         <TabItem.Header>
