@@ -130,7 +130,8 @@
                 <GridSplitter x:Name="gridSplitter2" Grid.Row="3" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
 
                 <Grid Grid.Row="4" x:Name="_TASK_SERACH_RESULT_AREA">
-                    <Grid>
+                    <StackPanel>
+                        <TextBlock Text="SEARCH RESULTS"/>
                         <ListView x:Name="_TASK_SERACH_RESULT_LIST" 
                           HorizontalContentAlignment="Stretch" 
                           SelectedValue="{Binding SearchResult.SelectedItem.Value}"
@@ -160,8 +161,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <TextBlock Text="SEARCH RESULTS"/>
-                    </Grid>
+                    </StackPanel>
                 </Grid>
 
             </Grid>
