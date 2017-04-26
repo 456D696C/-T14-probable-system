@@ -37,27 +37,29 @@ namespace Simple.TaskManagement.Service.Point
     {
         static void Main(string[] args)
         {
-            using (var container = Bootstrapper.RegisterTypes(new UnityContainer()))
+            using (Bootstrapper.Start())
             {
-
-                DisplayContainerRegistrations(container);
-
-                using (var bus = Configure.With(new UnityContainerAdapter(container))
-               .Logging(l => l.ColoredConsole(minLevel: LogLevel.Debug))
-               .UseFilesystem(Config.FileSystem.BaseDirectory, Config.Queues.MiddleEnd)
-               .Options(b => b.EnableMessageAuditing(Config.Queues.AuditMiddleEnd))
-               .Routing(r => r.TypeBased()
-                                .MapAssemblyOf<Simple.TaskManagement.Contract>(a => a.CommandAndQueryTypes(), Config.Queues.MiddleEnd)
-                                .MapAssemblyOf<Simple.TaskManagement.Contract>(a => a.ResultTypes(), Config.Queues.FrontEnd)
-                               )
-               .Start())
-                {
-                    Task.Run(async ()=> { await Task.Delay(TimeSpan.FromSeconds(3)); await Console.Out.WriteLineAsync($@"
+                Console.WriteLine($@"
                     {typeof(Program).Namespace} up and runnig.
-                    Press any key to stop"); });
-                    Console.ReadLine();
-                };
+                    Press any key to stop!
+                    "
+                    );
+
+                Console.ReadLine();
+
+                Console.WriteLine($@"
+                    {typeof(Program).Namespace} stopping...
+                    "
+                   );
             }
+
+            Console.WriteLine($@"
+                    {typeof(Program).Namespace} stopped.
+                    Press any key to quit!
+                    "
+                    );
+
+            Console.ReadLine();
         }
 
 
