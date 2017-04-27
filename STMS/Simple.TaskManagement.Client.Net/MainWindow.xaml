@@ -74,38 +74,35 @@
               <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Grid  x:Name="_TASK_LIST_AREA" Margin="4 8 4 8">
-              <StackPanel Margin="4 8 4 8">
-                <TextBlock Text="TASK LIST AREA"/>
-                <ListView  x:Name="_TASK_LIST"
+                        <ListView  x:Name="_TASK_LIST"
                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                     HorizontalContentAlignment="Stretch"
                     ItemsSource="{Binding TaskList.Tasks.Value}">
-                  <ListView.ItemTemplate>
-                    <DataTemplate>
-                      <Expander Header="{Binding TaskDescription}">
-                        <ListView
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Expander Header="{Binding TaskDescription}">
+                                        <ListView
                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                 HorizontalContentAlignment="Stretch"
                                 ItemsSource="{Binding Comments}">
-                          <ListView.ItemTemplate>
-                            <DataTemplate>
-                              <Grid>
-                                <Grid.RowDefinitions>
-                                  <RowDefinition />
-                                  <RowDefinition />
-                                  <RowDefinition />
-                                </Grid.RowDefinitions>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition />
+                                                            <RowDefinition />
+                                                            <RowDefinition />
+                                                        </Grid.RowDefinitions>
 
-                                <Grid.ColumnDefinitions>
-                                  <ColumnDefinition Width="Auto" />
-                                  <ColumnDefinition Width="*" />
-                                  <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="{Binding Key}" Padding="4 0 4 0" TextWrapping="Wrap"/>
-                                <!--#region Comentary-->
-                                <TextBox Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Value.Commentary}"
+                                                        <TextBlock Text="{Binding Key}" Padding="4 0 4 0" TextWrapping="Wrap"/>
+                                                        <!--#region Comentary-->
+                                                        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Value.Commentary}"
      TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 0 0 0"
      MinWidth="280"
      AcceptsReturn="True"
@@ -114,44 +111,42 @@
      IsReadOnly="True"
      materialDesign:HintAssist.Hint="Multiline text"
                                                                  />
-                                <!--#endregion-->
-                                <TextBlock Grid.Row="2" Text="{Binding Value.ReminderDate, StringFormat='remind me {0:dd/MM/yyyy}'}" Margin="32 0 0 0"/>
+                                                        <!--#endregion-->
+                                                        <TextBlock Grid.Row="2" Text="{Binding Value.ReminderDate, StringFormat='remind me {0:dd/MM/yyyy}'}" Margin="32 0 0 0"/>
 
-                                <StackPanel  Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
-                                  <StackPanel.Resources>
-                                    <ResourceDictionary>
-                                      <ResourceDictionary.MergedDictionaries>
-                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
-                                      </ResourceDictionary.MergedDictionaries>
-                                    </ResourceDictionary>
-                                  </StackPanel.Resources>
-                                  <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                        <StackPanel  Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
+                                                            <StackPanel.Resources>
+                                                                <ResourceDictionary>
+                                                                    <ResourceDictionary.MergedDictionaries>
+                                                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
+                                                                    </ResourceDictionary.MergedDictionaries>
+                                                                </ResourceDictionary>
+                                                            </StackPanel.Resources>
+                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
                               materialDesign:RippleAssist.IsCentered="True">
-                                    <materialDesign:PackIcon Kind="Delete" />
-                                  </Button>
-                                  <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                                <materialDesign:PackIcon Kind="Delete" />
+                                                            </Button>
+                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
                               materialDesign:RippleAssist.IsCentered="True">
-                                    <materialDesign:PackIcon Kind="Pencil" />
-                                  </Button>
-                                  <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
-                                    <StackPanel>
-                                      <Button Content="More"/>
-                                      <Button Content="Options"/>
-                                    </StackPanel>
-                                  </materialDesign:PopupBox>
-                                </StackPanel>
-                              </Grid>
-                            </DataTemplate>
-                          </ListView.ItemTemplate>
+                                                                <materialDesign:PackIcon Kind="Pencil" />
+                                                            </Button>
+                                                            <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
+                                                                <StackPanel>
+                                                                    <Button Content="More"/>
+                                                                    <Button Content="Options"/>
+                                                                </StackPanel>
+                                                            </materialDesign:PopupBox>
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </Expander>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
                         </ListView>
-                      </Expander>
-                    </DataTemplate>
-                  </ListView.ItemTemplate>
-                </ListView>
-              </StackPanel>
-            </Grid>
 
-            <GridSplitter x:Name="gridSplitter2" Grid.Row="3" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                        <GridSplitter x:Name="gridSplitter2" Grid.Row="3" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
 
             <Grid Grid.Row="4" x:Name="_TASK_SERACH_RESULT_AREA">
               <StackPanel>
