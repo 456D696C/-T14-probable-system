@@ -112,9 +112,29 @@
                                                                  />      
                                                         <!--#endregion-->
                                                         <TextBlock Grid.Row="2" Text="{Binding Value.ReminderDate, StringFormat='remind me {0:dd/MM/yyyy}'}" Margin="32 0 0 0"/>
-                                                        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
-                                                            <materialDesign:PackIcon Kind="Delete" />
-                                                            <materialDesign:PackIcon Kind="Pencil" />
+                                                       
+                                                        <StackPanel  Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
+                                                            <StackPanel.Resources>
+                                                                <ResourceDictionary>
+                                                                    <ResourceDictionary.MergedDictionaries>
+                                                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
+                                                                    </ResourceDictionary.MergedDictionaries>
+                                                                </ResourceDictionary>
+                                                            </StackPanel.Resources>
+                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                            materialDesign:RippleAssist.IsCentered="True">
+                                                                <materialDesign:PackIcon Kind="Delete" />
+                                                            </Button>
+                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                            materialDesign:RippleAssist.IsCentered="True">
+                                                                <materialDesign:PackIcon Kind="Pencil" />
+                                                            </Button>
+                                                            <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
+                                                                <StackPanel>
+                                                                    <Button Content="More"/>
+                                                                    <Button Content="Options"/>
+                                                                </StackPanel>
+                                                            </materialDesign:PopupBox>
                                                         </StackPanel>
                                                     </Grid>
                                                 </DataTemplate>
@@ -361,9 +381,29 @@
                                                         </DatePicker.SelectedDate>-->
                                                     </DatePicker>
                                                     <!--#endregion-->
-                                                    <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
-                                                        <materialDesign:PackIcon Kind="Delete" />
-                                                        <materialDesign:PackIcon Kind="Pencil" />
+                                                    
+                                                    <StackPanel HorizontalAlignment="Right" Grid.Row="4" Orientation="Horizontal" Margin="8">
+                                                        <StackPanel.Resources>
+                                                            <ResourceDictionary>
+                                                                <ResourceDictionary.MergedDictionaries>
+                                                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
+                                                                </ResourceDictionary.MergedDictionaries>
+                                                            </ResourceDictionary>
+                                                        </StackPanel.Resources>
+                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                            materialDesign:RippleAssist.IsCentered="True">
+                                                            <materialDesign:PackIcon Kind="ShareVariant" />
+                                                        </Button>
+                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                            materialDesign:RippleAssist.IsCentered="True">
+                                                            <materialDesign:PackIcon Kind="Heart" />
+                                                        </Button>
+                                                        <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
+                                                            <StackPanel>
+                                                                <Button Content="More"/>
+                                                                <Button Content="Options"/>
+                                                            </StackPanel>
+                                                        </materialDesign:PopupBox>
                                                     </StackPanel>
                                                 </Grid>
                                             </ListViewItem>
