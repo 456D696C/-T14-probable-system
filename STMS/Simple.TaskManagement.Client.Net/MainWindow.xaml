@@ -202,102 +202,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             
-                            <!--#region Task Header -->
-                            <Expander Header="TASK TO EDIT">
-                                <Grid Width="300" Margin="8,8,8,32">
-                                    <Grid.Resources>
-                                        <Style TargetType="CheckBox" BasedOn="{StaticResource MaterialDesignCheckBox}">
-                                            <Setter Property="Margin" Value="8,8,10,8"/>
-                                        </Style>
-                                        <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignTextBox}">
-                                            <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
-                                            <Setter Property="Margin" Value="8,8,8,8"/>
-                                        </Style>
-                                        <Style TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
-                                            <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
-                                            <Setter Property="Margin" Value="8,8,8,8"/>
-                                            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                                        </Style>
-                                        <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignComboBox}">
-                                            <Setter Property="Margin" Value="8,8,8,8"/>
-                                            <Setter Property="MaxDropDownHeight" Value="200" />
-                                        </Style>
-                                    </Grid.Resources>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16">ATTRIBUTES</TextBlock>
-
-                                    <DatePicker Grid.Column="0" Grid.Row="1" x:Name="CreatedDatePicker" HorizontalAlignment="Stretch"
-                                                    materialDesign:HintAssist.Hint="Created">
-                                        <DatePicker.SelectedDate>
-                                            <Binding Path="CreatedDate" UpdateSourceTrigger="PropertyChanged">
-                                                <Binding.ValidationRules>
-                                                    <validation:SimpleDateValidationRule ValidatesOnTargetUpdated="True" />
-                                                </Binding.ValidationRules>
-                                            </Binding>
-                                        </DatePicker.SelectedDate>
-                                    </DatePicker>
-
-                                    <DatePicker Grid.Column="0" Grid.Row="2" x:Name="RequiredByDatePicker" HorizontalAlignment="Stretch"
-                                                    materialDesign:HintAssist.Hint="Required By">
-                                        <DatePicker.SelectedDate>
-                                            <Binding Path="RequiredByDate" UpdateSourceTrigger="PropertyChanged">
-                                                <Binding.ValidationRules>
-                                                    <validation:FutureDateValidationRule ValidatesOnTargetUpdated="True" />
-                                                </Binding.ValidationRules>
-                                            </Binding>
-                                        </DatePicker.SelectedDate>
-                                    </DatePicker>
-                                    <ComboBox Grid.Column="0" Grid.Row="3" materialDesign:HintAssist.Hint="Status" materialDesign:HintAssist.IsFloating="True"
-                                            >
-                                        <ComboBoxItem>InProgress</ComboBoxItem>
-                                        <ComboBoxItem>Completed</ComboBoxItem>
-                                        <ComboBoxItem>Canceled</ComboBoxItem>
-                                    </ComboBox>
-                                    <ComboBox Grid.Column="0" Grid.Row="4" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"
-                                           >
-                                        <ComboBoxItem>Idea</ComboBoxItem>
-                                        <ComboBoxItem>Problem analysis</ComboBoxItem>
-                                        <ComboBoxItem>Research</ComboBoxItem>
-                                        <ComboBoxItem>Prototype</ComboBoxItem>
-                                        <ComboBoxItem>Project Development</ComboBoxItem>
-                                        <ComboBoxItem>Marketing Strategy</ComboBoxItem>
-                                    </ComboBox>
-                                    <ComboBox Grid.Column="0" Grid.Row="5" materialDesign:HintAssist.Hint="Assigned To" materialDesign:HintAssist.IsFloating="True">
-                                        <ComboBoxItem>Contact #1</ComboBoxItem>
-                                        <ComboBoxItem>Contact #2</ComboBoxItem>
-                                        <ComboBoxItem>Contact #3</ComboBoxItem>
-                                        <ComboBoxItem>Anybody else, I can't remmber his name</ComboBoxItem>
-                                        <ComboBoxItem>Forget</ComboBoxItem>
-                                    </ComboBox>
-
-                                    <CheckBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" />
-                                    <CheckBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" />
-                                    <CheckBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" />
-                                    <CheckBox Grid.Column="1" Grid.Row="4" IsChecked="True" VerticalAlignment="Bottom" />
-                                    <CheckBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" />
-                                    <CheckBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Bottom" />
-
-
-                                    <DatePicker Grid.Column="0" Grid.Row="6" x:Name="NextActionDatePicker" HorizontalAlignment="Stretch"
-                                                    materialDesign:HintAssist.Hint="Next Action Date" />
-                                </Grid>
-                            </Expander>
-
-
-                            <!--#endregion-->
+                            
                             
                             <!--#region SAMPLE 1-->                            
                             <materialDesign:DialogHost
@@ -334,6 +239,102 @@
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
+                                    <!--#region Task Header -->
+                                    <Expander Header="TASK TO EDIT">
+                                        <Grid Width="300" Margin="8,8,8,32">
+                                            <Grid.Resources>
+                                                <Style TargetType="CheckBox" BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                                    <Setter Property="Margin" Value="8,8,10,8"/>
+                                                </Style>
+                                                <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignTextBox}">
+                                                    <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
+                                                    <Setter Property="Margin" Value="8,8,8,8"/>
+                                                </Style>
+                                                <Style TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
+                                                    <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
+                                                    <Setter Property="Margin" Value="8,8,8,8"/>
+                                                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                                </Style>
+                                                <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignComboBox}">
+                                                    <Setter Property="Margin" Value="8,8,8,8"/>
+                                                    <Setter Property="MaxDropDownHeight" Value="200" />
+                                                </Style>
+                                            </Grid.Resources>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16">ATTRIBUTES</TextBlock>
+
+                                            <DatePicker Grid.Column="0" Grid.Row="1" x:Name="CreatedDatePicker" HorizontalAlignment="Stretch"
+                                                    materialDesign:HintAssist.Hint="Created">
+                                                <DatePicker.SelectedDate>
+                                                    <Binding Path="CreatedDate" UpdateSourceTrigger="PropertyChanged">
+                                                        <Binding.ValidationRules>
+                                                            <validation:SimpleDateValidationRule ValidatesOnTargetUpdated="True" />
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </DatePicker.SelectedDate>
+                                            </DatePicker>
+
+                                            <DatePicker Grid.Column="0" Grid.Row="2" x:Name="RequiredByDatePicker" HorizontalAlignment="Stretch"
+                                                    materialDesign:HintAssist.Hint="Required By">
+                                                <DatePicker.SelectedDate>
+                                                    <Binding Path="RequiredByDate" UpdateSourceTrigger="PropertyChanged">
+                                                        <Binding.ValidationRules>
+                                                            <validation:FutureDateValidationRule ValidatesOnTargetUpdated="True" />
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </DatePicker.SelectedDate>
+                                            </DatePicker>
+                                            <ComboBox Grid.Column="0" Grid.Row="3" materialDesign:HintAssist.Hint="Status" materialDesign:HintAssist.IsFloating="True"
+                                            >
+                                                <ComboBoxItem>InProgress</ComboBoxItem>
+                                                <ComboBoxItem>Completed</ComboBoxItem>
+                                                <ComboBoxItem>Canceled</ComboBoxItem>
+                                            </ComboBox>
+                                            <ComboBox Grid.Column="0" Grid.Row="4" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"
+                                           >
+                                                <ComboBoxItem>Idea</ComboBoxItem>
+                                                <ComboBoxItem>Problem analysis</ComboBoxItem>
+                                                <ComboBoxItem>Research</ComboBoxItem>
+                                                <ComboBoxItem>Prototype</ComboBoxItem>
+                                                <ComboBoxItem>Project Development</ComboBoxItem>
+                                                <ComboBoxItem>Marketing Strategy</ComboBoxItem>
+                                            </ComboBox>
+                                            <ComboBox Grid.Column="0" Grid.Row="5" materialDesign:HintAssist.Hint="Assigned To" materialDesign:HintAssist.IsFloating="True">
+                                                <ComboBoxItem>Contact #1</ComboBoxItem>
+                                                <ComboBoxItem>Contact #2</ComboBoxItem>
+                                                <ComboBoxItem>Contact #3</ComboBoxItem>
+                                                <ComboBoxItem>Anybody else, I can't remmber his name</ComboBoxItem>
+                                                <ComboBoxItem>Forget</ComboBoxItem>
+                                            </ComboBox>
+
+                                            <CheckBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" />
+                                            <CheckBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" />
+                                            <CheckBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" />
+                                            <CheckBox Grid.Column="1" Grid.Row="4" IsChecked="True" VerticalAlignment="Bottom" />
+                                            <CheckBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" />
+                                            <CheckBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Bottom" />
+
+
+                                            <DatePicker Grid.Column="0" Grid.Row="6" x:Name="NextActionDatePicker" HorizontalAlignment="Stretch"
+                                                    materialDesign:HintAssist.Hint="Next Action Date" />
+                                        </Grid>
+                                    </Expander>
+
+
+                                    <!--#endregion-->
                                     <Border Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                                       MinWidth="256" MinHeight="256" ClipToBounds="True">
                                         <Grid x:Name="_EDITABLE_TASK_CONTENT_AREA" Width="300" Margin="8,8,8,32">
@@ -344,7 +345,7 @@
                                             </Grid.RowDefinitions>
                                             <TextBlock Text="COMMENTS"  Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16"/>
                                             <ListBox x:Name="_EDITABLE_COMMENTS_LISTVIEW" Grid.Row="1" 
-                                                        
+                                                        Style="{StaticResource MaterialDesignCardsListBox}"
                                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                                         HorizontalContentAlignment="Stretch" >
                                                
@@ -352,7 +353,6 @@
                                                     <Expander Header="1.1. Great task item">
                                                         <Grid>
                                                             <Grid.RowDefinitions>
-                                                                <RowDefinition Height="*"/>
                                                                 <RowDefinition Height="*"/>
                                                                 <RowDefinition Height="*"/>
                                                                 <RowDefinition Height="*"/>
@@ -365,14 +365,13 @@
                                                                 <ColumnDefinition Width="Auto" />
                                                             </Grid.ColumnDefinitions>
 
-                                                            <TextBlock Text="1.1" Padding="4 0 4 0" TextWrapping="Wrap"/>
-
+                                                           
                                                             <!--#region Comentary-->
-                                                            <ComboBox Grid.Row="1" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"  Margin="32 8 8 8">
+                                                            <ComboBox Grid.Row="0" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"  Margin="32 8 8 8">
                                                                 <ComboBoxItem>Note</ComboBoxItem>
                                                                 <ComboBoxItem>Comment</ComboBoxItem>
                                                             </ComboBox>
-                                                            <TextBox Grid.Row="2" x:Name="CommenatryTextBox"
+                                                            <TextBox Grid.Row="1" x:Name="CommenatryTextBox"
                                                                  TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8"
                                                                  MinWidth="280"
                                                                  AcceptsReturn="True"                 
@@ -381,7 +380,7 @@
                                                                  materialDesign:HintAssist.Hint="Write note or task item"
                                                                  Text="Note or task item"
                                                                  />
-                                                            <DatePicker Grid.Row="3" x:Name="ReminderDatePicker" HorizontalAlignment="Stretch" Margin="32 8 8 8"
+                                                            <DatePicker Grid.Row="2" x:Name="ReminderDatePicker" HorizontalAlignment="Stretch" Margin="32 8 8 8"
                                                                 materialDesign:HintAssist.Hint="Reminder Action Date">
                                                                 <!--<DatePicker.SelectedDate>
                                                             <Binding Path="ReminderDate" UpdateSourceTrigger="PropertyChanged">
@@ -393,7 +392,7 @@
                                                             </DatePicker>
                                                             <!--#endregion-->
 
-                                                            <StackPanel HorizontalAlignment="Right" Grid.Row="4" Orientation="Horizontal" Margin="8">
+                                                            <StackPanel HorizontalAlignment="Right" Grid.Row="3" Orientation="Horizontal" Margin="8">
                                                                 <StackPanel.Resources>
                                                                     <ResourceDictionary>
                                                                         <ResourceDictionary.MergedDictionaries>
@@ -426,7 +425,6 @@
                                                                 <RowDefinition Height="*"/>
                                                                 <RowDefinition Height="*"/>
                                                                 <RowDefinition Height="*"/>
-                                                                <RowDefinition Height="*"/>
                                                                 <RowDefinition Height="*" />
                                                                 <RowDefinition Height="*" />
                                                             </Grid.RowDefinitions>
@@ -436,14 +434,14 @@
                                                                 <ColumnDefinition Width="Auto" />
                                                             </Grid.ColumnDefinitions>
 
-                                                            <TextBlock Text="1.1" Padding="4 0 4 0" TextWrapping="Wrap"/>
+                                                          
 
                                                             <!--#region Comentary-->
-                                                            <ComboBox Grid.Row="1" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"  Margin="32 8 8 8">
+                                                            <ComboBox Grid.Row="0" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"  Margin="32 8 8 8">
                                                                 <ComboBoxItem>Note</ComboBoxItem>
                                                                 <ComboBoxItem>Comment</ComboBoxItem>
                                                             </ComboBox>
-                                                            <TextBox Grid.Row="2" x:Name="CommenatryTextBox1"
+                                                            <TextBox Grid.Row="1" x:Name="CommenatryTextBox1"
                                                                  TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8"
                                                                  MinWidth="280"
                                                                  AcceptsReturn="True"                 
@@ -452,7 +450,7 @@
                                                                  materialDesign:HintAssist.Hint="Write note or task item"
                                                                  Text="WHY? WHY? WHY?"
                                                                  />
-                                                            <DatePicker Grid.Row="3" x:Name="ReminderDatePicker1" HorizontalAlignment="Stretch" Margin="32 8 8 8"
+                                                            <DatePicker Grid.Row="2" x:Name="ReminderDatePicker1" HorizontalAlignment="Stretch" Margin="32 8 8 8"
                                                                 materialDesign:HintAssist.Hint="Reminder Action Date">
                                                                 <!--<DatePicker.SelectedDate>
                                                             <Binding Path="ReminderDate" UpdateSourceTrigger="PropertyChanged">
@@ -464,7 +462,7 @@
                                                             </DatePicker>
                                                             <!--#endregion-->
 
-                                                            <StackPanel HorizontalAlignment="Right" Grid.Row="4" Orientation="Horizontal" Margin="8">
+                                                            <StackPanel HorizontalAlignment="Right" Grid.Row="3" Orientation="Horizontal" Margin="8">
                                                                 <StackPanel.Resources>
                                                                     <ResourceDictionary>
                                                                         <ResourceDictionary.MergedDictionaries>
