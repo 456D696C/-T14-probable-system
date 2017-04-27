@@ -62,82 +62,59 @@
             </Grid.ColumnDefinitions>
             <Grid
             x:Name="_REGION_TASKS">
-            
+
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="5"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="5"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-
-
-                <Grid  x:Name="_NEW_LIST_AREA">
-                    <ListView  x:Name="_NEW_TASK_LIST" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Factory.Next.Value}">
-                        <ListView.Resources>
-                            <DataTemplate DataType="{x:Type domain:NextTaskManagerViewModel}">
-                                <Grid>
-                                    <Border Name="border" BorderBrush="Navy" BorderThickness="1" Padding="5" Margin="5">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition />
-                                                <ColumnDefinition />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Task Name:"/>
-                                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Current.Value.TaskId}" />
-                                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Description:"/>
-                                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Current.Value.TaskDescription}"/>
-                                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Task Type:"/>
-                                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Current.Value.TaskType}"/>
-                                            <Grid Grid.Row="4" Grid.ColumnSpan="2">
-                                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
-                                                    <Button Content="Save"   Command="{Binding SaveAsyncCommand}"    />
-                                                    <Button Content="Cancel" Command="{Binding CancelAsyncCommand}"   />
-                                                </StackPanel>
-                                            </Grid>
-                                        </Grid>
-                                    </Border>
-                                </Grid>
-                            </DataTemplate>
-                        </ListView.Resources>
-                    </ListView>
-                </Grid>
-
-                <GridSplitter x:Name="gridSplitter1" Grid.Row="1" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-
-
-                <Grid  x:Name="_TASK_LIST_AREA" Grid.Row="2">
-                    <StackPanel>
+                
+                <Grid  x:Name="_TASK_LIST_AREA" Margin="4 8 4 8">
+                    <StackPanel Margin="4 8 4 8">
                         <TextBlock Text="TASK LIST AREA"/>
                         <ListView  x:Name="_TASK_LIST" 
                                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                           HorizontalContentAlignment="Stretch"  
-                                   ItemsSource="{Binding TaskList.Tasks.Value}">
+                                          ItemsSource="{Binding TaskList.Tasks.Value}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Expander Header="{Binding TaskDescription}">
                                         <ListView 
                                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                           HorizontalContentAlignment="Stretch"
-                                ItemsSource="{Binding Comments}">
+                                          ItemsSource="{Binding Comments}">
                                             <ListView.ItemTemplate>
                                                 <DataTemplate>
                                                     <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition />
+                                                            <RowDefinition />
+                                                            <RowDefinition />
+                                                        </Grid.RowDefinitions>
+
                                                         <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="Auto"/>
-                                                            <ColumnDefinition Width="*"/>
-                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
                                                         </Grid.ColumnDefinitions>
-                                                        <TextBlock Text="{Binding Key}" Margin="8 0 8 0"/>
-                                                        <TextBlock Grid.Column="1" Text="{Binding Value.Commentary}" Padding="4 0 4 0" TextWrapping="Wrap"/>
-                                                        <TextBlock Grid.Column="2" Text="{Binding Value.ReminderDate}" />
+
+                                                        <TextBlock Text="{Binding Key}" Padding="4 0 4 0" TextWrapping="Wrap"/>
+                                                        <!--#region Comentary-->
+                                                        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Value.Commentary}"
+                                                                 TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 0 0 0"
+                                                                 MinWidth="280"
+                                                                 AcceptsReturn="True"                 
+                                                                 VerticalScrollBarVisibility="Auto"
+                                                                 SpellCheck.IsEnabled="True"
+                                                                 IsReadOnly="True"
+                                                                 materialDesign:HintAssist.Hint="Multiline text"
+                                                                 />      
+                                                        <!--#endregion-->
+                                                        <TextBlock Grid.Row="2" Text="{Binding Value.ReminderDate, StringFormat='remind me {0:dd/MM/yyyy}'}" Margin="32 0 0 0"/>
+                                                        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                                                            <materialDesign:PackIcon Kind="Delete" />
+                                                            <materialDesign:PackIcon Kind="Pencil" />
+                                                        </StackPanel>
                                                     </Grid>
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
@@ -192,11 +169,56 @@
             <GridSplitter x:Name="gridSplitter0" Grid.Column="1" Width="5" Height="21"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
             <Grid x:Name="_REGION_MISC" Grid.Column="2">
                 <TabControl x:Name="_FEATURES_TABS">
+                    <TabItem x:Name="_EDIT_TAKS_TAB_ITEM">
+                        <TabItem.Header>
+                            <TextBlock Text="EDIT TASK" />
+                        </TabItem.Header>
+                        <Grid  x:Name="_NEW_LIST_AREA">
+                            <ListView  x:Name="_NEW_TASK_LIST" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Factory.Next.Value}">
+                                <ListView.Resources>
+                                    <DataTemplate DataType="{x:Type domain:NextTaskManagerViewModel}">
+                                        <Grid>
+                                            <Border Name="border" BorderBrush="Navy" BorderThickness="1" Padding="5" Margin="5">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Task Name:"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Current.Value.TaskId}" />
+                                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Description:"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Current.Value.TaskDescription}"/>
+                                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Task Type:"/>
+                                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Current.Value.TaskType}"/>
+                                                    <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                                                        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                                                            <Button Content="Save"   Command="{Binding SaveAsyncCommand}"    />
+                                                            <Button Content="Cancel" Command="{Binding CancelAsyncCommand}"   />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.Resources>
+                            </ListView>
+                        </Grid>
+                    </TabItem>
+                    
                     <TabItem x:Name="_COOL_FEATURE_TAB_ITEM">
                         <TabItem.Header>
                             <TextBlock Text="COOL FEATURE" />
                         </TabItem.Header>
-                        <Grid x:Name="_COOL_FEATURE_LAYOUT"/>
+                        <Grid x:Name="_COOL_FEATURE_LAYOUT">
+                            
+                        </Grid>
                     </TabItem>
                     <TabItem x:Name="_YET_ANOTHER_COOL_FEATURE_TAB_ITEM">
                         <TabItem.Header>
@@ -208,7 +230,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2" 
-              HorizontalAlignment="Center" >
+            HorizontalAlignment="Center" >
             <Button Command="{Binding Factory.StartAsyncCommand}">
                 <TextBlock Text="+" MinWidth="50"
                            TextAlignment="Center"

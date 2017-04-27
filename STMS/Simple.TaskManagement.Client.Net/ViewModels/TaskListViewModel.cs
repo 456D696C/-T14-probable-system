@@ -40,6 +40,6 @@ namespace Simple.TaskManagement.ViewModels
 
         }
 
-        public ReactiveProperty<DataTypes. Task[]> Tasks { get; }
+        public ReactiveProperty<DataTypes.Task[]> Tasks { get; }
     }
 }
