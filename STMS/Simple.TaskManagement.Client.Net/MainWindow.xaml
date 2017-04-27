@@ -188,7 +188,7 @@
 
             </Grid>
             <GridSplitter x:Name="gridSplitter0" Grid.Column="1" Width="5" Height="21"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-            <Grid x:Name="_REGION_MISC" Grid.Column="2">
+            <Grid x:Name="_EDITABLE_TASK_CONTENT_AREA" Grid.Column="2">
                 <!--#region  Edit task -->
                 <materialDesign:DialogHost
                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -320,7 +320,7 @@
                         <!--#endregion-->
                         <Border Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                                       MinWidth="256" MinHeight="256" ClipToBounds="True">
-                            <Grid x:Name="_EDITABLE_TASK_CONTENT_AREA" Width="300" Margin="8,8,8,32">
+                            <Grid x:Name="_EDITABLE_COMMENTS_AREA" Width="300" Margin="8,8,8,32">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="*" />
