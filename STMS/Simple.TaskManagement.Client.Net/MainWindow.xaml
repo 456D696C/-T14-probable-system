@@ -217,7 +217,7 @@
                                         <RowDefinition Height="*" />
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16">OPTIONS</TextBlock>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16">ATTRIBUTES</TextBlock>
 
                                     <DatePicker Grid.Column="0" Grid.Row="1" x:Name="CreatedDatePicker" HorizontalAlignment="Stretch"
                                                     materialDesign:HintAssist.Hint="Created">
