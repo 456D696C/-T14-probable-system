@@ -103,16 +103,17 @@
                                                             <ColumnDefinition Width="Auto" />
                                                         </Grid.ColumnDefinitions>
 
-                                                        <TextBlock Text="{Binding Key}" Padding="4 0 4 0" TextWrapping="Wrap"/>
+                                                        
                                                         <!--#region Comentary-->
                                                         <TextBox Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Value.Commentary}"
-     TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 0 0 0"
-     MinWidth="280"
-     AcceptsReturn="True"
-     VerticalScrollBarVisibility="Auto"
-     SpellCheck.IsEnabled="True"
-     IsReadOnly="True"
-     materialDesign:HintAssist.Hint="Multiline text"
+                                                             TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8"
+                                                             MinWidth="280"
+                                                             AcceptsReturn="True"
+                                                             VerticalScrollBarVisibility="Auto"
+                                                             SpellCheck.IsEnabled="True"
+                                                             IsReadOnly="True"
+                                                             materialDesign:HintAssist.Hint="{Binding Key}"
+                                                             materialDesign:HintAssist.IsFloating="True"
                                                                  />
                                                         <!--#endregion-->
                                                         <TextBlock Grid.Row="2" Text="{Binding Value.ReminderDate, StringFormat='remind me {0:dd/MM/yyyy}'}" Margin="32 0 0 0"/>
