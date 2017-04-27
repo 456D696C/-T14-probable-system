@@ -74,18 +74,20 @@
               <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-                        <ListView  x:Name="_TASK_LIST"
-                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                    HorizontalContentAlignment="Stretch"
-                    ItemsSource="{Binding TaskList.Tasks.Value}">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <Expander Header="{Binding TaskDescription}">
-                                        <ListView
+                        <ListBox  x:Name="_TASK_LIST"
+                                Style="{StaticResource MaterialDesignCardsListBox}"
                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                 HorizontalContentAlignment="Stretch"
-                                ItemsSource="{Binding Comments}">
-                                            <ListView.ItemTemplate>
+                                ItemsSource="{Binding TaskList.Tasks.Value}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Expander Header="{Binding TaskDescription}">
+                                        <ListBox
+                                                Style="{StaticResource MaterialDesignCardsListBox}"
+                                                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                HorizontalContentAlignment="Stretch"
+                                                ItemsSource="{Binding Comments}">
+                                            <ListBox.ItemTemplate>
                                                 <DataTemplate>
                                                     <Grid>
                                                         <Grid.RowDefinitions>
@@ -139,12 +141,12 @@
                                                         </StackPanel>
                                                     </Grid>
                                                 </DataTemplate>
-                                            </ListView.ItemTemplate>
-                                        </ListView>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
                                     </Expander>
                                 </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
 
                         <GridSplitter x:Name="gridSplitter2" Grid.Row="3" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
 
