@@ -496,21 +496,6 @@
                         </materialDesign:DialogHost>
                         <!--#endregion-->
                     </TabItem>
-                    
-                    <TabItem x:Name="_COOL_FEATURE_TAB_ITEM">
-                        <TabItem.Header>
-                            <TextBlock Text="COOL FEATURE" />
-                        </TabItem.Header>
-                        <Grid x:Name="_COOL_FEATURE_LAYOUT">
-                            
-                        </Grid>
-                    </TabItem>
-                    <TabItem x:Name="_YET_ANOTHER_COOL_FEATURE_TAB_ITEM">
-                        <TabItem.Header>
-                            <TextBlock Text="YET ANOTHER COOL FEATURE" />
-                        </TabItem.Header>
-                        <Grid x:Name="_YET_ANOTHER_COOL_FEATURE_LAYOUT"/>
-                    </TabItem>
                 </TabControl>
             </Grid>
         </Grid>
