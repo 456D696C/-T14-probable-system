@@ -322,7 +322,9 @@
                       <RowDefinition Height="Auto" />
                       <RowDefinition Height="*" />
                       <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
                     <TextBlock Text="COMMENTS"  Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16"/>
                     <ListBox x:Name="_EDITABLE_COMMENTS_LISTVIEW" Grid.Row="1"
                     Style="{StaticResource MaterialDesignCardsListBox}"
@@ -456,10 +458,43 @@
                         </Expander>
                       </ListBoxItem>
                     </ListBox>
-                    <materialDesign:ColorZone Mode="PrimaryMid" Grid.Row="2" Effect="{DynamicResource MaterialDesignShadowDepth5}">
-                      <TextBlock Margin="16">Task editor footer</TextBlock>
-                    </materialDesign:ColorZone>
-                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                        <ProgressBar  Height="1" Grid.Row="2"/>
+                                        <TextBox Grid.Row="3" x:Name="CommenatryOrNoteTextBox"
+                                 TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="8 8 8 8"
+                                MinHeight="48"
+                                 AcceptsReturn="True"
+                                 VerticalScrollBarVisibility="Auto"
+                                 SpellCheck.IsEnabled="True"
+                                 materialDesign:HintAssist.Hint="Write note or task item"
+                                 materialDesign:HintAssist.IsFloating="True"
+                                 Text="The written text"
+                                 />
+                                        <StackPanel  Grid.Row="4"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
+
+                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                                materialDesign:RippleAssist.IsCentered="True">
+                                                <materialDesign:PackIcon Kind="Delete" />
+                                            </Button>
+                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                                materialDesign:RippleAssist.IsCentered="True">
+                                                <materialDesign:PackIcon Kind="Comment" />
+                                            </Button>
+                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                                materialDesign:RippleAssist.IsCentered="True">
+                                                <materialDesign:PackIcon Kind="Note" />
+                                            </Button>
+                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                                materialDesign:RippleAssist.IsCentered="True">
+                                                <materialDesign:PackIcon Kind="Pencil" />
+                                            </Button>
+                                            <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
+                                                <StackPanel>
+                                                    <Button Content="More"/>
+                                                    <Button Content="Options"/>
+                                                </StackPanel>
+                                            </materialDesign:PopupBox>
+                                        </StackPanel>
+                                        <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
             Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"
             VerticalAlignment="Bottom" HorizontalAlignment="Right"
             Grid.Row="1" Margin="0 0 28 -20">
