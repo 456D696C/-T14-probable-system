@@ -343,9 +343,12 @@
                                                 <RowDefinition Height="Auto" />
                                             </Grid.RowDefinitions>
                                             <TextBlock Text="COMMENTS"  Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16"/>
-                                            <ListView x:Name="_EDITABLE_COMMENTS_LISTVIEW" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                            <ListBox x:Name="_EDITABLE_COMMENTS_LISTVIEW" Grid.Row="1" 
+                                                        
+                                                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                                         HorizontalContentAlignment="Stretch" >
-                                                <ListViewItem>
+                                               
+                                                <ListBoxItem>
                                                     <Expander Header="1.1. Great task item">
                                                         <Grid>
                                                             <Grid.RowDefinitions>
@@ -415,8 +418,8 @@
                                                             </StackPanel>
                                                         </Grid>
                                                     </Expander>
-                                                </ListViewItem>
-                                                <ListViewItem>
+                                                </ListBoxItem>
+                                                <ListBoxItem>
                                                     <Expander Header="1.2. Great note">
                                                         <Grid>
                                                             <Grid.RowDefinitions>
@@ -486,8 +489,8 @@
                                                             </StackPanel>
                                                         </Grid>
                                                     </Expander>
-                                                </ListViewItem>
-                                            </ListView>
+                                                </ListBoxItem>
+                                            </ListBox>
                                             <materialDesign:ColorZone Mode="PrimaryMid" Grid.Row="2" Effect="{DynamicResource MaterialDesignShadowDepth5}">
                                                 <TextBlock Margin="16">Task editor footer</TextBlock>
                                             </materialDesign:ColorZone>
