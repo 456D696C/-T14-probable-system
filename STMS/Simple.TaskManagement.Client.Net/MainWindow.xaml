@@ -19,11 +19,12 @@
         Title="{Binding AboutThis.Title}" Height="800" Width="1100">
   <Window.Resources>
     <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
-      </ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+        </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Window.Resources>
   <Window.DataContext>
@@ -117,19 +118,13 @@
                                                         <TextBlock Grid.Row="2" Text="{Binding Value.ReminderDate, StringFormat='remind me {0:dd/MM/yyyy}'}" Margin="32 0 0 0"/>
 
                                                         <StackPanel  Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
-                                                            <StackPanel.Resources>
-                                                                <ResourceDictionary>
-                                                                    <ResourceDictionary.MergedDictionaries>
-                                                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
-                                                                    </ResourceDictionary.MergedDictionaries>
-                                                                </ResourceDictionary>
-                                                            </StackPanel.Resources>
+
                                                             <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
-                              materialDesign:RippleAssist.IsCentered="True">
+                                                                materialDesign:RippleAssist.IsCentered="True">
                                                                 <materialDesign:PackIcon Kind="Delete" />
                                                             </Button>
                                                             <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
-                              materialDesign:RippleAssist.IsCentered="True">
+                                                                materialDesign:RippleAssist.IsCentered="True">
                                                                 <materialDesign:PackIcon Kind="Pencil" />
                                                             </Button>
                                                             <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
@@ -376,15 +371,8 @@
                             </DatePicker>
                             <!--#endregion-->
 
-                            <StackPanel HorizontalAlignment="Right" Grid.Row="3" Orientation="Horizontal" Margin="8">
-                              <StackPanel.Resources>
-                                <ResourceDictionary>
-                                  <ResourceDictionary.MergedDictionaries>
-                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
-                                  </ResourceDictionary.MergedDictionaries>
-                                </ResourceDictionary>
-                              </StackPanel.Resources>
-                              <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                        <StackPanel HorizontalAlignment="Right" Grid.Row="3" Orientation="Horizontal" Margin="8">
+                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
     materialDesign:RippleAssist.IsCentered="True">
                                 <materialDesign:PackIcon Kind="ShareVariant" />
                               </Button>
@@ -447,13 +435,7 @@
                             <!--#endregion-->
 
                             <StackPanel HorizontalAlignment="Right" Grid.Row="3" Orientation="Horizontal" Margin="8">
-                              <StackPanel.Resources>
-                                <ResourceDictionary>
-                                  <ResourceDictionary.MergedDictionaries>
-                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
-                                  </ResourceDictionary.MergedDictionaries>
-                                </ResourceDictionary>
-                              </StackPanel.Resources>
+                          
                               <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
     materialDesign:RippleAssist.IsCentered="True">
                                 <materialDesign:PackIcon Kind="ShareVariant" />
