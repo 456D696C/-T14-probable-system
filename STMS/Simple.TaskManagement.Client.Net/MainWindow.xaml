@@ -278,13 +278,14 @@
                         </Binding>
                       </DatePicker.SelectedDate>
                     </DatePicker>
-                    <ComboBox Grid.Column="0" Grid.Row="3" materialDesign:HintAssist.Hint="Status" materialDesign:HintAssist.IsFloating="True"
+                                        <TextBox Grid.Column="0" Grid.Row="3" Text="Task Description" materialDesign:HintAssist.Hint="Description"/>
+                    <ComboBox Grid.Column="0" Grid.Row="4" materialDesign:HintAssist.Hint="Status" materialDesign:HintAssist.IsFloating="True"
                                             >
                       <ComboBoxItem>InProgress</ComboBoxItem>
                       <ComboBoxItem>Completed</ComboBoxItem>
                       <ComboBoxItem>Canceled</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox Grid.Column="0" Grid.Row="4" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"
+                    <ComboBox Grid.Column="0" Grid.Row="5" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"
                                            >
                       <ComboBoxItem>Idea</ComboBoxItem>
                       <ComboBoxItem>Problem analysis</ComboBoxItem>
@@ -293,7 +294,7 @@
                       <ComboBoxItem>Project Development</ComboBoxItem>
                       <ComboBoxItem>Marketing Strategy</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox Grid.Column="0" Grid.Row="5" materialDesign:HintAssist.Hint="Assigned To" materialDesign:HintAssist.IsFloating="True">
+                    <ComboBox Grid.Column="0" Grid.Row="6" materialDesign:HintAssist.Hint="Assigned To" materialDesign:HintAssist.IsFloating="True">
                       <ComboBoxItem>Contact #1</ComboBoxItem>
                       <ComboBoxItem>Contact #2</ComboBoxItem>
                       <ComboBoxItem>Contact #3</ComboBoxItem>
@@ -307,10 +308,9 @@
                     <CheckBox Grid.Column="1" Grid.Row="4" IsChecked="True" VerticalAlignment="Bottom" />
                     <CheckBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" />
                     <CheckBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Bottom" />
-
-
-                    <DatePicker Grid.Column="0" Grid.Row="6" x:Name="NextActionDatePicker" HorizontalAlignment="Stretch"
-                materialDesign:HintAssist.Hint="Next Action Date" />
+                    <CheckBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Bottom" />
+                    <DatePicker Grid.Column="0" Grid.Row="7" x:Name="NextActionDatePicker" HorizontalAlignment="Stretch"
+                    materialDesign:HintAssist.Hint="Next Action Date" />
                   </Grid>
                 </Expander>
                 <!--#endregion-->
