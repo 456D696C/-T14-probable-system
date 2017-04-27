@@ -102,7 +102,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
             {
                 { "1.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Analyze the task."
                     }
@@ -110,7 +110,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                  { "2.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Understand the problem area."
                     }
@@ -119,7 +119,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                 { "3.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Examine existing solutions."
                     }
@@ -127,7 +127,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                 { "4.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Evaluate available resources."
                     }
@@ -135,14 +135,14 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                 { "4.1", new Comment()
                     {
-                        CommentType = CommentType.SubTaskItem,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "such as time"
                     }
                 },
                 { "4.2", new Comment()
                     {
-                        CommentType = CommentType.SubTaskItem,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "such as time",
                     }
@@ -172,7 +172,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
             {
                 { "1.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Simple task management systems."
                     }
@@ -180,7 +180,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                 { "1.1", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Simple task management systems i.e. 
                                        http://www.capterra.com/task-management-software/ 
@@ -190,7 +190,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                 { "1.2", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Simple task management systems i.e. 
                                       https://xbsoftware.com/case-studies-webdev/project-management-tool-for-communications-portal/."
@@ -200,7 +200,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                  { "2.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Cool 'TODO' apps at https://zapier.com/blog/best-todo-list-apps/"
                     }
@@ -208,7 +208,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                  { "2.1", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Remember the milk https://zapier.com/blog/best-todo-list-apps/#remember"
                     }
@@ -216,7 +216,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                  { "2.2", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Everyday https://zapier.com/blog/best-todo-list-apps/#everyday"
                     }
@@ -246,7 +246,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
             {
                 { "1.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Developed very first prototypes were developed."
                     }
@@ -285,7 +285,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
             {
                 { "1.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Developing some of the core software features."
                     }
@@ -325,7 +325,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
             {
                 { "1.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary =
                     @"The code name T14 comes from а game of words
@@ -339,7 +339,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
                 { "2.", new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Invent a good name for the product."
                     }

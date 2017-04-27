@@ -316,12 +316,58 @@
                                             <RowDefinition Height="*" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
-                                        <TextBlock Text="COMMENTS" />
-                                        <ListBox x:Name="CommentsListBox" Grid.Row="1">
-                                            <ListBoxItem>Boy to eat Apple</ListBoxItem>
-                                            <ListBoxItem>Girl to eat Banana</ListBoxItem>
-                                            <ListBoxItem>Daddy to buy Pear</ListBoxItem>
-                                        </ListBox>
+                                        <TextBlock Text="COMMENTS"  Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16"/>
+                                        <ListView x:Name="_EDITABLE_COMMENTS_LISTVIEW" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                          HorizontalContentAlignment="Stretch" >
+                                            <ListViewItem>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <TextBlock Text="1.1" Padding="4 0 4 0" TextWrapping="Wrap"/>
+                                                    
+                                                    <!--#region Comentary-->
+                                                    <ComboBox Grid.Row="1" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"  Margin="32 8 8 8">
+                                                        <ComboBoxItem>Note</ComboBoxItem>
+                                                        <ComboBoxItem>Comment</ComboBoxItem>
+                                                    </ComboBox>
+                                                    <TextBox Grid.Row="2" x:Name="CommenatryTextBox"
+                                                                 TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8"
+                                                                 MinWidth="280"
+                                                                 AcceptsReturn="True"                 
+                                                                 VerticalScrollBarVisibility="Auto"
+                                                                 SpellCheck.IsEnabled="True"
+                                                                 materialDesign:HintAssist.Hint="Write note or task item"
+                                                                 Text="Note or task item"
+                                                                 />
+                                                    <DatePicker Grid.Row="3" x:Name="ReminderDatePicker" HorizontalAlignment="Stretch" Margin="32 8 8 8"
+                                                                materialDesign:HintAssist.Hint="Reminder Action Date">
+                                                        <!--<DatePicker.SelectedDate>
+                                                            <Binding Path="ReminderDate" UpdateSourceTrigger="PropertyChanged">
+                                                                <Binding.ValidationRules>
+                                                                    <validation:SimpleDateValidationRule ValidatesOnTargetUpdated="True" />
+                                                                </Binding.ValidationRules>
+                                                            </Binding>
+                                                        </DatePicker.SelectedDate>-->
+                                                    </DatePicker>
+                                                    <!--#endregion-->
+                                                    <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <materialDesign:PackIcon Kind="Delete" />
+                                                        <materialDesign:PackIcon Kind="Pencil" />
+                                                    </StackPanel>
+                                                </Grid>
+                                            </ListViewItem>
+                                        </ListView>
                                         <materialDesign:ColorZone Mode="PrimaryMid" Grid.Row="2" Effect="{DynamicResource MaterialDesignShadowDepth5}">
                                             <TextBlock Margin="16">Task editor footer</TextBlock>
                                         </materialDesign:ColorZone>

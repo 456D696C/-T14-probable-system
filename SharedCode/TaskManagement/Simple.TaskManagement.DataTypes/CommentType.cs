@@ -10,13 +10,10 @@ namespace Simple.TaskManagement.DataTypes
         
         None,
 
-        [Description("*\t")]
-        SubTaks,
+        [Description("Work Item")]
+        Item,
 
-        [Description("i\t\t")]
-        SubTaskItem,
-
-        [Description("n\t")]
+        [Description("Note")]
         Note
     }
 }
