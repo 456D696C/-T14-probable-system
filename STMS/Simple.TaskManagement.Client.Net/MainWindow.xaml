@@ -204,7 +204,7 @@
                             
                             <!--#region Task Header -->
                             <Expander Header="TASK TO EDIT">
-                                <Grid Width="300" Margin="8,8,8,8">
+                                <Grid Width="300" Margin="8,8,8,32">
                                     <Grid.Resources>
                                         <Style TargetType="CheckBox" BasedOn="{StaticResource MaterialDesignCheckBox}">
                                             <Setter Property="Margin" Value="8,8,10,8"/>
@@ -329,8 +329,8 @@
                                     </StackPanel>
                                 </materialDesign:DialogHost.DialogContent>
 
-                                <Grid x:Name="_EDITABLE_TASK_CONTENT_AREA">
-                                    <Border BorderThickness="1" BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+                            
+                                 <Border x:Name="_EDITABLE_TASK_CONTENT_AREA" Width="300" Margin="8,8,8,32" BorderThickness="1" BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                                     MinWidth="256" MinHeight="256" ClipToBounds="True">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -348,6 +348,7 @@
                                                             <RowDefinition Height="*"/>
                                                             <RowDefinition Height="*"/>
                                                             <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*" />
                                                             <RowDefinition Height="*" />
                                                         </Grid.RowDefinitions>
 
@@ -425,7 +426,7 @@
                                             </Button>
                                         </Grid>
                                     </Border>
-                                </Grid>
+                                
                             </materialDesign:DialogHost>
                             <!--#endregion -->
                         </Grid>
