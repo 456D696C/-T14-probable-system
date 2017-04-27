@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple.TaskManagement"
         xmlns:domain="clr-namespace:Simple.TaskManagement.ViewModels"
+        xmlns:validation="clr-namespace:Simple.TaskManagement.Validators"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
@@ -192,6 +193,15 @@
                                             <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
                                             <Setter Property="Margin" Value="8,8,8,8"/>
                                         </Style>
+                                        <Style TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
+                                            <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
+                                            <Setter Property="Margin" Value="8,8,8,8"/>
+                                            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                        </Style>
+                                        <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignComboBox}">
+                                            <Setter Property="Margin" Value="8,8,8,8"/>
+                                            <Setter Property="MaxDropDownHeight" Value="200" />
+                                        </Style>
                                     </Grid.Resources>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
@@ -203,26 +213,66 @@
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16">OPTIONS</TextBlock>
-                                    <TextBox Grid.Column="0" Grid.Row="1" materialDesign:HintAssist.Hint="Setting 1" Text="200"/>
-                                    <TextBox Grid.Column="0" Grid.Row="2" materialDesign:HintAssist.Hint="Setting 2" Text="400"/>
-                                    <TextBox Grid.Column="0" Grid.Row="3" materialDesign:HintAssist.Hint="Setting 3" Text="600"/>
-                                    <CheckBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" />
-                                    <CheckBox Grid.Column="1" Grid.Row="2" IsChecked="True" VerticalAlignment="Bottom" />
-                                    <CheckBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" />
-                                    <ComboBox Grid.Column="0" Grid.Row="4" materialDesign:HintAssist.Hint="Setting 4" materialDesign:HintAssist.IsFloating="True"
-                                  MaxDropDownHeight="200"
-                                  Margin="8 8 8 8">
-                                        <ComboBoxItem>25%</ComboBoxItem>
-                                        <ComboBoxItem>50%</ComboBoxItem>
-                                        <ComboBoxItem>75%</ComboBoxItem>
-                                        <ComboBoxItem>100%</ComboBoxItem>
-                                        <ComboBoxItem>150%</ComboBoxItem>
-                                        <ComboBoxItem>200%</ComboBoxItem>
-                                        <ComboBoxItem>250%</ComboBoxItem>
-                                        <ComboBoxItem>501%</ComboBoxItem>
+
+                                    <DatePicker Grid.Column="0" Grid.Row="1" x:Name="CreatedDatePicker" HorizontalAlignment="Stretch"
+                                                    materialDesign:HintAssist.Hint="Created">
+                                        <DatePicker.SelectedDate>
+                                            <Binding Path="CreatedDate" UpdateSourceTrigger="PropertyChanged">
+                                                <Binding.ValidationRules>
+                                                    <validation:SimpleDateValidationRule ValidatesOnTargetUpdated="True" />
+                                                </Binding.ValidationRules>
+                                            </Binding>
+                                        </DatePicker.SelectedDate>
+                                    </DatePicker>
+
+                                    <DatePicker Grid.Column="0" Grid.Row="2" x:Name="RequiredByDatePicker" HorizontalAlignment="Stretch"
+                                                    materialDesign:HintAssist.Hint="Required By">
+                                        <DatePicker.SelectedDate>
+                                            <Binding Path="RequiredByDate" UpdateSourceTrigger="PropertyChanged">
+                                                <Binding.ValidationRules>
+                                                    <validation:FutureDateValidationRule ValidatesOnTargetUpdated="True" />
+                                                </Binding.ValidationRules>
+                                            </Binding>
+                                        </DatePicker.SelectedDate>
+                                    </DatePicker>
+                                    <ComboBox Grid.Column="0" Grid.Row="3" materialDesign:HintAssist.Hint="Status" materialDesign:HintAssist.IsFloating="True"
+                                            >
+                                        <ComboBoxItem>InProgress</ComboBoxItem>
+                                        <ComboBoxItem>Completed</ComboBoxItem>
+                                        <ComboBoxItem>Canceled</ComboBoxItem>
                                     </ComboBox>
+                                    <ComboBox Grid.Column="0" Grid.Row="4" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True"
+                                           >
+                                        <ComboBoxItem>Idea</ComboBoxItem>
+                                        <ComboBoxItem>Problem analysis</ComboBoxItem>
+                                        <ComboBoxItem>Research</ComboBoxItem>
+                                        <ComboBoxItem>Prototype</ComboBoxItem>
+                                        <ComboBoxItem>Project Development</ComboBoxItem>
+                                        <ComboBoxItem>Marketing Strategy</ComboBoxItem>
+                                    </ComboBox>
+                                    <ComboBox Grid.Column="0" Grid.Row="5" materialDesign:HintAssist.Hint="Assigned To" materialDesign:HintAssist.IsFloating="True">
+                                        <ComboBoxItem>Contact #1</ComboBoxItem>
+                                        <ComboBoxItem>Contact #2</ComboBoxItem>
+                                        <ComboBoxItem>Contact #3</ComboBoxItem>
+                                        <ComboBoxItem>Anybody else, I can't remmber his name</ComboBoxItem>
+                                        <ComboBoxItem>Forget</ComboBoxItem>
+                                    </ComboBox>
+
+                                    <CheckBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" />
+                                    <CheckBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" />
+                                    <CheckBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" />
+                                    <CheckBox Grid.Column="1" Grid.Row="4" IsChecked="True" VerticalAlignment="Bottom" />
+                                    <CheckBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" />
+                                    <CheckBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Bottom" />
+
+
+                                    <DatePicker Grid.Column="0" Grid.Row="6" x:Name="NextActionDatePicker" HorizontalAlignment="Stretch"
+                                                    materialDesign:HintAssist.Hint="Next Action Date" />
                                 </Grid>
                             </Expander>
 

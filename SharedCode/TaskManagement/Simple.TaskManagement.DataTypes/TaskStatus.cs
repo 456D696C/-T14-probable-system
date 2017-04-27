@@ -10,10 +10,13 @@ namespace Simple.TaskManagement.DataTypes
     {
         None,
 
-        [Description("Task is canceled")]
-        Canceled,
+        [Description("Task is completed")]
+        InProgress,
 
         [Description("Task is completed")]
         Completed,
+
+        [Description("Task is canceled")]
+        Canceled,
     }
 }

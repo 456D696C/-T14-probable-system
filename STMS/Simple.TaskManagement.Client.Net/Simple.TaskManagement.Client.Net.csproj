@@ -132,6 +132,8 @@
     <Compile Include="Handlers\BridgeMessageHandler.cs" />
     <Compile Include="Handlers\Tasks\TasksSearchOnCommentsReportMessageHandler.cs" />
     <Compile Include="IClientService.cs" />
+    <Compile Include="Validators\SimpleDateValidationRule.cs" />
+    <Compile Include="Validators\FutureDateValidationRule.cs" />
     <Compile Include="ViewModels\AboutThisViewModel.cs" />
     <Compile Include="ViewModels\NextTaskFactoryViewModel.cs" />
     <Compile Include="ViewModels\NextTaskManagerViewModel.cs" />
