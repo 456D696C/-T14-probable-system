@@ -16,6 +16,7 @@ namespace Simple.TaskManagement
     public class Locator
     {
         public AboutThisViewModel AboutThis { get; }
+        public ApplicationSessionViewModel Session { get; }
         public TaskListViewModel TaskList { get; }
         public TextSearchViewModel TextSearch { get; }
         public SearchResultViewModel SearchResult { get; }
@@ -27,6 +28,7 @@ namespace Simple.TaskManagement
             var container = Bootstrapper.RegisterTypes(new UnityContainer());
 
             AboutThis = container.Resolve<AboutThisViewModel>();
+            Session = container.Resolve<ApplicationSessionViewModel>();
             TaskList = container.Resolve<TaskListViewModel>();
             TextSearch = container.Resolve<TextSearchViewModel>();
             SearchResult = container.Resolve<SearchResultViewModel>();
