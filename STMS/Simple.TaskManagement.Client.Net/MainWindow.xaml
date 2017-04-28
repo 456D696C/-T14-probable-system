@@ -322,10 +322,33 @@
                                                             <materialDesign:PackIcon  Grid.Row="1" Kind="Pen" VerticalAlignment="Bottom" Margin="8 4 4 4"/>
                                                             <TextBox Grid.Row="1" x:Name="CommenatryOrNoteTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" MinHeight="48" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" materialDesign:HintAssist.IsFloating="True" Text="The written text" 
                                                                      Padding="16 0 0 0" />
-                                                            <StackPanel HorizontalAlignment="Right" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="8">
+                                                            <StackPanel HorizontalAlignment="Right" Grid.Row="1"  Orientation="Horizontal" Margin="8">
                                                                 <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
                                                                     <materialDesign:PackIcon Kind="Send" />
                                                                 </Button>
+                                                            </StackPanel>
+                                                            <StackPanel Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
+                                                                <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                    <materialDesign:PackIcon Kind="Database" />
+                                                                </Button>
+                                                                <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                    <materialDesign:PackIcon Kind="Printer" />
+                                                                </Button>
+                                                                <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                    <materialDesign:PackIcon Kind="Email" />
+                                                                </Button>
+                                                                <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                    <materialDesign:PackIcon Kind="Pulse" />
+                                                                </Button>
+                                                                <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                    <materialDesign:PackIcon Kind="ShareVariant" />
+                                                                </Button>
+                                                                <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
+                                                                    <StackPanel>
+                                                                        <Button Content="More" />
+                                                                        <Button Content="Options" />
+                                                                    </StackPanel>
+                                                                </materialDesign:PopupBox>
                                                             </StackPanel>
                                                         </Grid>
                                                     </Grid>
