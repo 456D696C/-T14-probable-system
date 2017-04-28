@@ -116,7 +116,7 @@
                                                                             <ColumnDefinition Width="Auto" />
                                                                         </Grid.ColumnDefinitions>
                                                                         <!--#region Comentary-->
-                                                                        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Value.Commentary}" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8" MinWidth="280" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" IsReadOnly="True" materialDesign:HintAssist.Hint="{Binding Key}" materialDesign:HintAssist.IsFloating="True" />
+                                                                        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Value.Commentary}" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8" MinWidth="200" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" IsReadOnly="True" materialDesign:HintAssist.Hint="{Binding Key}" materialDesign:HintAssist.IsFloating="True" />
                                                                         <!--#endregion-->
                                                                         <TextBlock Grid.Row="2" Text="{Binding Value.ReminderDate, StringFormat='remind me {0:dd/MM/yyyy}'}" Margin="32 0 0 0" />
                                                                         <StackPanel Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
@@ -172,7 +172,7 @@
                                                 </Grid.RowDefinitions>
                                                 <!--#region Task Header -->
                                                 <Expander Header="TASK TO EDIT">
-                                                    <Grid Width="300" Margin="8,8,8,32">
+                                                    <Grid >
                                                         <Grid.Resources>
                                                             <Style TargetType="CheckBox" BasedOn="{StaticResource MaterialDesignCheckBox}">
                                                                 <Setter Property="Margin" Value="8,8,10,8" />
@@ -256,143 +256,96 @@
                                                     </Grid>
                                                 </Expander>
                                                 <!--#endregion-->
-                                                <Border Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource PrimaryHueMidBrush}" MinWidth="256" MinHeight="256" ClipToBounds="True">
-                                                    <Grid x:Name="_EDITABLE_COMMENTS_AREA" Width="300" Margin="8,8,8,32">
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="Auto" />
-                                                            <RowDefinition Height="*" />
-                                                            <RowDefinition Height="Auto" />
-                                                            <RowDefinition Height="Auto" />
-                                                            <RowDefinition Height="Auto" />
-                                                        </Grid.RowDefinitions>
-                                                        <TextBlock Text="COMMENTS" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16" />
-                                                        <ListBox x:Name="_EDITABLE_COMMENTS_LISTVIEW" Grid.Row="1" Style="{StaticResource MaterialDesignCardsListBox}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
-                                                            <ListBoxItem>
-                                                                <Expander Header="1.1. Great task item">
-                                                                    <Grid>
-                                                                        <Grid.RowDefinitions>
-                                                                            <RowDefinition Height="*" />
-                                                                            <RowDefinition Height="*" />
-                                                                            <RowDefinition Height="*" />
-                                                                            <RowDefinition Height="*" />
-                                                                            <RowDefinition Height="*" />
-                                                                        </Grid.RowDefinitions>
-                                                                        <Grid.ColumnDefinitions>
-                                                                            <ColumnDefinition Width="*" />
-                                                                            <ColumnDefinition Width="Auto" />
-                                                                        </Grid.ColumnDefinitions>
-                                                                        <!--#region Comentary-->
-                                                                        <ComboBox Grid.Row="0" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True" Margin="32 8 8 8">
-                                                                            <ComboBoxItem>Note</ComboBoxItem>
-                                                                            <ComboBoxItem>Comment</ComboBoxItem>
-                                                                        </ComboBox>
-                                                                        <TextBox Grid.Row="1" x:Name="CommenatryTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8" MinWidth="280" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" Text="Note or task item" />
-                                                                        <DatePicker Grid.Row="2" x:Name="ReminderDatePicker" HorizontalAlignment="Stretch" Margin="32 8 8 8" materialDesign:HintAssist.Hint="Reminder Action Date">
-                                                                            <!--<DatePicker.SelectedDate>
+
+                                                <Grid Grid.Row="1" x:Name="_EDITABLE_COMMENTS_AREA" >
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Text="COMMENTS" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16" />
+                                                    <ListBox x:Name="_EDITABLE_COMMENTS_LISTVIEW" Grid.Row="1" Style="{StaticResource MaterialDesignCardsListBox}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+                                                        <ListBoxItem Padding="8">
+                                                            <Expander Header="1.1. Great task item">
+                                                                <Grid>
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition Height="*" />
+                                                                        <RowDefinition Height="*" />
+                                                                        <RowDefinition Height="*" />
+                                                                        <RowDefinition Height="*" />
+                                                                        <RowDefinition Height="*" />
+                                                                    </Grid.RowDefinitions>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*" />
+                                                                        <ColumnDefinition Width="Auto" />
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <!--#region Comentary-->
+                                                                    <ComboBox Grid.Row="0" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True" Margin="32 8 8 8">
+                                                                        <ComboBoxItem>Note</ComboBoxItem>
+                                                                        <ComboBoxItem>Comment</ComboBoxItem>
+                                                                    </ComboBox>
+                                                                    <TextBox Grid.Row="1" x:Name="CommenatryTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8" MinWidth="200" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" Text="Note or task item" />
+                                                                    <DatePicker Grid.Row="2" x:Name="ReminderDatePicker" HorizontalAlignment="Stretch" Margin="32 8 8 8" materialDesign:HintAssist.Hint="Reminder Action Date">
+                                                                        <!--<DatePicker.SelectedDate>
                                                             <Binding Path="ReminderDate" UpdateSourceTrigger="PropertyChanged">
                                                                 <Binding.ValidationRules>
                                                                     <validation:SimpleDateValidationRule ValidatesOnTargetUpdated="True" />
                                                                 </Binding.ValidationRules>
                                                             </Binding>
                                                         </DatePicker.SelectedDate>-->
-                                                                        </DatePicker>
-                                                                        <!--#endregion-->
-                                                                        <StackPanel HorizontalAlignment="Right" Grid.Row="3" Orientation="Horizontal" Margin="8">
-                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
-                                                                                <materialDesign:PackIcon Kind="ShareVariant" />
-                                                                            </Button>
-                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
-                                                                                <materialDesign:PackIcon Kind="Heart" />
-                                                                            </Button>
-                                                                            <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
-                                                                                <StackPanel>
-                                                                                    <Button Content="More" />
-                                                                                    <Button Content="Options" />
-                                                                                </StackPanel>
-                                                                            </materialDesign:PopupBox>
-                                                                        </StackPanel>
-                                                                    </Grid>
-                                                                </Expander>
-                                                            </ListBoxItem>
-                                                            <ListBoxItem>
-                                                                <Expander Header="1.2. Great note">
-                                                                    <Grid>
-                                                                        <Grid.RowDefinitions>
-                                                                            <RowDefinition Height="*" />
-                                                                            <RowDefinition Height="*" />
-                                                                            <RowDefinition Height="*" />
-                                                                            <RowDefinition Height="*" />
-                                                                            <RowDefinition Height="*" />
-                                                                        </Grid.RowDefinitions>
-                                                                        <Grid.ColumnDefinitions>
-                                                                            <ColumnDefinition Width="*" />
-                                                                            <ColumnDefinition Width="Auto" />
-                                                                        </Grid.ColumnDefinitions>
-                                                                        <!--#region Comentary-->
-                                                                        <ComboBox Grid.Row="0" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.IsFloating="True" Margin="32 8 8 8">
-                                                                            <ComboBoxItem>Note</ComboBoxItem>
-                                                                            <ComboBoxItem>Comment</ComboBoxItem>
-                                                                        </ComboBox>
-                                                                        <TextBox Grid.Row="1" x:Name="CommenatryTextBox1" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="32 8 8 8" MinWidth="280" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" Text="WHY? WHY? WHY?" />
-                                                                        <DatePicker Grid.Row="2" x:Name="ReminderDatePicker1" HorizontalAlignment="Stretch" Margin="32 8 8 8" materialDesign:HintAssist.Hint="Reminder Action Date">
-                                                                            <!--<DatePicker.SelectedDate>
-                                                            <Binding Path="ReminderDate" UpdateSourceTrigger="PropertyChanged">
-                                                                <Binding.ValidationRules>
-                                                                    <validation:SimpleDateValidationRule ValidatesOnTargetUpdated="True" />
-                                                                </Binding.ValidationRules>
-                                                            </Binding>
-                                                        </DatePicker.SelectedDate>-->
-                                                                        </DatePicker>
-                                                                        <!--#endregion-->
-                                                                        <StackPanel HorizontalAlignment="Right" Grid.Row="3" Orientation="Horizontal" Margin="8">
-                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
-                                                                                <materialDesign:PackIcon Kind="ShareVariant" />
-                                                                            </Button>
-                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
-                                                                                <materialDesign:PackIcon Kind="Heart" />
-                                                                            </Button>
-                                                                            <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
-                                                                                <StackPanel>
-                                                                                    <Button Content="More" />
-                                                                                    <Button Content="Options" />
-                                                                                </StackPanel>
-                                                                            </materialDesign:PopupBox>
-                                                                        </StackPanel>
-                                                                    </Grid>
-                                                                </Expander>
-                                                            </ListBoxItem>
-                                                        </ListBox>
-                                                        <ProgressBar Height="1" Grid.Row="2" />
-                                                        <TextBox Grid.Row="3" x:Name="CommenatryOrNoteTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="8 8 8 8" MinHeight="48" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" materialDesign:HintAssist.IsFloating="True" Text="The written text" />
-                                                        <StackPanel Grid.Row="4" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
-                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
-                                                                <materialDesign:PackIcon Kind="Delete" />
-                                                            </Button>
-                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
-                                                                <materialDesign:PackIcon Kind="Comment" />
-                                                            </Button>
-                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
-                                                                <materialDesign:PackIcon Kind="Note" />
-                                                            </Button>
-                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
-                                                                <materialDesign:PackIcon Kind="Pencil" />
-                                                            </Button>
-                                                            <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
-                                                                <StackPanel>
-                                                                    <Button Content="More" />
-                                                                    <Button Content="Options" />
-                                                                </StackPanel>
-                                                            </materialDesign:PopupBox>
-                                                        </StackPanel>
-                                                        <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="1" Margin="0 0 28 -20">
-                                                            <Viewbox Width="22" Height="22">
-                                                                <Canvas Width="24" Height="24">
-                                                                    <Path Data="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" Fill="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=Foreground}" />
-                                                                </Canvas>
-                                                            </Viewbox>
+                                                                    </DatePicker>
+                                                                    <!--#endregion-->
+                                                                    <StackPanel HorizontalAlignment="Right" Grid.Row="3" Orientation="Horizontal" Margin="8">
+                                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                            <materialDesign:PackIcon Kind="ShareVariant" />
+                                                                        </Button>
+                                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                            <materialDesign:PackIcon Kind="Heart" />
+                                                                        </Button>
+                                                                        <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
+                                                                            <StackPanel>
+                                                                                <Button Content="More" />
+                                                                                <Button Content="Options" />
+                                                                            </StackPanel>
+                                                                        </materialDesign:PopupBox>
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                            </Expander>
+                                                        </ListBoxItem>
+                                                        
+                                                    </ListBox>
+                                                    <Separator Height="1" Grid.Row="2" />
+                                                    <TextBox Grid.Row="3" x:Name="CommenatryOrNoteTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" MinHeight="48" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" materialDesign:HintAssist.IsFloating="True" Text="The written text" />
+                                                    <StackPanel Grid.Row="4" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
+                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                            <materialDesign:PackIcon Kind="Delete" />
                                                         </Button>
-                                                    </Grid>
-                                                </Border>
+                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                            <materialDesign:PackIcon Kind="Comment" />
+                                                        </Button>
+                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                            <materialDesign:PackIcon Kind="Note" />
+                                                        </Button>
+                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                            <materialDesign:PackIcon Kind="Pencil" />
+                                                        </Button>
+                                                        <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
+                                                            <StackPanel>
+                                                                <Button Content="More" />
+                                                                <Button Content="Options" />
+                                                            </StackPanel>
+                                                        </materialDesign:PopupBox>
+                                                    </StackPanel>
+                                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="1" Margin="0 0 28 -20">
+                                                        <Viewbox Width="22" Height="22">
+                                                            <Canvas Width="24" Height="24">
+                                                                <Path Data="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" Fill="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=Foreground}" />
+                                                            </Canvas>
+                                                        </Viewbox>
+                                                    </Button>
+                                                </Grid>
                                             </Grid>
                                         </materialDesign:DialogHost>
                                         <!--#endregion-->
