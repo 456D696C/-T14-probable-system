@@ -212,22 +212,10 @@
                                                                 </Grid.RowDefinitions>
                                                                 <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="8,8,8,16">ATTRIBUTES</TextBlock>
                                                                 <DatePicker Grid.Column="0" Grid.Row="1" x:Name="CreatedDatePicker" HorizontalAlignment="Stretch" materialDesign:HintAssist.Hint="Created">
-                                                                    <DatePicker.SelectedDate>
-                                                                        <Binding Path="CreatedDate" UpdateSourceTrigger="PropertyChanged">
-                                                                            <Binding.ValidationRules>
-                                                                                <validation:SimpleDateValidationRule ValidatesOnTargetUpdated="True" />
-                                                                            </Binding.ValidationRules>
-                                                                        </Binding>
-                                                                    </DatePicker.SelectedDate>
+                                                                    
                                                                 </DatePicker>
                                                                 <DatePicker Grid.Column="0" Grid.Row="2" x:Name="RequiredByDatePicker" HorizontalAlignment="Stretch" materialDesign:HintAssist.Hint="Required By">
-                                                                    <DatePicker.SelectedDate>
-                                                                        <Binding Path="RequiredByDate" UpdateSourceTrigger="PropertyChanged">
-                                                                            <Binding.ValidationRules>
-                                                                                <validation:FutureDateValidationRule ValidatesOnTargetUpdated="True" />
-                                                                            </Binding.ValidationRules>
-                                                                        </Binding>
-                                                                    </DatePicker.SelectedDate>
+                                                                    
                                                                 </DatePicker>
                                                                 <TextBox Grid.Column="0" Grid.Row="3" Text="Task Description" materialDesign:HintAssist.Hint="Description" />
                                                                 <ComboBox Grid.Column="0" Grid.Row="4" materialDesign:HintAssist.Hint="Status" materialDesign:HintAssist.IsFloating="True">
