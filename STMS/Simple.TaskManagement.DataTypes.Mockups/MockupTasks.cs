@@ -35,7 +35,8 @@ namespace Simple.TaskManagement.DataTypes.Mockups
             TaskType = TaskType.Analysis,
             TaskStatus = TaskStatus.Completed,
 
-            RequiredByDate = DateTime.Parse("2017-01-01"),
+            NextActionDate = DateTime.Parse("2017-04-01"),
+            RequiredByDate = DateTime.Parse("2017-04-01"),
 
             TaskDescription = "The concept of T14 was born",
 
@@ -108,7 +109,9 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Analysis,
 
-            RequiredByDate = DateTime.Parse("2017-01-01"),
+            RequiredByDate = DateTime.Parse("2017-02-03"),
+
+            NextActionDate = DateTime.Parse("2017-02-07"),
 
             TaskDescription = "Research, Research, Research existing solutions.",
 
@@ -299,7 +302,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
         }
         #endregion
 
-        #region Task Types
+        #region Task Statuses
         public IEnumerable<TaskStatus> TaskStatuses
         {
             get

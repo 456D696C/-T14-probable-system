@@ -15,6 +15,6 @@ namespace Simple.TaskManagement.DataTypes
         public List<Comment> Comments { get; set; }
         public string TaskNumber { get; set; }
         public string TaskId { get; set; }
-        public DateTimeOffset NextActionDate { get; set; }
+        public DateTimeOffset? NextActionDate { get; set; }
     }
 }

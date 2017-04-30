@@ -8,6 +8,7 @@
         xmlns:datatypes="clr-namespace:Simple.TaskManagement.DataTypes;assembly=Simple.TaskManagement.DataTypes"
         xmlns:mockups="clr-namespace:Simple.TaskManagement.DataTypes.Mockups"
         xmlns:validation="clr-namespace:Simple.TaskManagement.Validators" 
+        xmlns:convert="clr-namespace:Simple.TaskManagement.Converters"
         xmlns:system="clr-namespace:System;assembly=mscorlib" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" TextElement.Foreground="{DynamicResource MaterialDesignBody}" 
@@ -109,18 +110,62 @@
                                         <ColumnDefinition Width="5" />
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
-                                    <ListView x:Name="_TASK_LIST"   ItemsSource="{Binding TaskList.Tasks.Value}">
-                                        <ListView.View>
-                                            <GridView>
-                                                <GridViewColumn DisplayMemberBinding="{Binding TaskType}" Header="TaskType" />
-                                                <GridViewColumn DisplayMemberBinding="{Binding TaskDescription}" Header="Description" />
-                                                <GridViewColumn DisplayMemberBinding="{Binding AssignedTo[0].Id}" Header="Assigned To" />
-                                                <GridViewColumn DisplayMemberBinding="{Binding RequiredByDate}" Header="Required By" />
-                                                <GridViewColumn DisplayMemberBinding="{Binding TaskStatus}" Header="Status" />
-                                                <GridViewColumn DisplayMemberBinding="{Binding NextActionDate}" Header="NextActionDate" />
-                                            </GridView>
-                                        </ListView.View>
-                                    </ListView>
+                                    
+                                    <DataGrid Margin="0 8 0 0" x:Name="_TASK_LIST"   ItemsSource="{Binding TaskList.Tasks.Value}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                                            materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+
+                                        <DataGrid.Columns>
+                                            <DataGridCheckBoxColumn 
+                                            ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
+                                            EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"
+                                            >
+                                                <DataGridCheckBoxColumn.Header>
+                                                    <!--padding to allow hit test to pass thru for sorting -->
+                                                    <Border Background="Transparent" Padding="6 0 6 0" HorizontalAlignment="Center">
+                                                        <CheckBox HorizontalAlignment="Center"                                               
+                                                        DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext}"
+                                                        />
+                                                    </Border>
+                                                </DataGridCheckBoxColumn.Header>
+                                            </DataGridCheckBoxColumn>
+                                            <materialDesign:MaterialDataGridComboBoxColumn Header="Type"        
+                                                                   SelectedValueBinding="{Binding TaskType}"                                                            
+                                                                   ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.TaskTypes}" 
+                                                                   />
+                                            
+                                            <!-- set a max length to get an indicator in the editor -->
+                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding TaskDescription}"
+                                                               Header="Description"                                                        
+                                                               MaxLength="255" 
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
+
+
+
+                                            <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                                            <materialDesign:MaterialDataGridComboBoxColumn
+                                                               Header="Assigned To" 
+                                                               SelectedValueBinding ="{Binding AssignedTo, Converter={convert:ContactToListListConverter}}"                                             
+                                                               ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Contacts}" 
+                                                                   />
+                                            
+                                            <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+                                            <materialDesign:MaterialDataGridComboBoxColumn Header="Status"        
+                                                                   SelectedValueBinding="{Binding TaskStatus}"                                                            
+                                                                   ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.TaskStatuses}" 
+                                                                   />
+
+
+                                            <!-- How to deal with datetime offset collumn -->
+                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
+                                                               Header="Required By"                                                        
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
+                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
+                                                               Header="Next action date"                                                        
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
+
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
                                     <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
                                     
                                     <!--#region  Edit task -->
