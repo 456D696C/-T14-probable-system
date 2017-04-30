@@ -10,7 +10,7 @@ namespace Simple.TaskManagement.DataTypes
     {
         None,
 
-        [Description("Task is completed")]
+        [Description("Task is in pogress")]
         InProgress,
 
         [Description("Task is completed")]

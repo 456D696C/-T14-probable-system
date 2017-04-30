@@ -36,7 +36,7 @@ namespace Simple.TaskManagement.ViewModels
             Tasks = EventAggregator.GetEvent<TasksReport>()
                 .ObserveOnDispatcher()
                 .Select(found => found?.Tasks.OfType<DataTypes.Task>().ToArray())
-                .ToReactiveProperty(new DataTypes.Mockups.MockupTasks().TaskList);
+                .ToReactiveProperty(new DataTypes.Mockups.MockupTasks().TaskList.Take(1).ToArray());
 
         }
 
