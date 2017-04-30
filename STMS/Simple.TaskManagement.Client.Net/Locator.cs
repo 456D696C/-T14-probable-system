@@ -39,5 +39,40 @@ namespace Simple.TaskManagement
             container.Resolve<IClientService>().StartAsync().Wait();
   
         }
+
+
+        #region Task Types
+        public IEnumerable<DataTypes.TaskType> TaskTypes
+        {
+            get
+            {
+                return Enum.GetValues(typeof(DataTypes.TaskType))
+                    .OfType<DataTypes.TaskType>();
+            }
+        }
+        #endregion
+
+        #region Task Statuses
+        public IEnumerable<DataTypes.TaskStatus> TaskStatuses
+        {
+            get
+            {
+                return Enum.GetValues(typeof(DataTypes.TaskStatus))
+                    .OfType<DataTypes.TaskStatus>();
+            }
+        }
+        #endregion
+
+
+        public IEnumerable<string> Contacts
+        {
+            get
+            {
+                yield return "applicant@abv.bg";
+                yield return "bill@abv.bg";
+                yield return "will@abv.bg";
+                yield return "hill@abv.bg";
+            }
+        }
     }
 }
