@@ -148,6 +148,11 @@
                                                                ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Contacts}" 
                                                                    />
                                             
+                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
+                                                               Header="Required By"                                                        
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
+
+
                                             <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
                                             <materialDesign:MaterialDataGridComboBoxColumn Header="Status"        
                                                                    SelectedValueBinding="{Binding TaskStatus}"                                                            
@@ -156,9 +161,7 @@
 
 
                                             <!-- How to deal with datetime offset collumn -->
-                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
-                                                               Header="Required By"                                                        
-                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
+                                            
                                             <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
                                                                Header="Next action date"                                                        
                                                                EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
