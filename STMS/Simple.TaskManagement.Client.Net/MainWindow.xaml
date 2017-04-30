@@ -109,27 +109,18 @@
                                         <ColumnDefinition Width="5" />
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Grid x:Name="_REGION_TASKS">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="5" />
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
-                                       
-                                        <ListView x:Name="_TASK_LIST"   ItemsSource="{Binding TaskList.Tasks.Value}">
-                                            <ListView.View>
-                                                <GridView>
-                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskType}" Header="TaskType" />
-                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskDescription}" Header="Description" />
-                                                    <GridViewColumn DisplayMemberBinding="{Binding AssignedTo[0].Id}" Header="Assigned To" />
-                                                    <GridViewColumn DisplayMemberBinding="{Binding RequiredByDate}" Header="Required By" />
-                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskStatus}" Header="Status" />
-                                                    <GridViewColumn DisplayMemberBinding="{Binding NextActionDate}" Header="NextActionDate" />
-                                                </GridView>
-                                            </ListView.View>
-                                        </ListView>
-                                        
-                                    </Grid>
+                                    <ListView x:Name="_TASK_LIST"   ItemsSource="{Binding TaskList.Tasks.Value}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn DisplayMemberBinding="{Binding TaskType}" Header="TaskType" />
+                                                <GridViewColumn DisplayMemberBinding="{Binding TaskDescription}" Header="Description" />
+                                                <GridViewColumn DisplayMemberBinding="{Binding AssignedTo[0].Id}" Header="Assigned To" />
+                                                <GridViewColumn DisplayMemberBinding="{Binding RequiredByDate}" Header="Required By" />
+                                                <GridViewColumn DisplayMemberBinding="{Binding TaskStatus}" Header="Status" />
+                                                <GridViewColumn DisplayMemberBinding="{Binding NextActionDate}" Header="NextActionDate" />
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
                                     <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
                                     
                                     <!--#region  Edit task -->
