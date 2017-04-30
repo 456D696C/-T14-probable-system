@@ -1,20 +1,21 @@
-﻿<Window x:Class="Simple.TaskManagement.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Simple.TaskManagement"
+﻿<Window x:Class="Simple.TaskManagement.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:local="clr-namespace:Simple.TaskManagement" 
         xmlns:domain="clr-namespace:Simple.TaskManagement.ViewModels"
-        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:datatypes="clr-namespace:Simple.TaskManagement.DataTypes;assembly=Simple.TaskManagement.DataTypes"
+        xmlns:mockups="clr-namespace:Simple.TaskManagement.DataTypes.Mockups"
+        xmlns:validation="clr-namespace:Simple.TaskManagement.Validators" 
+        xmlns:system="clr-namespace:System;assembly=mscorlib" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
+        mc:Ignorable="d" TextElement.Foreground="{DynamicResource MaterialDesignBody}" 
+        TextElement.FontWeight="Regular" TextElement.FontSize="13" 
         TextOptions.TextFormattingMode="Ideal" 
-        TextOptions.TextRenderingMode="Auto"        
-        Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{StaticResource MaterialDesignFont}"
+        TextOptions.TextRenderingMode="Auto" 
+        Background="{DynamicResource MaterialDesignPaper}" 
+        FontFamily="{StaticResource MaterialDesignFont}" 
         Title="{Binding AboutThis.Title}" Height="800" Width="1100">
     <Window.Resources>
         <ResourceDictionary>
@@ -22,192 +23,357 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <Window.DataContext>
-        <local:Locator/>
+        <local:Locator />
     </Window.DataContext>
-    <Grid
-        x:Name="_MAIN_WINDOW_LAYOUT">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid 
-             x:Name="_APP_BAR">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Label>
-                <Run Text="Search bar:"/>
-            </Label>
-            <Border Grid.Column="1" BorderBrush="Red" BorderThickness="0.1" Margin="8,0,0,0">
-                <TextBox  Text="{Binding TextSearch.InputTerm.Value, UpdateSourceTrigger=PropertyChanged}" />
-            </Border>
-            <Border Grid.Column="2">
-                <Button Content=" -> " Command="{Binding TextSearch.Start}"/>
-            </Border>
-        </Grid>
-        <Grid 
-            x:Name="_APP_CONTENT"
-            Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid
-            x:Name="_REGION_TASKS">
-            
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="5"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="5"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-
-                <Grid  x:Name="_NEW_LIST_AREA">
-                    <ListView  x:Name="_NEW_TASK_LIST" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Factory.Next.Value}">
-                        <ListView.Resources>
-                            <DataTemplate DataType="{x:Type domain:NextTaskManagerViewModel}">
-                                <Grid>
-                                    <Border Name="border" BorderBrush="Navy" BorderThickness="1" Padding="5" Margin="5">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition />
-                                                <ColumnDefinition />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Task Name:"/>
-                                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Current.Value.TaskId}" />
-                                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Description:"/>
-                                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Current.Value.TaskDescription}"/>
-                                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Task Type:"/>
-                                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Current.Value.TaskType}"/>
-                                            <Grid Grid.Row="4" Grid.ColumnSpan="2">
-                                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
-                                                    <Button Content="Save"   Command="{Binding SaveAsyncCommand}"    />
-                                                    <Button Content="Cancel" Command="{Binding CancelAsyncCommand}"   />
-                                                </StackPanel>
-                                            </Grid>
-                                        </Grid>
-                                    </Border>
-                                </Grid>
+    <materialDesign:DialogHost x:Name="_ROOT_DIALOG_HOST" Identifier="RootDialog" SnackbarMessageQueue="{Binding ElementName=MainSnackbar, Path=MessageQueue}">
+        <materialDesign:DrawerHost x:Name="_ROOT_DRAWERHOST" IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <DockPanel MinWidth="212" x:Name="_ROOT_DRAWERHOST_LEFT_PANEL">
+                    <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="16" IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" />
+                    <ListBox x:Name="FeaturesListBox" Margin="0 16 0 16" SelectedIndex="0">
+                        <ListBox.Items>
+                            <ListBoxItem>
+                                <TextBlock Text="TASKS" Style="{DynamicResource MaterialDesignHeadlineTextBlock}" />
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <TextBlock Text="CONTACTS" Style="{DynamicResource MaterialDesignHeadlineTextBlock}" />
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <TextBlock Text="COMMENTS" Style="{DynamicResource MaterialDesignHeadlineTextBlock}" />
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <TextBlock Text="ETC." Style="{DynamicResource MaterialDesignHeadlineTextBlock}" />
+                            </ListBoxItem>
+                        </ListBox.Items>
+                    </ListBox>
+                </DockPanel>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+            <materialDesign:DrawerHost.BottomDrawerContent>
+                <StackPanel MinHeight="212" x:Name="_ROOT_DRAWERHOST_BOTTOM_PANEL">
+                    <TextBlock Text="SEARCH RESULTS" />
+                    <ListView x:Name="_TASK_SERACH_RESULT_LIST" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" SelectedValue="{Binding SearchResult.SelectedItem.Value}" ItemsSource="{Binding SearchResult.TaskList.Value}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
                             </DataTemplate>
-                        </ListView.Resources>
+                        </ListView.ItemTemplate>
                     </ListView>
-                </Grid>
-
-                <GridSplitter x:Name="gridSplitter1" Grid.Row="1" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-
-
-                <Grid  x:Name="_TASK_LIST_AREA" Grid.Row="2">
-                    <StackPanel>
-                        <TextBlock Text="TASK LIST AREA"/>
-                        <ListView  x:Name="_TASK_LIST" HorizontalContentAlignment="Stretch" ItemsSource="{Binding TaskList.Tasks.Value}">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <Expander Header="{Binding TaskDescription}">
-                                        <ListView 
-                                HorizontalContentAlignment="Stretch"
-                                ItemsSource="{Binding Comments}">
-                                            <ListView.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Grid>
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="Auto"/>
-                                                            <ColumnDefinition Width="*"/>
-                                                            <ColumnDefinition Width="Auto"/>
-                                                        </Grid.ColumnDefinitions>
-                                                        <TextBlock Text="{Binding Key}" Margin="8 0 8 0"/>
-                                                        <TextBlock Grid.Column="1" Text="{Binding Value.Commentary}" Padding="4 0 4 0"/>
-                                                        <TextBlock Grid.Column="2" Text="{Binding Value.ReminderDate}" />
-                                                    </Grid>
-                                                </DataTemplate>
-                                            </ListView.ItemTemplate>
+                </StackPanel>
+            </materialDesign:DrawerHost.BottomDrawerContent>
+            <DockPanel x:Name="_ROOT_DRAWERHOST_CONTENT_PANEL">
+                <materialDesign:ColorZone x:Name="HeaderColorZone" Mode="PrimaryMid" Padding="16" DockPanel.Dock="Top">
+                    <DockPanel materialDesign:RippleAssist.IsCentered="True">
+                        <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False" x:Name="MenuToggleButton" />
+                        <Button DockPanel.Dock="Right" Style="{DynamicResource MaterialDesignToolForegroundButton}" Margin="8 0 0 0" Panel.ZIndex="0" Command="{Binding Session.PowerOfAsyncCommand}">
+                            <materialDesign:PackIcon Kind="Power" Width="24" Height="24" />
+                        </Button>
+                        <materialDesign:ColorZone Mode="Standard" Padding="1 2 1 1" CornerRadius="2" Panel.ZIndex="1" Margin="16 0 0 0" materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{DynamicResource MaterialDesignToolButton}" Command="{Binding TextSearch.Start}">
+                                    <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
+                                </Button>
+                                <TextBox Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search the simple task management system" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" MinWidth="200" VerticalAlignment="Center" Text="{Binding TextSearch.InputTerm.Value, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Style="{DynamicResource MaterialDesignToolButton}" Grid.Column="2">
+                                    <materialDesign:PackIcon Kind="Microphone" Opacity=".56" Margin="8 0 0 0" />
+                                </Button>
+                            </Grid>
+                        </materialDesign:ColorZone>
+                    </DockPanel>
+                </materialDesign:ColorZone>
+                <materialDesign:ColorZone x:Name="FooterColorZone" Padding="16 0 16 0" materialDesign:ShadowAssist.ShadowDepth="Depth2" Mode="Accent" DockPanel.Dock="Bottom">
+                    <DockPanel HorizontalAlignment="Right" Width="1060">
+                        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 8 0 8" Text="{Binding AboutThis.Title}" />
+                    </DockPanel>
+                </materialDesign:ColorZone>
+                <Grid x:Name="_APP_CONTENT_LAYERS">
+                    <TabControl x:Name="_APP_CONTENT" Grid.Row="1">
+                        <TabItem Header="TASKS" x:Name="_ALL_TAKS_TABITEM">
+                            <Grid x:Name="_ADD_OR_UPDATE_TASK_CONTENT">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid x:Name="_ALL_TAKS_CONTENT">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="5" />
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid x:Name="_REGION_TASKS">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="5" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                       
+                                        <ListView x:Name="_TASK_LIST"   ItemsSource="{Binding TaskList.Tasks.Value}">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskId}" Header="Task Id" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskType}" Header="TaskType" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskStatus}" Header="Status" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding AssignedTo[0].Id}" Header="Assigned To" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskDescription}" Header="Description" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding CreatedDate}" Header="Created" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding RequiredByDate}" Header="Required By" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding NextActionDate}" Header="NextActionDate" />
+                                                </GridView>
+                                            </ListView.View>
                                         </ListView>
-                                    </Expander>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </StackPanel>
+                                        <!--?Use row #3, #4 for create task?-->
+                                    </Grid>
+                                    <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+                                    
+                                    <!--#region  Edit task -->
+                                    <materialDesign:DialogHost x:Name="_EDITABLE_TASK_CONTENT_AREA"  Identifier="TaskEditorDialog"  Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                        <materialDesign:DialogHost.DialogContent>
+                                            <StackPanel Margin="16">
+                                                <TextBlock>Add new message.</TextBlock>
+                                                <TextBox Margin="0 8 0 0" HorizontalAlignment="Stretch" x:Name="FruitTextBox" />
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                    <Button Style="{StaticResource MaterialDesignFlatButton}" IsDefault="True" Margin="0 8 8 0" Command="materialDesign:DialogHost.CloseDialogCommand">
+                                                        <Button.CommandParameter>
+                                                            <system:Boolean>True</system:Boolean>
+                                                        </Button.CommandParameter> ACCEPT
+                                                    </Button>
+                                                    <Button Style="{StaticResource MaterialDesignFlatButton}" IsCancel="True" Margin="0 8 8 0" Command="materialDesign:DialogHost.CloseDialogCommand">
+                                                        <Button.CommandParameter>
+                                                            <system:Boolean>False</system:Boolean>
+                                                        </Button.CommandParameter> CANCEL
+                                                    </Button>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </materialDesign:DialogHost.DialogContent>
+                                        <materialDesign:DrawerHost x:Name="_EDITABLE_TASK_DRAWER_HOST">
+                                            <Grid>
+                                                <ListView VerticalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                                     MinWidth="300"
+                                                     ItemsSource="{Binding TaskList.Tasks.Value}"
+                                                      >
+
+                                                    <ListView.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <StackPanel Orientation="Horizontal"/>
+                                                        </ItemsPanelTemplate>
+                                                    </ListView.ItemsPanel>
+                                                    <ListView.ItemTemplate>
+                                                        <DataTemplate DataType="{x:Type datatypes:Task}">
+
+                                                            <Grid>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="Auto" />
+                                                                    <RowDefinition Height="*" />
+                                                                    <RowDefinition Height="Auto" />
+                                                                </Grid.RowDefinitions>
+                                                                <materialDesign:Card Margin="4 4 0 0">
+                                                                    <Expander>
+                                                                        <Expander.Header>
+                                                                            <TextBox Text="{Binding TaskDescription}" 
+                                                                         materialDesign:HintAssist.Hint="Task Description"
+                                                                         materialDesign:HintAssist.IsFloating="True"
+                                                                         HorizontalAlignment="Stretch"
+                                                                         MaxLength="50"
+                                                                         />
+                                                                        </Expander.Header>
+                                                                    </Expander>
+                                                                </materialDesign:Card>
+
+
+                                                                <!--#region TASK COMMENTS-->
+                                                                <ListBox x:Name="_EDITABLE_COMMENTS_LISTBOX" Grid.Row="1"
+                                                                    ItemsSource="{Binding Comments}"
+                                                                     HorizontalContentAlignment="Stretch"
+                                                                     >
+                                                                    <ListBox.Resources>
+                                                                        <DataTemplate DataType="{x:Type datatypes:Comment}">
+                                                                            <Expander>
+                                                                                <Expander.Header>
+                                                                                    <Grid >
+                                                                                        <Grid.ColumnDefinitions>
+                                                                                            <ColumnDefinition Width="Auto"/>
+                                                                                            <ColumnDefinition/>
+                                                                                        </Grid.ColumnDefinitions>
+                                                                                        <ListBox Grid.Column="0" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" SelectedIndex="0" Margin="4 8 8 4">
+                                                                                            <ListBox.Resources>
+                                                                                                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
+                                                                                                    <Setter Property="Padding" Value="4 6 4 6" />
+                                                                                                </Style>
+                                                                                            </ListBox.Resources>
+
+                                                                                            <ListBoxItem>
+                                                                                                <materialDesign:PackIcon  Kind="Comment" VerticalAlignment="Center" Margin="8 4 4 4"/>
+                                                                                            </ListBoxItem>
+                                                                                            <ListBoxItem>
+                                                                                                <materialDesign:PackIcon  Kind="Note" VerticalAlignment="Center" Margin="8 4 4 4"/>
+                                                                                            </ListBoxItem>
+                                                                                        </ListBox>
+                                                                                        <TextBox Grid.Column="1" x:Name="CommenatryTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="16 8 8 8" MinWidth="200" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="{Binding Number}" 
+                                                                                            Text="{Binding Commentary}"/>
+                                                                                    </Grid>
+                                                                                </Expander.Header>
+                                                                                <Grid>
+
+                                                                                    <Grid.RowDefinitions>
+                                                                                        <RowDefinition/>
+                                                                                        <RowDefinition/>
+                                                                                        <RowDefinition/>
+                                                                                    </Grid.RowDefinitions>
+                                                                                    <TextBox Grid.Row="0" Text="{Binding Number}" materialDesign:HintAssist.Hint="Number" materialDesign:HintAssist.IsFloating="True" HorizontalAlignment="Stretch" Margin="16 8 8 8" />
+                                                                                    <DatePicker Grid.Row="1" SelectedDate="{Binding ReminderDate}" HorizontalAlignment="Stretch" Margin="16 8 8 8" materialDesign:HintAssist.Hint="Reminder" materialDesign:HintAssist.IsFloating="True"/>
+                                                                                    <StackPanel Grid.Column="2" HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
+                                                                                        <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
+                                                                                            materialDesign:RippleAssist.IsCentered="True">
+                                                                                            <materialDesign:PackIcon Kind="Delete" />
+                                                                                        </Button>
+                                                                                    </StackPanel>
+                                                                                </Grid>
+                                                                            </Expander>
+
+                                                                        </DataTemplate>
+                                                                    </ListBox.Resources>
+                                                                </ListBox>
+                                                                <!--#endregion -->
+
+                                                                <materialDesign:Card  Grid.Row="2" Margin="4 4 0 0">
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="Auto"/>
+                                                                            <ColumnDefinition/>
+
+
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition />
+                                                                            <RowDefinition />
+                                                                            <RowDefinition />
+                                                                        </Grid.RowDefinitions>
+                                                                        <materialDesign:PackIcon Grid.Column="0" Kind="Pen" VerticalAlignment="Center" Margin="8 4 4 4"/>
+                                                                        <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" SelectedIndex="0" Margin="4 8 8 4">
+                                                                            <ListBox.Resources>
+                                                                                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
+                                                                                    <Setter Property="Padding" Value="4 6 4 6" />
+                                                                                </Style>
+                                                                            </ListBox.Resources>
+                                                                            <ListBoxItem>
+                                                                                <materialDesign:PackIcon  Kind="Comment" VerticalAlignment="Center" Margin="8 4 4 4"/>
+                                                                            </ListBoxItem>
+                                                                            <ListBoxItem>
+                                                                                <materialDesign:PackIcon  Kind="Note" VerticalAlignment="Center" Margin="8 4 4 4"/>
+                                                                            </ListBoxItem>
+                                                                        </ListBox>
+                                                                        <TextBox Grid.Row="1" Grid.ColumnSpan="2" x:Name="WriteCommenatryOrNoteTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" MinHeight="48" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" materialDesign:HintAssist.IsFloating="True" Text="The written text" 
+                                                                     Padding="16 0 8 0" />
+                                                                        <StackPanel  Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3"  Orientation="Horizontal" Margin="8">
+                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                                <materialDesign:PackIcon Kind="Send" />
+                                                                            </Button>
+                                                                        </StackPanel>
+                                                                        <StackPanel Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal" Margin="8">
+                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                                <materialDesign:PackIcon Kind="Database" />
+                                                                            </Button>
+                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                                <materialDesign:PackIcon Kind="Printer" />
+                                                                            </Button>
+                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                                <materialDesign:PackIcon Kind="Email" />
+                                                                            </Button>
+                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                                <materialDesign:PackIcon Kind="Pulse" />
+                                                                            </Button>
+                                                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                                                <materialDesign:PackIcon Kind="ShareVariant" />
+                                                                            </Button>
+                                                                            <materialDesign:PopupBox Style="{StaticResource MaterialDesignToolPopupBox}" Padding="2 0 2 0">
+                                                                                <StackPanel>
+                                                                                    <Button Content="More" />
+                                                                                    <Button Content="Options" />
+                                                                                </StackPanel>
+                                                                            </materialDesign:PopupBox>
+                                                                        </StackPanel>
+                                                                    </Grid>
+                                                                </materialDesign:Card>
+                                                            </Grid>
+
+
+                                                        </DataTemplate>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
+                                                <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="TaskEditorSnackbar" />
+                                                <materialDesign:Snackbar Message="hello task editor 1" IsActive="True" x:Name="TaskEditorSnackbarTest" />
+                                            </Grid>
+
+                                        </materialDesign:DrawerHost>
+                                        
+                                    </materialDesign:DialogHost>
+                                    <!--#endregion-->    
+
+                                </Grid>
+                               
+                                <materialDesign:Card x:Name="_NEW_TASK_AREA" Grid.Row="1" Margin="4 4 0 0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+
+
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <materialDesign:PackIcon Grid.Column="0" Kind="Pen" VerticalAlignment="Center" Margin="8 4 4 4"/>
+                                        <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" SelectedIndex="0" Margin="4 8 8 4">
+                                            <ListBox.Resources>
+                                                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
+                                                    <Setter Property="Padding" Value="4 6 4 6" />
+                                                </Style>
+                                            </ListBox.Resources>
+                                            <ListBoxItem>
+                                                <materialDesign:PackIcon  Kind="Comment" VerticalAlignment="Center" Margin="8 4 4 4"/>
+                                            </ListBoxItem>
+                                            <ListBoxItem>
+                                                <materialDesign:PackIcon  Kind="Note" VerticalAlignment="Center" Margin="8 4 4 4"/>
+                                            </ListBoxItem>
+                                        </ListBox>
+                                        <TextBox Grid.Row="1" Grid.ColumnSpan="2" x:Name="NextTaskNameTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" MinHeight="48" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" materialDesign:HintAssist.IsFloating="True" Text="The written text" 
+                                                                     Padding="16 0 8 0" />
+                                        <StackPanel  Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3"  Orientation="Horizontal" Margin="8">
+                                            <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
+                                                <materialDesign:PackIcon Kind="Send" />
+                                            </Button>
+                                        </StackPanel>
+                                        
+                                    </Grid>
+                                </materialDesign:Card>
+                                <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" PlacementMode="LeftAndAlignMiddles" UnfurlOrientation="Horizontal" ToolTip="Manage items" Margin="0 0 0 -24" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button ToolTip="Add an item" Command="{Binding Factory.StartAsyncCommand}">
+                                            <Path Data="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" Stretch="Uniform" Width="15" Height="15" Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" />
+                                        </Button>
+                                        <Button ToolTip="Remove selected item" Command="{Binding Factory.StartAsyncCommand}">
+                                            <Path Data="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" Stretch="Uniform" Width="15" Height="15" Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" />
+                                        </Button>
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar" />
+                    <materialDesign:Snackbar Message="hello 1" IsActive="True" x:Name="SnackbarTest" />
                 </Grid>
-
-                <GridSplitter x:Name="gridSplitter2" Grid.Row="3" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-
-                <Grid Grid.Row="4" x:Name="_TASK_SERACH_RESULT_AREA">
-                    <StackPanel>
-                        <TextBlock Text="SEARCH RESULTS"/>
-                        <ListView x:Name="_TASK_SERACH_RESULT_LIST" 
-                          HorizontalContentAlignment="Stretch" 
-                          SelectedValue="{Binding SearchResult.SelectedItem.Value}"
-                          ItemsSource="{Binding SearchResult.TaskList.Value}">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <Expander Header="{Binding TaskDescription}">
-                                        <ListView 
-                                HorizontalContentAlignment="Stretch"
-                                ItemsSource="{Binding Comments}">
-                                            <ListView.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Grid>
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="Auto"/>
-                                                            <ColumnDefinition Width="*"/>
-                                                            <ColumnDefinition Width="Auto"/>
-                                                        </Grid.ColumnDefinitions>
-                                                        <TextBlock Text="{Binding Key}" Margin="8 0 8 0"/>
-                                                        <TextBlock Grid.Column="1" Text="{Binding Value.Commentary}" Padding="4 0 4 0"/>
-                                                        <TextBlock Grid.Column="2" Text="{Binding Value.ReminderDate}" />
-                                                    </Grid>
-                                                </DataTemplate>
-                                            </ListView.ItemTemplate>
-                                        </ListView>
-                                    </Expander>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </StackPanel>
-                </Grid>
-
-            </Grid>
-            <GridSplitter x:Name="gridSplitter0" Grid.Column="1" Width="21" Height="5"  Background="#FF03A9F4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-            <Grid x:Name="_REGION_MISC" Grid.Column="2">
-                <TabControl x:Name="_FEATURES_TABS">
-                    <TabItem x:Name="_COOL_FEATURE_TAB_ITEM">
-                        <TabItem.Header>
-                            <TextBlock Text="COOL FEATURE" />
-                        </TabItem.Header>
-                        <Grid x:Name="_COOL_FEATURE_LAYOUT"/>
-                    </TabItem>
-                    <TabItem x:Name="_YET_ANOTHER_COOL_FEATURE_TAB_ITEM">
-                        <TabItem.Header>
-                            <TextBlock Text="YET ANOTHER COOL FEATURE" />
-                        </TabItem.Header>
-                        <Grid x:Name="_YET_ANOTHER_COOL_FEATURE_LAYOUT"/>
-                    </TabItem>
-                </TabControl>
-            </Grid>
-        </Grid>
-        <Grid Grid.Row="2" 
-              HorizontalAlignment="Center" >
-            <Button Command="{Binding Factory.StartAsyncCommand}">
-                <TextBlock Text="+" MinWidth="50"
-                           TextAlignment="Center"
-                           VerticalAlignment="Center"/>
-            </Button>
-        </Grid>
-    </Grid>
+            </DockPanel>
+        </materialDesign:DrawerHost>
+    </materialDesign:DialogHost>
 </Window>

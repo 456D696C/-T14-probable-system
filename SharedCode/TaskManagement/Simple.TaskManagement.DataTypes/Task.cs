@@ -11,9 +11,10 @@ namespace Simple.TaskManagement.DataTypes
         public string TaskDescription { get; set; }
         public TaskStatus? TaskStatus { get; set; }
         public TaskType? TaskType { get; set; }
-        public Dictionary<string,Contact> AssignedTo { get; set; }
-        public Dictionary<string,Comment> Comments { get; set; }
+        public List<Contact> AssignedTo { get; set; }
+        public List<Comment> Comments { get; set; }
+        public string TaskNumber { get; set; }
         public string TaskId { get; set; }
-        //public string NextActionDate { get; set; }
+        public DateTimeOffset NextActionDate { get; set; }
     }
 }

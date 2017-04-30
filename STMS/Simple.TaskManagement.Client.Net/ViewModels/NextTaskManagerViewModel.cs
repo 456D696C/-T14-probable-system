@@ -37,8 +37,8 @@ namespace Simple.TaskManagement.ViewModels
             {
                 TaskId = "#next",
                 TaskDescription = "<TaskDescription>",
-                AssignedTo = new Dictionary<string, DataTypes.Contact>(),
-                Comments = new Dictionary<string, DataTypes.Comment>(),
+                AssignedTo = new List<DataTypes.Contact>(),
+                Comments = new List<DataTypes.Comment>()
             });
 
             SaveAsyncCommand = this.ShareSource.ToAsyncReactiveCommand();

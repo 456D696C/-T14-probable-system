@@ -13,61 +13,6 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
         public Simple.TaskManagement.DataTypes.Task[] TaskList => AdvancedTaskList();
 
-        #region Simple task list
-        Simple.TaskManagement.DataTypes.Task[] SimpleTaskList() => new DataTypes.Task[]
-        {
-                    new DataTypes.Task()
-                    {
-                        TaskId = "1",
-                        TaskDescription = "Remember The Milk",
-
-
-                        Comments = new Dictionary<string, Comment>()
-                        {
-                            { "1.1", new Comment() { Commentary="for simple task management without distraction"} }
-
-                        },
-                    },
-
-                    new DataTypes.Task()
-                    {
-                        TaskId = "2",
-                        TaskDescription = "Everyday",
-
-                        Comments = new Dictionary<string, Comment>()
-                        {
-                            { "2.1", new Comment() {  Commentary="for quickly swiping through projects"} }
-
-                        },
-                    },
-                    //Clear 	Clear 	simple, gesture-based interface
-                    new DataTypes.Task()
-                    {
-                        TaskId = "3",
-                        TaskDescription = "Clear",
-
-
-                        Comments = new Dictionary<string, Comment>()
-                        {
-                            { "3.1", new Comment() {  Commentary="simple, gesture-based interface"} }
-
-                        },
-                    },
-                    //Swipes 	Swipes 	snoozing your tasks until you're ready to do them
-                    new DataTypes.Task()
-                    {
-                        TaskId = "4",
-                        TaskDescription = "Swipes",
-
-                        Comments = new Dictionary<string, Comment>()
-                        {
-                            { "4.1", new Comment() {   Commentary="snoozing your tasks until you're ready to do them"} }
-
-                        },
-                    }
-        };
-        #endregion
-
         #region Advanced task list
 
         Simple.TaskManagement.DataTypes.Task[] AdvancedTaskList() => new DataTypes.Task[]
@@ -88,67 +33,71 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
 
             TaskType = TaskType.Analysis,
+            TaskStatus = TaskStatus.Completed,
 
             RequiredByDate = DateTime.Parse("2017-01-01"),
 
             TaskDescription = "The concept of T14 was born",
 
-            AssignedTo = new Dictionary<string, Contact>()
-            {
-                { "applicant@abv.bg", new Contact() }
-            },
+            AssignedTo = new List<Contact>(new Contact[] { new Contact() { Id = "applicant@abv.bg" } }),
 
-            Comments = new Dictionary<string, Comment>()
+            Comments = new List<Comment>(new Comment[]
             {
-                { "1.", new Comment()
+                 new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        Number = "1.",
+                        CommentType = CommentType.Item,
+                        ReminderDate = DateTime.Now.AddDays(3),
                         Commentary = "Analyze the task."
-                    }
-                },
+                    },
 
-                 { "2.", new Comment()
+
+                 new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                     Number = "2.",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Understand the problem area."
-                    }
-                },
+                    },
 
 
-                { "3.", new Comment()
+
+                new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                    Number = "3.",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Examine existing solutions."
-                    }
-                },
+                    },
 
-                { "4.", new Comment()
+
+
+
+                 new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                    Number = "4.",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Evaluate available resources."
-                    }
-                },
+                    },
 
-                { "4.1", new Comment()
+
+                 new Comment()
                     {
-                        CommentType = CommentType.SubTaskItem,
+                    Number = "4.1",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "such as time"
-                    }
-                },
-                { "4.2", new Comment()
+                    },
+
+                new Comment()
                     {
-                        CommentType = CommentType.SubTaskItem,
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "such as time",
-                    }
-                },
-            }
+                    },
 
+            })
         };
         #endregion
 
@@ -163,68 +112,68 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "Research, Research, Research existing solutions.",
 
-            AssignedTo = new Dictionary<string, Contact>()
-            {
-                { "applicant@abv.bg", new Contact() }
-            },
+            AssignedTo = new List<Contact>(new Contact[] { new Contact() { Id = "applicant@abv.bg" } }),
 
-            Comments = new Dictionary<string, Comment>()
-            {
-                { "1.", new Comment()
+
+            Comments = new List<Comment>(new Comment[]
+        {
+                new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        Number = "1",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Simple task management systems."
-                    }
-                },
+                    },
 
-                { "1.1", new Comment()
+
+                    new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        Number= "1.1",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Simple task management systems i.e. 
                                        http://www.capterra.com/task-management-software/ 
                                      ."
-                    }
-                },
+                    },
 
-                { "1.2", new Comment()
+
+                    new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        Number="1.2",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Simple task management systems i.e. 
                                       https://xbsoftware.com/case-studies-webdev/project-management-tool-for-communications-portal/."
-                    }
-                },
+                    },
 
 
-                 { "2.", new Comment()
+
+                    new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        Number = "2.",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Cool 'TODO' apps at https://zapier.com/blog/best-todo-list-apps/"
-                    }
-                },
+                    },
 
-                 { "2.1", new Comment()
+
+                    new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        Number = "2.1",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Remember the milk https://zapier.com/blog/best-todo-list-apps/#remember"
-                    }
-                },
+                    },
 
-                 { "2.2", new Comment()
+
+                    new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                     Number = "2.2",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = "Everyday https://zapier.com/blog/best-todo-list-apps/#everyday"
                     }
-                },
-
-            }
-
-        };
+        })};
         #endregion
 
         #region Prototype
@@ -237,31 +186,26 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "Developed prototypes.",
 
-            AssignedTo = new Dictionary<string, Contact>()
-            {
-                { "applicant@abv.bg", new Contact() }
-            },
+            AssignedTo = new List<Contact>(new Contact[] { new Contact() { Id = "applicant@abv.bg" } }),
 
-            Comments = new Dictionary<string, Comment>()
+            Comments = new List<Comment>(new Comment[]
             {
-                { "1.", new Comment()
+                new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                    Number = "1.",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Developed very first prototypes were developed."
-                    }
-                },
+                    },
 
-                { "1.1", new Comment()
+                new Comment()
                     {
+                        Number = "1",
                         CommentType = CommentType.Note,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"The very first prototypes were developed."
                     }
-                },
-
-            }
-
+        })
         };
         #endregion
 
@@ -276,31 +220,26 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "Developed Project.",
 
-            AssignedTo = new Dictionary<string, Contact>()
-            {
-                { "applicant@abv.bg", new Contact() }
-            },
+            AssignedTo = new List<Contact>(new Contact[] { new Contact() { Id = "applicant@abv.bg" } }),
 
-            Comments = new Dictionary<string, Comment>()
+            Comments = new List<Comment>(new Comment[]
             {
-                { "1.", new Comment()
+                 new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        Number = "1.",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Developing some of the core software features."
-                    }
-                },
+                    },
 
-                { "2.", new Comment()
+                new Comment()
                     {
+                        Number = "2.",
                         CommentType = CommentType.Note,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Develop the rest."
                     }
-                },
-
-            }
-
+            })
         };
         #endregion
 
@@ -316,16 +255,14 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskDescription = "Invent a good name for the product.",
 
-            AssignedTo = new Dictionary<string, Contact>()
-            {
-                { "applicant@abv.bg", new Contact() }
-            },
+            AssignedTo = new List<Contact>(new Contact[] { new Contact() { Id = "applicant@abv.bg" } }),
 
-            Comments = new Dictionary<string, Comment>()
+            Comments = new List<Comment>(new Comment[]
             {
-                { "1.", new Comment()
+                new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                        Number = "1.",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary =
                     @"The code name T14 comes from а game of words
@@ -334,23 +271,43 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                         the popular T4 template feature.
                         The 'T14-probable-system' is the name automatically generated by git,
                         вhich began to appeal to me in time."
-                    }
-                },
+                    },
 
-                { "2.", new Comment()
+                new Comment()
                     {
-                        CommentType = CommentType.SubTaks,
+                    Number = "2.",
+                        CommentType = CommentType.Item,
                         ReminderDate = DateTime.Now.AddDays(-3),
                         Commentary = @"Invent a good name for the product."
                     }
-                },
 
-            }
 
+            })
         };
         #endregion
 
         #endregion
 
+        #region Task Types
+        public IEnumerable<TaskType> TaskTypes
+        {
+            get
+            {
+                return Enum.GetValues(typeof(TaskType))
+                    .OfType<TaskType>();
+            }
+        }
+        #endregion
+
+        #region Task Types
+        public IEnumerable<TaskStatus> TaskStatuses
+        {
+            get
+            {
+                return Enum.GetValues(typeof(TaskStatus))
+                    .OfType<TaskStatus>();
+            }
+        }
+        #endregion
     }
 }
