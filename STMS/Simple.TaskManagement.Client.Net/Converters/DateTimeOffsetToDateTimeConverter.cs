@@ -19,26 +19,36 @@ namespace Simple.TaskManagement.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var dateTimeOffsetValue = value as DateTimeOffset?;
+            if (value == null)
+                return DependencyProperty.UnsetValue;
 
-            return dateTimeOffsetValue == null ? DependencyProperty.UnsetValue : dateTimeOffsetValue.Value.UtcDateTime.Date;
+            if (targetType.IsAssignableFrom(typeof(DateTime)))
+            {
+                if (value == null) return DependencyProperty.UnsetValue;
+                if( value is string & $"{value}".Trim()=="") return DependencyProperty.UnsetValue;
+                return DateTime.ParseExact($"{value}", DataTypes.Constant.DateTimeFormat, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.AssumeUniversal);
+            }
+
+            if (targetType == typeof(string))
+                if (value is string) return value;
+
+#if DEBUG
+            throw new NotImplementedException($"I don't understend {new { value, @typeof = value?.GetType() }} to {new { targetType }} conversion");
+#else
+            return value;
+#endif
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var stringValue = value as string;
+            if (targetType != typeof(string))
+                return value;
 
+            if(value == null) return (string)null;
+            if(value == DependencyProperty.UnsetValue) return (string)null;
 
-            DateTime date; 
-            if (stringValue!=null && (stringValue = $"{stringValue}").Trim() != "" &&
-                    DateTime.TryParseExact(stringValue, "dd-MMM-yyyy",DateTimeFormatInfo.InvariantInfo,DateTimeStyles.AssumeUniversal,out date))
-                    return (DateTimeOffset)date.ToUniversalTime();
-
-            if (stringValue == "") return (DateTimeOffset?)null;
-
-            var dateTimeValue = value as DateTime?;
-   
-            if (null != dateTimeValue) return (DateTimeOffset)dateTimeValue.Value.ToUniversalTime();
+            if (value.GetType().IsAssignableFrom(typeof(DateTime)))
+                return (value as DateTime?)?.ToUniversalTime().ToString(DataTypes.Constant.DateTimeFormat, DateTimeFormatInfo.InvariantInfo);
 
             return value;
         }

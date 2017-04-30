@@ -148,7 +148,7 @@
                                                                ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Contacts}" 
                                                                    />
                                             
-                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
+                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:yyyy-MM-dd}}"
                                                                Header="Required By"                                                        
                                                                EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
 
@@ -162,7 +162,7 @@
 
                                             <!-- How to deal with datetime offset collumn -->
                                             
-                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
+                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:yyyy-MM-dd}}"
                                                                Header="Next action date"                                                        
                                                                EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
 

@@ -35,8 +35,8 @@ namespace Simple.TaskManagement.DataTypes.Mockups
             TaskType = TaskType.Analysis,
             TaskStatus = TaskStatus.Completed,
 
-            NextActionDate = DateTime.Parse("2017-04-01"),
-            RequiredByDate = DateTime.Parse("2017-04-01"),
+            NextActionDate = "2017-04-01",
+            RequiredByDate = "2017-04-01",
 
             TaskDescription = "The concept of T14 was born",
 
@@ -48,7 +48,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number = "1.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(3),
+                        ReminderDate = DateTime.Now.AddDays(3).ToString(Constant.DateTimeFormat),
                         Commentary = "Analyze the task."
                     },
 
@@ -57,7 +57,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                      Number = "2.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = "Understand the problem area."
                     },
 
@@ -67,7 +67,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                     Number = "3.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = "Examine existing solutions."
                     },
 
@@ -78,7 +78,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                     Number = "4.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = "Evaluate available resources."
                     },
 
@@ -87,14 +87,14 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                     Number = "4.1",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = "such as time"
                     },
 
                 new Comment()
                     {
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = "such as time",
                     },
 
@@ -109,9 +109,9 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Analysis,
 
-            RequiredByDate = DateTime.Parse("2017-02-03"),
+            RequiredByDate = "2017-02-03",
 
-            NextActionDate = DateTime.Parse("2017-02-07"),
+            NextActionDate = "2017-02-07",
 
             TaskDescription = "Research, Research, Research existing solutions.",
 
@@ -124,7 +124,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number = "1",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = @"Simple task management systems."
                     },
 
@@ -133,7 +133,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number= "1.1",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = @"Simple task management systems i.e. 
                                        http://www.capterra.com/task-management-software/ 
                                      ."
@@ -144,7 +144,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number="1.2",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = @"Simple task management systems i.e. 
                                       https://xbsoftware.com/case-studies-webdev/project-management-tool-for-communications-portal/."
                     },
@@ -155,7 +155,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number = "2.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = "Cool 'TODO' apps at https://zapier.com/blog/best-todo-list-apps/"
                     },
 
@@ -164,7 +164,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number = "2.1",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = "Remember the milk https://zapier.com/blog/best-todo-list-apps/#remember"
                     },
 
@@ -173,7 +173,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                      Number = "2.2",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = "Everyday https://zapier.com/blog/best-todo-list-apps/#everyday"
                     }
         })};
@@ -185,7 +185,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Prototype,
 
-            RequiredByDate = DateTime.Parse("2017-01-01"),
+            RequiredByDate = "2017-01-01",
 
             TaskDescription = "Developed prototypes.",
 
@@ -197,7 +197,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                     Number = "1.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = @"Developed very first prototypes were developed."
                     },
 
@@ -205,7 +205,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number = "1",
                         CommentType = CommentType.Note,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = @"The very first prototypes were developed."
                     }
         })
@@ -219,7 +219,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Develop,
 
-            RequiredByDate = DateTime.Parse("2017-01-01"),
+            RequiredByDate = "2017-01-01",
 
             TaskDescription = "Developed Project.",
 
@@ -231,7 +231,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number = "1.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =   DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = @"Developing some of the core software features."
                     },
 
@@ -239,7 +239,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number = "2.",
                         CommentType = CommentType.Note,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = @"Develop the rest."
                     }
             })
@@ -254,7 +254,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Market,
 
-            RequiredByDate = DateTime.Parse("2017-01-01"),
+            RequiredByDate = "2017-07-07",
 
             TaskDescription = "Invent a good name for the product.",
 
@@ -266,7 +266,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                         Number = "1.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary =
                     @"The code name T14 comes from а game of words
                         Task for Task-ing
@@ -280,7 +280,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
                     {
                     Number = "2.",
                         CommentType = CommentType.Item,
-                        ReminderDate = DateTime.Now.AddDays(-3),
+                        ReminderDate =  DateTime.Now.AddDays(-3).ToString(Constant.DateTimeFormat),
                         Commentary = @"Invent a good name for the product."
                     }
 
