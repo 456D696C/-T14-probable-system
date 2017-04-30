@@ -119,18 +119,16 @@
                                         <ListView x:Name="_TASK_LIST"   ItemsSource="{Binding TaskList.Tasks.Value}">
                                             <ListView.View>
                                                 <GridView>
-                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskId}" Header="Task Id" />
                                                     <GridViewColumn DisplayMemberBinding="{Binding TaskType}" Header="TaskType" />
-                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskStatus}" Header="Status" />
-                                                    <GridViewColumn DisplayMemberBinding="{Binding AssignedTo[0].Id}" Header="Assigned To" />
                                                     <GridViewColumn DisplayMemberBinding="{Binding TaskDescription}" Header="Description" />
-                                                    <GridViewColumn DisplayMemberBinding="{Binding CreatedDate}" Header="Created" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding AssignedTo[0].Id}" Header="Assigned To" />
                                                     <GridViewColumn DisplayMemberBinding="{Binding RequiredByDate}" Header="Required By" />
+                                                    <GridViewColumn DisplayMemberBinding="{Binding TaskStatus}" Header="Status" />
                                                     <GridViewColumn DisplayMemberBinding="{Binding NextActionDate}" Header="NextActionDate" />
                                                 </GridView>
                                             </ListView.View>
                                         </ListView>
-                                        <!--?Use row #3, #4 for create task?-->
+                                        
                                     </Grid>
                                     <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
                                     
