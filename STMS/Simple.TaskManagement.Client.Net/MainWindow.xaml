@@ -115,6 +115,8 @@
                                             materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8"
                                               ItemsSource="{Binding TaskList.Tasks.Value}" 
                                               SelectedItem="{Binding TaskList.SelectedItem.Value, Mode=TwoWay}"
+                                              SelectionMode="Single"
+                                              SelectionUnit="FullRow"
                                               >
 
                                         <DataGrid.Columns>
