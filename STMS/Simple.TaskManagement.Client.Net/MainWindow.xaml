@@ -147,11 +147,24 @@
                                                                SelectedValueBinding ="{Binding AssignedTo, Converter={convert:ContactToListListConverter}}"                                             
                                                                ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Contacts}" 
                                                                    />
-                                            
-                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:yyyy-MM-dd}}"
-                                                               Header="Required By"                                                        
-                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
 
+                                            <!--<materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:yyyy-MM-dd}}"
+                                                               Header="Required By"                                                        
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />-->
+                                            <DataGridTemplateColumn Header="Required By"  >
+                                                <DataGridTemplateColumn.CellTemplate >
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding RequiredByDate}" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                                <DataGridTemplateColumn.CellEditingTemplate>
+                                                    <DataTemplate>
+                                                        <DatePicker SelectedDate="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:yyyy-MM-dd}}" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellEditingTemplate>
+                                            </DataGridTemplateColumn>
+
+                            
 
                                             <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
                                             <materialDesign:MaterialDataGridComboBoxColumn Header="Status"        
@@ -163,8 +176,10 @@
                                             <!-- How to deal with datetime offset collumn -->
                                             
                                             <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:yyyy-MM-dd}}"
-                                                               Header="Next action date"                                                        
-                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
+                                                               Header="Next action date"   
+                                                               IsReadOnly="True"
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  
+                                                                                       />
 
                                         </DataGrid.Columns>
                                     </DataGrid>
@@ -266,7 +281,7 @@
                                                                                         <RowDefinition/>
                                                                                     </Grid.RowDefinitions>
                                                                                     <TextBox Grid.Row="0" Text="{Binding Number}" materialDesign:HintAssist.Hint="Number" materialDesign:HintAssist.IsFloating="True" HorizontalAlignment="Stretch" Margin="16 8 8 8" />
-                                                                                    <DatePicker Grid.Row="1" SelectedDate="{Binding ReminderDate}" HorizontalAlignment="Stretch" Margin="16 8 8 8" materialDesign:HintAssist.Hint="Reminder" materialDesign:HintAssist.IsFloating="True"/>
+                                                                                    <DatePicker Grid.Row="1" SelectedDate="{Binding ReminderDate, Converter={convert:DateTimeOffsetToDateTimeConverter}}" HorizontalAlignment="Stretch" Margin="16 8 8 8" materialDesign:HintAssist.Hint="Reminder" materialDesign:HintAssist.IsFloating="True"/>
                                                                                     <StackPanel Grid.Column="2" HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
                                                                                         <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
                                                                                             materialDesign:RippleAssist.IsCentered="True">

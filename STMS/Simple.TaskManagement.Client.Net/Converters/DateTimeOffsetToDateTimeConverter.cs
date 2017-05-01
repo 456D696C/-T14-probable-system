@@ -26,7 +26,7 @@ namespace Simple.TaskManagement.Converters
             {
                 if (value == null) return DependencyProperty.UnsetValue;
                 if( value is string & $"{value}".Trim()=="") return DependencyProperty.UnsetValue;
-                return DateTime.ParseExact($"{value}", DataTypes.Constant.DateTimeFormat, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.AssumeUniversal);
+                if (value is string) return DateTime.ParseExact($"{value}", DataTypes.Constant.DateTimeFormat, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.AssumeUniversal);
             }
 
             if (targetType == typeof(string))
