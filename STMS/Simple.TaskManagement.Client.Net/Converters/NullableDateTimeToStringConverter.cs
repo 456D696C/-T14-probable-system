@@ -13,7 +13,7 @@ using System.Globalization;
 
 namespace Simple.TaskManagement.Converters
 {
-    public class DateTimeOffsetToDateTimeConverter: MarkupExtension, IValueConverter
+    public class NullableDateTimeToStringConverter: MarkupExtension, IValueConverter
     {
         
 

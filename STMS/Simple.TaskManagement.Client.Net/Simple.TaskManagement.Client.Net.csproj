@@ -127,7 +127,7 @@
     </ApplicationDefinition>
     <Compile Include="ClientService.cs" />
     <Compile Include="Converters\ContactToListListConverter.cs" />
-    <Compile Include="Converters\DateTimeOffsetToDateTimeConverter.cs" />
+    <Compile Include="Converters\NullableDateTimeToStringConverter.cs" />
     <Compile Include="Events\Result.cs" />
     <Compile Include="Events\Search.cs" />
     <Compile Include="Events\Selection.cs" />
