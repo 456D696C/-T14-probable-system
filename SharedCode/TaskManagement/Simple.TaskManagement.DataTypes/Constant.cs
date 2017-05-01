@@ -6,6 +6,6 @@ namespace Simple.TaskManagement.DataTypes
 {
     public static class Constant
     {
-        public const string DateTimeFormat = "yyyy-MM-dd";
+        public const string DateTimeFormat = "dd/MM/yyyy";
     }
 }

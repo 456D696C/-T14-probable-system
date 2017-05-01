@@ -35,8 +35,8 @@ namespace Simple.TaskManagement.DataTypes.Mockups
             TaskType = TaskType.Analysis,
             TaskStatus = TaskStatus.Completed,
 
-            NextActionDate = "2017-04-01",
-            RequiredByDate = "2017-04-01",
+            NextActionDate = "01/04/2017",
+            RequiredByDate = "01/04/2017",
 
             TaskDescription = "The concept of T14 was born",
 
@@ -109,9 +109,9 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Analysis,
 
-            RequiredByDate = "2017-02-03",
+            RequiredByDate = "03/03/2017",
 
-            NextActionDate = "2017-02-07",
+            NextActionDate = "03/03/2017",
 
             TaskDescription = "Research, Research, Research existing solutions.",
 
@@ -185,7 +185,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Prototype,
 
-            RequiredByDate = "2017-01-01",
+            RequiredByDate = "07/07/2017",
 
             TaskDescription = "Developed prototypes.",
 
@@ -219,7 +219,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Develop,
 
-            RequiredByDate = "2017-01-01",
+            RequiredByDate = "08/08/2017",
 
             TaskDescription = "Developed Project.",
 
