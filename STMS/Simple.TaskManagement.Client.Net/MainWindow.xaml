@@ -176,11 +176,9 @@
 
                                             <!-- How to deal with datetime offset collumn -->
                                             
-                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate, Converter={convert:NullableDateTimeToStringConverter}, StringFormat={}{0:dd/MM/yyy}}"
+                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate}"
                                                                Header="Next action date"   
-                                                               IsReadOnly="True"
-                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  
-                                                                                       />
+                                                               IsReadOnly="True"  />
 
                                         </DataGrid.Columns>
                                     </DataGrid>
