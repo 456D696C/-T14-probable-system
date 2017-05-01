@@ -211,7 +211,7 @@
                                             <Grid>
                                                 <ListView VerticalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled"
                                                      MinWidth="300"
-                                                     ItemsSource="{Binding TaskList.Tasks.Value}"
+                                                     ItemsSource="{Binding TaskManager.Editor.Value}"
                                                       >
 
                                                     <ListView.ItemsPanel>

@@ -141,7 +141,9 @@
     <Compile Include="ViewModels\NextTaskFactoryViewModel.cs" />
     <Compile Include="ViewModels\NextTaskManagerViewModel.cs" />
     <Compile Include="ViewModels\SearchResultViewModel.cs" />
+    <Compile Include="ViewModels\TaskEditor.cs" />
     <Compile Include="ViewModels\TaskListViewModel.cs" />
+    <Compile Include="ViewModels\TaskManagerViewModel.cs" />
     <Compile Include="ViewModels\TextSearchViewModel.cs" />
     <Compile Include="ViewModels\VisualNotificationQueue.cs" />
     <Compile Include="ViewModels\VisualNotificationSystemViewModel.cs" />
