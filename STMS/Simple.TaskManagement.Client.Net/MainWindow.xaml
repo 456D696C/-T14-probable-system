@@ -384,18 +384,19 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
                                         <materialDesign:PackIcon Grid.Column="0" Kind="Pen" VerticalAlignment="Center" Margin="8 4 4 4"/>
-                                        <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" SelectedIndex="0" Margin="4 8 8 4">
+                                        <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" SelectedIndex="0" Margin="4 8 8 4" 
+                                                 ItemsSource="{Binding TaskTypes}">
                                             <ListBox.Resources>
                                                 <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
                                                     <Setter Property="Padding" Value="4 6 4 6" />
                                                 </Style>
                                             </ListBox.Resources>
-                                            <ListBoxItem>
+                                            <!--<ListBoxItem>
                                                 <materialDesign:PackIcon  Kind="Comment" VerticalAlignment="Center" Margin="8 4 4 4"/>
                                             </ListBoxItem>
                                             <ListBoxItem>
                                                 <materialDesign:PackIcon  Kind="Note" VerticalAlignment="Center" Margin="8 4 4 4"/>
-                                            </ListBoxItem>
+                                            </ListBoxItem>-->
                                         </ListBox>
                                         <TextBox Grid.Row="1" 
                                                  Grid.ColumnSpan="2" 

@@ -50,6 +50,16 @@ namespace Simple.TaskManagement
                     .OfType<DataTypes.TaskType>();
             }
         }
+
+        public IEnumerable<DataTypes.TaskType> NewTaskTypes
+        {
+            get
+            {
+                return Enum.GetValues(typeof(DataTypes.TaskType))
+                    .OfType<DataTypes.TaskType>().Where(x=>x>0);
+            }
+        }
+
         #endregion
 
         #region Task Statuses
@@ -61,6 +71,16 @@ namespace Simple.TaskManagement
                     .OfType<DataTypes.TaskStatus>();
             }
         }
+
+        public IEnumerable<DataTypes.TaskStatus> TaskNewStatuses
+        {
+            get
+            {
+                return Enum.GetValues(typeof(DataTypes.TaskStatus))
+                    .OfType<DataTypes.TaskStatus>().Where(x=>x > 0);
+            }
+        }
+
         #endregion
 
 
