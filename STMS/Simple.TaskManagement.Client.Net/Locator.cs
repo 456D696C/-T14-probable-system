@@ -21,7 +21,10 @@ namespace Simple.TaskManagement
         public TextSearchViewModel TextSearch { get; }
         public SearchResultViewModel SearchResult { get; }
         public NextTaskFactoryViewModel Factory { get; }
-        public VisualNotificationSystemViewModel VisualNotifications { get; }
+        public VisualNotificationSystemViewModel MainVisualNotifications { get; }
+        public VisualNotificationSystemViewModel TaskEditorVisualNotifications { get; }
+
+
 
         public Locator()
         {
@@ -33,11 +36,16 @@ namespace Simple.TaskManagement
             TextSearch = container.Resolve<TextSearchViewModel>();
             SearchResult = container.Resolve<SearchResultViewModel>();
             Factory = container.Resolve<NextTaskFactoryViewModel>();
-            VisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
+            MainVisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
+            TaskEditorVisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
+
 
 
             container.Resolve<IClientService>().StartAsync().Wait();
-  
+
+            MainVisualNotifications.Enqueue($"{AboutThis.Title} up and running".ToUpperInvariant());
+            TaskEditorVisualNotifications.Enqueue($"\n\n\n\tSketch your great ideas here\t\n\n\n".ToUpperInvariant());
+
         }
 
 
