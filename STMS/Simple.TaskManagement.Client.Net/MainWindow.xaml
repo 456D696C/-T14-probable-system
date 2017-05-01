@@ -397,8 +397,15 @@
                                                 <materialDesign:PackIcon  Kind="Note" VerticalAlignment="Center" Margin="8 4 4 4"/>
                                             </ListBoxItem>
                                         </ListBox>
-                                        <TextBox Grid.Row="1" Grid.ColumnSpan="2" x:Name="NextTaskNameTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" MinHeight="48" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" materialDesign:HintAssist.IsFloating="True" Text="The written text" 
-                                                                     Padding="16 0 8 0" />
+                                        <TextBox Grid.Row="1" 
+                                                 Grid.ColumnSpan="2" 
+                                                 x:Name="NextTaskNameTextBox" 
+                                                 MinHeight="48" 
+                                                 SpellCheck.IsEnabled="True" 
+                                                 materialDesign:HintAssist.Hint="Start your next idea here" 
+                                                 materialDesign:HintAssist.IsFloating="True" 
+                                                 Padding="16 0 8 0" 
+                                                 MaxLength="35"/>
                                         <StackPanel  Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3"  Orientation="Horizontal" Margin="8">
                                             <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
                                                 <materialDesign:PackIcon Kind="Send" />
