@@ -21,8 +21,8 @@ namespace Simple.TaskManagement
         public TextSearchViewModel TextSearch { get; }
         public SearchResultViewModel SearchResult { get; }
         public NextTaskFactoryViewModel Factory { get; }
-        public VisualNotificationSystemViewModel MainVisualNotifications { get; }
-        public VisualNotificationSystemViewModel TaskEditorVisualNotifications { get; }
+        public VisualNotificationSystemViewModel VisualNotifications { get; }
+
 
 
 
@@ -36,16 +36,30 @@ namespace Simple.TaskManagement
             TextSearch = container.Resolve<TextSearchViewModel>();
             SearchResult = container.Resolve<SearchResultViewModel>();
             Factory = container.Resolve<NextTaskFactoryViewModel>();
-            MainVisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
-            TaskEditorVisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
+            VisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
+
 
 
 
             container.Resolve<IClientService>().StartAsync().Wait();
 
-            MainVisualNotifications.Enqueue($"{AboutThis.Title} up and running".ToUpperInvariant());
-            TaskEditorVisualNotifications.Enqueue($"\n\n\n\tSketch your great ideas here\t\n\n\n".ToUpperInvariant());
+            Task.Factory.StartNew(async () =>
+            {
+                VisualNotifications.Main.Enqueue(
+                $"Your {AboutThis.Title} up and running".ToUpperInvariant());
 
+                await Task.Delay(TimeSpan.FromSeconds(7));
+
+                VisualNotifications.TaskEditor.Enqueue(
+               $"Sketch your great ideas here".ToUpperInvariant());
+
+                await Task.Delay(TimeSpan.FromSeconds(7));
+
+                VisualNotifications.Main.Enqueue(
+                $"Have a nice day".ToUpperInvariant());
+            });
+  
+          
         }
 
 

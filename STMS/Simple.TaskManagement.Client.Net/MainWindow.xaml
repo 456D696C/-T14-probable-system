@@ -362,10 +362,8 @@
                                                         </DataTemplate>
                                                     </ListView.ItemTemplate>
                                                 </ListView>
-                                                <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="TaskEditorSnackbar" />
-                                                <materialDesign:Snackbar Message="hello task editor 1" IsActive="True" x:Name="TaskEditorSnackbarTest" />
+                                                <materialDesign:Snackbar MessageQueue="{Binding VisualNotifications.TaskEditor.Queue}" x:Name="TaskEditorSnackbar" />
                                             </Grid>
-
                                         </materialDesign:DrawerHost>
                                         
                                     </materialDesign:DialogHost>
@@ -431,8 +429,8 @@
                             </Grid>
                         </TabItem>
                     </TabControl>
-                    <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar" />
-                    <materialDesign:Snackbar Message="hello 1" IsActive="True" x:Name="SnackbarTest" />
+                    <materialDesign:Snackbar MessageQueue="{Binding VisualNotifications.Main.Queue}" x:Name="MainSnackbar" />
+                    <!--<materialDesign:Snackbar Message="hello 1" IsActive="True" x:Name="SnackbarTest" />-->
                 </Grid>
             </DockPanel>
         </materialDesign:DrawerHost>

@@ -143,6 +143,7 @@
     <Compile Include="ViewModels\SearchResultViewModel.cs" />
     <Compile Include="ViewModels\TaskListViewModel.cs" />
     <Compile Include="ViewModels\TextSearchViewModel.cs" />
+    <Compile Include="ViewModels\VisualNotificationQueue.cs" />
     <Compile Include="ViewModels\VisualNotificationSystemViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
