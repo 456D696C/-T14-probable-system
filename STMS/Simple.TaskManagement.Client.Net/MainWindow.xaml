@@ -97,7 +97,7 @@
                     </DockPanel>
                 </materialDesign:ColorZone>
                 <Grid x:Name="_APP_CONTENT_LAYERS">
-                    <TabControl x:Name="_APP_CONTENT" Grid.Row="1">
+                    <TabControl x:Name="_APP_CONTENT" >
                         <TabItem Header="TASKS" x:Name="_ALL_TAKS_TABITEM">
                             <Grid x:Name="_ADD_OR_UPDATE_TASK_CONTENT">
                                 <Grid.RowDefinitions>
@@ -392,12 +392,7 @@
                                                     <Setter Property="Padding" Value="4 6 4 6" />
                                                 </Style>
                                             </ListBox.Resources>
-                                            <!--<ListBoxItem>
-                                                <materialDesign:PackIcon  Kind="Comment" VerticalAlignment="Center" Margin="8 4 4 4"/>
-                                            </ListBoxItem>
-                                            <ListBoxItem>
-                                                <materialDesign:PackIcon  Kind="Note" VerticalAlignment="Center" Margin="8 4 4 4"/>
-                                            </ListBoxItem>-->
+                                            
                                         </ListBox>
                                         <TextBox Grid.Row="1" 
                                                  Grid.ColumnSpan="2" 
