@@ -111,8 +111,11 @@
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
                                     
-                                    <DataGrid Margin="0 8 0 0" x:Name="_TASK_LIST"   ItemsSource="{Binding TaskList.Tasks.Value}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
-                                            materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+                                    <DataGrid Margin="0 8 0 0" x:Name="_TASK_LIST" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                                            materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8"
+                                              ItemsSource="{Binding TaskList.Tasks.Value}" 
+                                              SelectedItem="{Binding TaskList.SelectedItem.Value, Mode=TwoWay}"
+                                              >
 
                                         <DataGrid.Columns>
                                             <DataGridCheckBoxColumn 

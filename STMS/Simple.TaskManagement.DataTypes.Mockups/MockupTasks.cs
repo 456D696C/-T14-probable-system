@@ -254,7 +254,7 @@ namespace Simple.TaskManagement.DataTypes.Mockups
 
             TaskType = TaskType.Market,
 
-            RequiredByDate = "2017-07-07",
+            RequiredByDate = "07/07/2017",
 
             TaskDescription = "Invent a good name for the product.",
 
