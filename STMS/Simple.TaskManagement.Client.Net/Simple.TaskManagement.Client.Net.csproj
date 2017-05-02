@@ -128,6 +128,7 @@
     <Compile Include="ClientService.cs" />
     <Compile Include="Converters\ContactToListListConverter.cs" />
     <Compile Include="Converters\NullableDateTimeToStringConverter.cs" />
+    <Compile Include="Events\Alert.cs" />
     <Compile Include="Events\Result.cs" />
     <Compile Include="Events\Search.cs" />
     <Compile Include="Events\Selection.cs" />

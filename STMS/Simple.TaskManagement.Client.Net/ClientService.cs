@@ -102,6 +102,7 @@ namespace Simple.TaskManagement
                             .Timeout(TimeSpan.FromSeconds(7))
                             .Do(_=> { },exception=>
                             {
+                                Events.Publish(Alert.Create($"{exception.Message}"));
                                 Console.WriteLine(exception);
                             })
                             .Catch<Result<TasksSearchOnCommentsReport>,Exception>(exception=>
