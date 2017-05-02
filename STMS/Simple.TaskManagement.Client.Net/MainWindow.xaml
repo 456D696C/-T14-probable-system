@@ -90,7 +90,7 @@
                     <TabControl x:Name="_APP_CONTENT" >
                         <TabItem  x:Name="_ALL_TAKS_TABITEM">
                             <TabItem.Header>
-                                <TextBox Text="TASKS" Width="64"/>
+                                <TextBox Text="TASKS" Width="96"/>
                             </TabItem.Header>
                             <materialDesign:DrawerHost x:Name="_ALL_TASK_DRAWER_HOST" 
                                IsBottomDrawerOpen="{Binding TextSearch.IsSearching.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
