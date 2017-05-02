@@ -28,10 +28,9 @@ namespace Simple.TaskManagement.ViewModels
 
         public ReactiveProperty<NextTaskItem> InputNextTaskItem { get; }
         public ReactiveCollection<DataTypes.Task> TaskList { get; } = new ReactiveCollection<DataTypes.Task>();
-        public ReactiveCollection<DataTypes.Task> OpenTaskList { get; } = new ReactiveCollection<DataTypes.Task>();
 
 
-        public ReactiveProperty<DataTypes.Task[]> Editor { get; }
+        public ReactiveProperty<TaskEditor> Editor { get; } 
 
 
         public ReactiveCommand AddTodoItemCommand { get; }
@@ -42,6 +41,10 @@ namespace Simple.TaskManagement.ViewModels
         public TaskManagerViewModel(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
+
+            Editor = new ReactiveProperty<TaskEditor>(new TaskEditor(EventAggregator));
+                
+       
 
             InputNextTaskItem = new ReactiveProperty<NextTaskItem>(
                 initialValue:new NextTaskItem(),
@@ -70,8 +73,7 @@ namespace Simple.TaskManagement.ViewModels
 
                     };
 
-                    OpenTaskList.ClearOnScheduler();
-                    OpenTaskList.AddOnScheduler(task);
+                    Editor.Value.Edit(task);
                    
 
                     
@@ -86,25 +88,12 @@ namespace Simple.TaskManagement.ViewModels
 
             selection.Subscribe(x =>
             {
-                var task = x?.Object;
-
-                OpenTaskList.ClearOnScheduler();
-
-                if(x != null)
-                {
-                    OpenTaskList.AddOnScheduler(task);
-                }
-
+                Editor.Value.Edit(x?.Object);
+ 
             });
 
 #if DEBUG
-
-            OpenTaskList.Add(new DataTypes.Task()
-            {
-                TaskDescription = "Test",
-                AssignedTo = new List<DataTypes.Contact>(),
-                Comments = new List<DataTypes.Comment>(),
-            });
+           
 
             var report = new TasksReport()
             {

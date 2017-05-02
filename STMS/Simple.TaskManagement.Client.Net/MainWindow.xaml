@@ -242,9 +242,10 @@
                                             </materialDesign:DialogHost.DialogContent>
                                             <materialDesign:DrawerHost x:Name="_EDITABLE_TASK_DRAWER_HOST">
                                                 <Grid>
+                                                    <TextBlock Text="{Binding TaskManager.Editor.Value.OpenTaskList}" />
                                                     <ListView VerticalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled"
                                                      MinWidth="300"
-                                                     ItemsSource="{Binding TaskManager.OpenTaskList}"
+                                                     ItemsSource="{Binding TaskManager.Editor.Value.OpenTaskList}"
                                                       >
 
                                                         <ListView.ItemsPanel>
