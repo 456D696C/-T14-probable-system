@@ -138,7 +138,7 @@
     <Compile Include="Validators\FutureDateValidationRule.cs" />
     <Compile Include="ViewModels\AboutThisViewModel.cs" />
     <Compile Include="ViewModels\ApplicationSessionViewModel.cs" />
-    <Compile Include="ViewModels\NextTaskFactoryViewModel.cs" />
+    <Compile Include="ViewModels\NextTaskItem.cs" />
     <Compile Include="ViewModels\NextTaskManagerViewModel.cs" />
     <Compile Include="ViewModels\SearchResultViewModel.cs" />
     <Compile Include="ViewModels\TaskEditor.cs" />

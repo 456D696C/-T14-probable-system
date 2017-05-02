@@ -21,6 +21,9 @@ namespace Simple.TaskManagement.ViewModels
     {
         private readonly IEventAggregator EventAggregator;
 
+
+        public ReactiveProperty<bool> IsSearching { get; } = new ReactiveProperty<bool>(false);
+
         public TextSearchViewModel(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
@@ -87,6 +90,20 @@ namespace Simple.TaskManagement.ViewModels
                 await Task.Run(()=>eventAggregator.Publish(query));
             });
 
+
+            Term.Subscribe(x =>
+            {
+                if(!String.IsNullOrWhiteSpace(x))
+                {
+                    IsSearching.Value = true;
+                }
+
+            });
+            
+            Cancel.Subscribe(x =>
+            {
+                IsSearching.Value = false;
+            });
         }
 
         public ReactiveProperty<object> Keywords { get; } = new ReactiveProperty<object>();
@@ -95,5 +112,6 @@ namespace Simple.TaskManagement.ViewModels
         public ReactiveProperty<string> SearchingStatus { get; }
         public ReactiveProperty<string> ProgressStatus { get; }
         public AsyncReactiveCommand Start { get; } = new AsyncReactiveCommand();
+        public ReactiveCommand Cancel = new ReactiveCommand();
     }
 }

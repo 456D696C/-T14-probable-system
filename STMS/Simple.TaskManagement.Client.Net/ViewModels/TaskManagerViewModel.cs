@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using Reactive.Bindings.Helpers;
 using System.ComponentModel;
 using System.Reactive.Linq;
 using Reactive.EventAggregator;
 using Reactive.Bindings.Notifiers;
-using Reactive.Bindings.Extensions;
+
+
+using System.ComponentModel.DataAnnotations;
 
 using Simple.TaskManagement;
 using Simple.TaskManagement.Commands.Tasks;
+using Simple.TaskManagement.Events.Tasks;
 
 
 namespace Simple.TaskManagement.ViewModels
@@ -22,27 +26,95 @@ namespace Simple.TaskManagement.ViewModels
     {
         private readonly IEventAggregator EventAggregator;
 
+        public ReactiveProperty<NextTaskItem> InputNextTaskItem { get; }
+        public ReactiveCollection<DataTypes.Task> TaskList { get; } = new ReactiveCollection<DataTypes.Task>();
+        public ReactiveCollection<DataTypes.Task> OpenTaskList { get; } = new ReactiveCollection<DataTypes.Task>();
+
+
         public ReactiveProperty<DataTypes.Task[]> Editor { get; }
-        
+
+
+        public ReactiveCommand AddTodoItemCommand { get; }
+        public AsyncReactiveCommand StartItemCommand { get; }
+        public AsyncReactiveCommand CancelAsyncCommand { get; }
+        private ReactiveProperty<bool> ShareSource { get; } = new ReactiveProperty<bool>(true);
 
         public TaskManagerViewModel(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
+
+            InputNextTaskItem = new ReactiveProperty<NextTaskItem>(
+                initialValue:new NextTaskItem(),
+                mode:ReactivePropertyMode.DistinctUntilChanged|ReactivePropertyMode.RaiseLatestValueOnSubscribe
+                );
+
+            this.AddTodoItemCommand = this.InputNextTaskItem
+               .Select(x => x.HasErrors)
+               .Switch()
+               .Select(x => !x)
+               .ToReactiveCommand();
+            this.AddTodoItemCommand
+                .Select(_ => this.InputNextTaskItem.Value)
+                .Subscribe(x =>
+                {
+                    var type = x.InputTaskType.Value;
+                    var desctiption = x.InputTaskDescription.Value;
+
+                    var task = new DataTypes.Task()
+                    {
+                        TaskDescription = desctiption,
+                        TaskType = type,
+
+                        Comments = new List<DataTypes.Comment>(),
+                        AssignedTo = new List<DataTypes.Contact>(),
+
+                    };
+
+                    OpenTaskList.ClearOnScheduler();
+                    OpenTaskList.AddOnScheduler(task);
+                   
+
+                    
+                    InputNextTaskItem.Value = new NextTaskItem();
+                });
+
 
             var selection =
                 EventAggregator.GetEvent<Events.Selection<DataTypes.Task>>()
                 .Do(x=>Console.WriteLine($"{new { x , Object = this}}"))
                 .ToReactiveProperty();
 
-            Editor = selection.Where(x=>x?.Object != null).Select(x => new DataTypes.Task[]
+            selection.Subscribe(x =>
             {
-                x.Object
+                var task = x?.Object;
 
-            })
-            .Do(x => Console.WriteLine($"{new { x, Object = this }}"))
-            .ToReactiveProperty();
+                OpenTaskList.ClearOnScheduler();
 
-            selection.Subscribe(x=>Console.WriteLine($"SUBSCRIBE:{new { x, Object = this }}"));
+                if(x != null)
+                {
+                    OpenTaskList.AddOnScheduler(task);
+                }
+
+            });
+
+#if DEBUG
+
+            OpenTaskList.Add(new DataTypes.Task()
+            {
+                TaskDescription = "Test",
+                AssignedTo = new List<DataTypes.Contact>(),
+                Comments = new List<DataTypes.Comment>(),
+            });
+
+            var report = new TasksReport()
+            {
+                Tasks = new DataTypes.Mockups.MockupTasks().TaskList.ToList()
+
+            };
+
+            EventAggregator.Publish(report);
+#endif
+           
         }
 
 
