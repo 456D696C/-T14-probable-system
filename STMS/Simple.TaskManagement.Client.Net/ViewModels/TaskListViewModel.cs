@@ -31,15 +31,52 @@ namespace Simple.TaskManagement.ViewModels
         {
             EventAggregator = eventAggregator;
 
+            SelectedItem = new ReactiveProperty<Object>(mode:
+                          ReactivePropertyMode.DistinctUntilChanged//|ReactivePropertyMode.RaiseLatestValueOnSubscribe
+                          );
 
+            SelectedTask =
+            SelectedItem.Select(x => x as DataTypes.Task)
+            .ToReadOnlyReactiveProperty()
+            ;
+
+            var disposable =
+               SelectedTask
+               .Subscribe(x => EventAggregator.Publish(new Events.Selection<DataTypes.Task>(x)));
+
+
+            SelectedItem.Do(x =>
+            {
+                Console.WriteLine($"SELECTED ITEM:{x}");
+            });
+
+            SelectedItem.Subscribe(x =>
+            {
+                Console.WriteLine($"SUBSCRIBE SELECTED ITEM:{x}");
+            });
 
             Tasks = EventAggregator.GetEvent<TasksReport>()
+                .Do(x=>Console.WriteLine($"Received:{x}"))
                 .ObserveOnDispatcher()
                 .Select(found => found?.Tasks.OfType<DataTypes.Task>().ToArray())
-                .ToReactiveProperty(new DataTypes.Mockups.MockupTasks().TaskList);
+                .ToReactiveProperty(new DataTypes.Mockups.MockupTasks().TaskList.Skip(1).Take(2).ToArray());
+
+
+#if DEBUG
+
+            var report = new TasksReport()
+            {
+                Tasks = new DataTypes.Mockups.MockupTasks().TaskList.ToList()
+
+            };
+
+            EventAggregator.Publish(report);
+#endif
 
         }
 
+        public ReactiveProperty<Object> SelectedItem { get; }
+        public ReadOnlyReactiveProperty<DataTypes.Task> SelectedTask { get; }
         public ReactiveProperty<DataTypes.Task[]> Tasks { get; }
 
 

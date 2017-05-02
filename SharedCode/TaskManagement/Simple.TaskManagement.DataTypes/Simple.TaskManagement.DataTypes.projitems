@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Comment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CommentType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constant.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Contact.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Task.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TaskStatus.cs" />

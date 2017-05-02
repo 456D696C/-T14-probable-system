@@ -23,6 +23,9 @@ namespace Simple.TaskManagement
         public NextTaskFactoryViewModel Factory { get; }
         public VisualNotificationSystemViewModel VisualNotifications { get; }
 
+
+
+
         public Locator()
         {
             var container = Bootstrapper.RegisterTypes(new UnityContainer());
@@ -36,8 +39,27 @@ namespace Simple.TaskManagement
             VisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
 
 
+
+
             container.Resolve<IClientService>().StartAsync().Wait();
+
+            Task.Factory.StartNew(async () =>
+            {
+                VisualNotifications.Main.Enqueue(
+                $"Your {AboutThis.Title} up and running".ToUpperInvariant());
+
+                await Task.Delay(TimeSpan.FromSeconds(7));
+
+                VisualNotifications.TaskEditor.Enqueue(
+               $"Sketch your great ideas here".ToUpperInvariant());
+
+                await Task.Delay(TimeSpan.FromSeconds(7));
+
+                VisualNotifications.Main.Enqueue(
+                $"Have a nice day".ToUpperInvariant());
+            });
   
+          
         }
 
 
@@ -50,6 +72,16 @@ namespace Simple.TaskManagement
                     .OfType<DataTypes.TaskType>();
             }
         }
+
+        public IEnumerable<DataTypes.TaskType> NewTaskTypes
+        {
+            get
+            {
+                return Enum.GetValues(typeof(DataTypes.TaskType))
+                    .OfType<DataTypes.TaskType>().Where(x=>x>0);
+            }
+        }
+
         #endregion
 
         #region Task Statuses
@@ -61,6 +93,16 @@ namespace Simple.TaskManagement
                     .OfType<DataTypes.TaskStatus>();
             }
         }
+
+        public IEnumerable<DataTypes.TaskStatus> TaskNewStatuses
+        {
+            get
+            {
+                return Enum.GetValues(typeof(DataTypes.TaskStatus))
+                    .OfType<DataTypes.TaskStatus>().Where(x=>x > 0);
+            }
+        }
+
         #endregion
 
 

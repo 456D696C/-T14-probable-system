@@ -97,7 +97,7 @@
                     </DockPanel>
                 </materialDesign:ColorZone>
                 <Grid x:Name="_APP_CONTENT_LAYERS">
-                    <TabControl x:Name="_APP_CONTENT" Grid.Row="1">
+                    <TabControl x:Name="_APP_CONTENT" >
                         <TabItem Header="TASKS" x:Name="_ALL_TAKS_TABITEM">
                             <Grid x:Name="_ADD_OR_UPDATE_TASK_CONTENT">
                                 <Grid.RowDefinitions>
@@ -111,8 +111,13 @@
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
                                     
-                                    <DataGrid Margin="0 8 0 0" x:Name="_TASK_LIST"   ItemsSource="{Binding TaskList.Tasks.Value}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
-                                            materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+                                    <DataGrid Margin="0 8 0 0" x:Name="_TASK_LIST" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                                            materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8"
+                                              ItemsSource="{Binding TaskList.Tasks.Value}" 
+                                              SelectedItem="{Binding TaskList.SelectedItem.Value, Mode=TwoWay}"
+                                              SelectionMode="Single"
+                                              SelectionUnit="FullRow"
+                                              >
 
                                         <DataGrid.Columns>
                                             <DataGridCheckBoxColumn 
@@ -147,11 +152,22 @@
                                                                SelectedValueBinding ="{Binding AssignedTo, Converter={convert:ContactToListListConverter}}"                                             
                                                                ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Contacts}" 
                                                                    />
-                                            
-                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredByDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
-                                                               Header="Required By"                                                        
-                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
 
+                 
+                                            <DataGridTemplateColumn Header="Required By"  >
+                                                <DataGridTemplateColumn.CellTemplate >
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding RequiredByDate}" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                                <DataGridTemplateColumn.CellEditingTemplate>
+                                                    <DataTemplate>
+                                                        <DatePicker SelectedDate="{Binding RequiredByDate, Converter={convert:NullableDateTimeToStringConverter}, StringFormat={}{0:dd/MM/yyyy}}" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellEditingTemplate>
+                                            </DataGridTemplateColumn>
+
+                            
 
                                             <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
                                             <materialDesign:MaterialDataGridComboBoxColumn Header="Status"        
@@ -162,9 +178,9 @@
 
                                             <!-- How to deal with datetime offset collumn -->
                                             
-                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate, Converter={convert:DateTimeOffsetToDateTimeConverter}, StringFormat={}{0:dd-MMM-yyyy}}"
-                                                               Header="Next action date"                                                        
-                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
+                                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding NextActionDate}"
+                                                               Header="Next action date"   
+                                                               IsReadOnly="True"  />
 
                                         </DataGrid.Columns>
                                     </DataGrid>
@@ -266,7 +282,7 @@
                                                                                         <RowDefinition/>
                                                                                     </Grid.RowDefinitions>
                                                                                     <TextBox Grid.Row="0" Text="{Binding Number}" materialDesign:HintAssist.Hint="Number" materialDesign:HintAssist.IsFloating="True" HorizontalAlignment="Stretch" Margin="16 8 8 8" />
-                                                                                    <DatePicker Grid.Row="1" SelectedDate="{Binding ReminderDate}" HorizontalAlignment="Stretch" Margin="16 8 8 8" materialDesign:HintAssist.Hint="Reminder" materialDesign:HintAssist.IsFloating="True"/>
+                                                                                    <DatePicker  Grid.Row="1" SelectedDate="{Binding ReminderDate, Converter={convert:NullableDateTimeToStringConverter},  StringFormat={}{0:dd/MM/yyyy}}" HorizontalAlignment="Stretch" Margin="16 8 8 8" materialDesign:HintAssist.Hint="Reminder" materialDesign:HintAssist.IsFloating="True"/>
                                                                                     <StackPanel Grid.Column="2" HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
                                                                                         <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0"
                                                                                             materialDesign:RippleAssist.IsCentered="True">
@@ -346,10 +362,8 @@
                                                         </DataTemplate>
                                                     </ListView.ItemTemplate>
                                                 </ListView>
-                                                <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="TaskEditorSnackbar" />
-                                                <materialDesign:Snackbar Message="hello task editor 1" IsActive="True" x:Name="TaskEditorSnackbarTest" />
+                                                <materialDesign:Snackbar MessageQueue="{Binding VisualNotifications.TaskEditor.Queue}" x:Name="TaskEditorSnackbar" />
                                             </Grid>
-
                                         </materialDesign:DrawerHost>
                                         
                                     </materialDesign:DialogHost>
@@ -371,21 +385,24 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
                                         <materialDesign:PackIcon Grid.Column="0" Kind="Pen" VerticalAlignment="Center" Margin="8 4 4 4"/>
-                                        <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" SelectedIndex="0" Margin="4 8 8 4">
+                                        <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" SelectedIndex="0" Margin="4 8 8 4" 
+                                                 ItemsSource="{Binding NewTaskTypes}">
                                             <ListBox.Resources>
                                                 <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
                                                     <Setter Property="Padding" Value="4 6 4 6" />
                                                 </Style>
                                             </ListBox.Resources>
-                                            <ListBoxItem>
-                                                <materialDesign:PackIcon  Kind="Comment" VerticalAlignment="Center" Margin="8 4 4 4"/>
-                                            </ListBoxItem>
-                                            <ListBoxItem>
-                                                <materialDesign:PackIcon  Kind="Note" VerticalAlignment="Center" Margin="8 4 4 4"/>
-                                            </ListBoxItem>
+                                            
                                         </ListBox>
-                                        <TextBox Grid.Row="1" Grid.ColumnSpan="2" x:Name="NextTaskNameTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" MinHeight="48" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Write note or task item" materialDesign:HintAssist.IsFloating="True" Text="The written text" 
-                                                                     Padding="16 0 8 0" />
+                                        <TextBox Grid.Row="1" 
+                                                 Grid.ColumnSpan="2" 
+                                                 x:Name="NextTaskNameTextBox" 
+                                                 MinHeight="48" 
+                                                 SpellCheck.IsEnabled="True" 
+                                                 materialDesign:HintAssist.Hint="Start your next idea here" 
+                                                 materialDesign:HintAssist.IsFloating="True" 
+                                                 Padding="16 0 8 0" 
+                                                 MaxLength="35"/>
                                         <StackPanel  Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3"  Orientation="Horizontal" Margin="8">
                                             <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True">
                                                 <materialDesign:PackIcon Kind="Send" />
@@ -407,8 +424,8 @@
                             </Grid>
                         </TabItem>
                     </TabControl>
-                    <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar" />
-                    <materialDesign:Snackbar Message="hello 1" IsActive="True" x:Name="SnackbarTest" />
+                    <materialDesign:Snackbar MessageQueue="{Binding VisualNotifications.Main.Queue}" x:Name="MainSnackbar" />
+                    <!--<materialDesign:Snackbar Message="hello 1" IsActive="True" x:Name="SnackbarTest" />-->
                 </Grid>
             </DockPanel>
         </materialDesign:DrawerHost>
