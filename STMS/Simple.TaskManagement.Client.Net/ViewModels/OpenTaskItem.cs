@@ -24,10 +24,16 @@ namespace Simple.TaskManagement.ViewModels
 
         public ReactiveProperty<DataTypes.Task> Task { get; } 
 
+        public ReactiveProperty<NextCommentItem> InputNextCommentItem { get; }
+
         public OpenTaskItem(IEventAggregator eventAggregator, DataTypes.Task task)
         {
             EventAggregator = eventAggregator;
             Task = new ReactiveProperty<DataTypes.Task>(task);
+            InputNextCommentItem = new ReactiveProperty<NextCommentItem>(
+                initialValue: new NextCommentItem(),
+                mode: ReactivePropertyMode.DistinctUntilChanged | ReactivePropertyMode.RaiseLatestValueOnSubscribe
+                );
         }
 
         public override string ToString() => new {Task}.ToString();
