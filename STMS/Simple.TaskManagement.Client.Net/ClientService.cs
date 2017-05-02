@@ -99,7 +99,20 @@ namespace Simple.TaskManagement
                    {
                        var result = Events.GetEvent<Result<TasksSearchOnCommentsReport>>()
                             .Where(selection => selection.Object?.Reference == q.Object?.Reference)
-                            .Timeout(TimeSpan.FromSeconds(7), Observable.Empty<Result<TasksSearchOnCommentsReport>>())
+                            .Timeout(TimeSpan.FromSeconds(7))
+                            .Do(_=> { },exception=>
+                            {
+                                Console.WriteLine(exception);
+                            })
+                            .Catch<Result<TasksSearchOnCommentsReport>,Exception>(exception=>
+                            {
+                                return Observable.Return(Result.Create(new TasksSearchOnCommentsReport()
+                                {
+                                    Query = q?.Object?.Query,
+                                    Reference = q?.Object?.Reference,
+                                    Tasks = new List<DataTypes.Task>()
+                                }));
+                            })
                             .FirstAsync()
                             .Publish()
                             .RefCount()
