@@ -22,7 +22,7 @@ namespace Simple.TaskManagement.ViewModels
         private readonly IEventAggregator EventAggregator;
 
 
-        public ReactiveProperty<bool> IsSearching { get; } = new ReactiveProperty<bool>(false);
+        public ReactiveProperty<bool> IsSearching { get; } = new ReactiveProperty<bool>(true);
 
         public TextSearchViewModel(IEventAggregator eventAggregator)
         {
