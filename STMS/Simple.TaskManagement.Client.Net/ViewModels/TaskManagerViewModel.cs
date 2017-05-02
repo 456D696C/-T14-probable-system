@@ -30,7 +30,7 @@ namespace Simple.TaskManagement.ViewModels
         public ReactiveCollection<DataTypes.Task> TaskList { get; } = new ReactiveCollection<DataTypes.Task>();
 
 
-        public ReactiveProperty<TaskEditor> Editor { get; } 
+    
 
 
         public ReactiveCommand AddTodoItemCommand { get; }
@@ -42,10 +42,7 @@ namespace Simple.TaskManagement.ViewModels
         {
             EventAggregator = eventAggregator;
 
-            Editor = new ReactiveProperty<TaskEditor>(new TaskEditor(EventAggregator));
-                
-       
-
+           
             InputNextTaskItem = new ReactiveProperty<NextTaskItem>(
                 initialValue:new NextTaskItem(),
                 mode:ReactivePropertyMode.DistinctUntilChanged|ReactivePropertyMode.RaiseLatestValueOnSubscribe
@@ -79,27 +76,27 @@ namespace Simple.TaskManagement.ViewModels
 
                     };
 
-                    Editor.Value.Edit(task);
-                   
 
-                    
+                    EventAggregator.Publish(Commands.Open.Create(task));
+
+
                     InputNextTaskItem.Value = new NextTaskItem();
                 });
 
 
+
             var selection =
-                EventAggregator.GetEvent<Events.Selection<DataTypes.Task>>()
-                .Do(x=>Console.WriteLine($"{new { x , Object = this}}"))
-                .ToReactiveProperty();
+               EventAggregator.GetEvent<Events.Selection<DataTypes.Task>>()
+               .Do(x => Console.WriteLine($"{new { x, Object = this }}"))
+               .ToReactiveProperty();
 
             selection.Subscribe(x =>
             {
-                Editor.Value.Edit(x?.Object);
- 
+                EventAggregator.Publish(Commands.Open.Create(x?.Object));
             });
 
 #if DEBUG
-           
+
 
             var report = new TasksReport()
             {

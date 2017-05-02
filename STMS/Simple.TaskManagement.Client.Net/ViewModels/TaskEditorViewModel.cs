@@ -13,7 +13,7 @@ using Reactive.Bindings.Extensions;
 
 namespace Simple.TaskManagement.ViewModels
 {
-    public class TaskEditor : INotifyPropertyChanged
+    public class TaskEditorViewModel : INotifyPropertyChanged
     {
         private readonly IEventAggregator EventAggregator;
 
@@ -27,17 +27,29 @@ namespace Simple.TaskManagement.ViewModels
 
         private ReactiveProperty<bool> ShareSource { get; } = new ReactiveProperty<bool>(true);
 
-        public TaskEditor(IEventAggregator eventAggregator)
+        public TaskEditorViewModel(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
-           
+
+            var open =
+               EventAggregator.GetEvent<Commands.Open<DataTypes.Task>>()
+               .Do(x => Console.WriteLine($"{new { x, Object = this }}"))
+               .ToReactiveProperty();
+
+            open.Subscribe(x =>
+            {
+                var task = x?.Object;
+
+                OpenTaskList.ClearOnScheduler();
+
+                if(null != task)
+                {
+                    OpenTaskList.AddOnScheduler(task);
+                }
+            });
         }
 
-        public void Edit(DataTypes.Task task)
-        {
-            OpenTaskList.ClearOnScheduler();
-            OpenTaskList.AddOnScheduler(task);
-        }
+        
         public event PropertyChangedEventHandler PropertyChanged = (_, __) => { };
     }
 }

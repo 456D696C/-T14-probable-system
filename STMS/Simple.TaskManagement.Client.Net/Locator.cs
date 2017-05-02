@@ -22,6 +22,7 @@ namespace Simple.TaskManagement
         public TextSearchViewModel TextSearch { get; }
         public SearchResultViewModel SearchResult { get; }
         public VisualNotificationSystemViewModel VisualNotifications { get; }
+        public TaskEditorViewModel TaskEditor { get; }
 
 
 
@@ -38,7 +39,7 @@ namespace Simple.TaskManagement
             
             VisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
             TaskManager = container.Resolve<TaskManagerViewModel>();
-
+            TaskEditor = container.Resolve<TaskEditorViewModel>();
 
 
             container.Resolve<IClientService>().StartAsync().Wait();
