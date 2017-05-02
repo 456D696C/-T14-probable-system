@@ -20,17 +20,17 @@ namespace Simple.TaskManagement.ViewModels
 {
     public class NextTaskItem :INotifyPropertyChanged
     {
+       
         public ReactiveProperty<string> InputTaskDescription { get; } 
         public ReactiveProperty<DataTypes.TaskType?> InputTaskType { get; }
         public ReactiveProperty<bool> HasErrors { get; }
 
         public NextTaskItem()
         {
+
             InputTaskDescription = new ReactiveProperty<string>();
             InputTaskType = new ReactiveProperty<DataTypes.TaskType?>();
             HasErrors = new ReactiveProperty<bool>(false);
-
-        
         }
 
         public override string ToString()=>new { InputTaskDescription, InputTaskType}.ToString();

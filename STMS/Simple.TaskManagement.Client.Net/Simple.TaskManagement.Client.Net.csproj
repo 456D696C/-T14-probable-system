@@ -141,6 +141,7 @@
     <Compile Include="ViewModels\ApplicationSessionViewModel.cs" />
     <Compile Include="ViewModels\NextTaskItem.cs" />
     <Compile Include="ViewModels\NextTaskManagerViewModel.cs" />
+    <Compile Include="ViewModels\OpenTaskItem.cs" />
     <Compile Include="ViewModels\SearchResultViewModel.cs" />
     <Compile Include="ViewModels\TaskEditor.cs" />
     <Compile Include="ViewModels\TaskListViewModel.cs" />

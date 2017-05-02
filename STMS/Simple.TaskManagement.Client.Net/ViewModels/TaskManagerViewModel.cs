@@ -68,8 +68,14 @@ namespace Simple.TaskManagement.ViewModels
                         TaskDescription = desctiption,
                         TaskType = type,
 
-                        Comments = new List<DataTypes.Comment>(),
-                        AssignedTo = new List<DataTypes.Contact>(),
+                        Comments = new List<DataTypes.Comment>()
+                        {
+                            new DataTypes.Comment()
+                        },
+                        AssignedTo = new List<DataTypes.Contact>()
+                        {
+                            new DataTypes.Contact()
+                        },
 
                     };
 
