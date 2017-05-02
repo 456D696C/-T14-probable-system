@@ -112,6 +112,6 @@ namespace Simple.TaskManagement.ViewModels
         public ReactiveProperty<string> SearchingStatus { get; }
         public ReactiveProperty<string> ProgressStatus { get; }
         public AsyncReactiveCommand Start { get; } = new AsyncReactiveCommand();
-        public ReactiveCommand Cancel = new ReactiveCommand();
+        public ReactiveCommand Cancel  { get; } = new ReactiveCommand();
     }
 }
