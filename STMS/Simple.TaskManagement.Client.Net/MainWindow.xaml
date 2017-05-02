@@ -88,7 +88,10 @@
                 </materialDesign:ColorZone>
                 <Grid x:Name="_APP_CONTENT_LAYERS">
                     <TabControl x:Name="_APP_CONTENT" >
-                        <TabItem Header="TASKS" x:Name="_ALL_TAKS_TABITEM">
+                        <TabItem  x:Name="_ALL_TAKS_TABITEM">
+                            <TabItem.Header>
+                                <TextBox Text="TASKS" Width="64"/>
+                            </TabItem.Header>
                             <materialDesign:DrawerHost x:Name="_ALL_TASK_DRAWER_HOST" 
                                IsBottomDrawerOpen="{Binding TextSearch.IsSearching.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                 <materialDesign:DrawerHost.BottomDrawerContent>
