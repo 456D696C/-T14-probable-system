@@ -17,14 +17,13 @@ namespace Simple.TaskManagement.ViewModels
     {
         private readonly IEventAggregator EventAggregator;
 
-        public ReactiveCollection<DataTypes.Task> OpenTaskList { get; } = new ReactiveCollection<DataTypes.Task>();
+        public ReactiveCollection<OpenTaskItem> OpenTaskList { get; } = new ReactiveCollection<OpenTaskItem>();
 
 
         public ReactiveProperty<DataTypes.Task> Current { get; }
 
         public AsyncReactiveCommand SaveAsyncCommand { get; }
         public AsyncReactiveCommand CancelAsyncCommand { get; }
-
         private ReactiveProperty<bool> ShareSource { get; } = new ReactiveProperty<bool>(true);
 
         public TaskEditorViewModel(IEventAggregator eventAggregator)
@@ -44,7 +43,7 @@ namespace Simple.TaskManagement.ViewModels
 
                 if(null != task)
                 {
-                    OpenTaskList.AddOnScheduler(task);
+                    OpenTaskList.AddOnScheduler(new OpenTaskItem(EventAggregator,task));
                 }
             });
         }

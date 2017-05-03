@@ -19,9 +19,23 @@ namespace Simple.TaskManagement.ViewModels
 {
     public class NextCommentItem : INotifyPropertyChanged
     {
-        public ReactiveProperty<string> InputCommentary { get; }
-        public ReactiveProperty<DataTypes.CommentType> InputCommentType { get; }
+        public ReactiveProperty<string> InputCommentary { get; } = new ReactiveProperty<string>();
+        public ReactiveProperty<DataTypes.CommentType?> InputCommentType { get; } = new ReactiveProperty<DataTypes.CommentType?>();
         public ReactiveProperty<bool> HasErrors { get; }
+
+        public NextCommentItem()
+        {
+
+            var query =
+            from comment in InputCommentary
+            from type in InputCommentType
+            select String.IsNullOrWhiteSpace(comment) | null == type
+
+            ;
+
+            HasErrors = query.ToReactiveProperty();
+                    
+        }
 
         public event PropertyChangedEventHandler PropertyChanged = (_, __) => { };
     }
