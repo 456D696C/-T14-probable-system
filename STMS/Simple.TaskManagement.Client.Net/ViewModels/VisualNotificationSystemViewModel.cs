@@ -26,6 +26,12 @@ namespace Simple.TaskManagement.ViewModels
         {
             EventAggregator = eventAggregator;
 
+            EventAggregator.GetEvent<Events.Alert>()
+                .Subscribe(aller =>
+                {
+                    Main.Enqueue((aller?.ToString() ?? "Something goes completely wrong").ToUpper());
+                });
+
         }
 
         public VisualNotificationQueue Main { get; } = new VisualNotificationQueue();

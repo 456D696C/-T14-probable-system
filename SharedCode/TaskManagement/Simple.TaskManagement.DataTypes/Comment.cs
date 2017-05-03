@@ -8,7 +8,7 @@ namespace Simple.TaskManagement.DataTypes
     {
         public string DateAdded { get; set; }
         public string Commentary { get; set; }
-        public CommentType CommentType { get; set; }
+        public CommentType? CommentType { get; set; }
         public string ReminderDate { get; set; }
         public string Number { get; set; }
         public string CommentId { get; set; }

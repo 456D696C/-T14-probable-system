@@ -18,10 +18,11 @@ namespace Simple.TaskManagement
         public AboutThisViewModel AboutThis { get; }
         public ApplicationSessionViewModel Session { get; }
         public TaskListViewModel TaskList { get; }
+        public TaskManagerViewModel TaskManager { get; }
         public TextSearchViewModel TextSearch { get; }
         public SearchResultViewModel SearchResult { get; }
-        public NextTaskFactoryViewModel Factory { get; }
         public VisualNotificationSystemViewModel VisualNotifications { get; }
+        public TaskEditorViewModel TaskEditor { get; }
 
 
 
@@ -35,30 +36,15 @@ namespace Simple.TaskManagement
             TaskList = container.Resolve<TaskListViewModel>();
             TextSearch = container.Resolve<TextSearchViewModel>();
             SearchResult = container.Resolve<SearchResultViewModel>();
-            Factory = container.Resolve<NextTaskFactoryViewModel>();
+            
             VisualNotifications = container.Resolve<VisualNotificationSystemViewModel>();
-
-
+            TaskManager = container.Resolve<TaskManagerViewModel>();
+            TaskEditor = container.Resolve<TaskEditorViewModel>();
 
 
             container.Resolve<IClientService>().StartAsync().Wait();
 
-            Task.Factory.StartNew(async () =>
-            {
-                VisualNotifications.Main.Enqueue(
-                $"Your {AboutThis.Title} up and running".ToUpperInvariant());
-
-                await Task.Delay(TimeSpan.FromSeconds(7));
-
-                VisualNotifications.TaskEditor.Enqueue(
-               $"Sketch your great ideas here".ToUpperInvariant());
-
-                await Task.Delay(TimeSpan.FromSeconds(7));
-
-                VisualNotifications.Main.Enqueue(
-                $"Have a nice day".ToUpperInvariant());
-            });
-  
+            
           
         }
 

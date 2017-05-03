@@ -126,8 +126,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClientService.cs" />
+    <Compile Include="Commands\Open.cs" />
     <Compile Include="Converters\ContactToListListConverter.cs" />
+    <Compile Include="Converters\EnumConverters.cs" />
+    <Compile Include="Converters\Extensions\EnumExtensions.cs" />
     <Compile Include="Converters\NullableDateTimeToStringConverter.cs" />
+    <Compile Include="Events\Alert.cs" />
     <Compile Include="Events\Result.cs" />
     <Compile Include="Events\Search.cs" />
     <Compile Include="Events\Selection.cs" />
@@ -138,10 +142,13 @@
     <Compile Include="Validators\FutureDateValidationRule.cs" />
     <Compile Include="ViewModels\AboutThisViewModel.cs" />
     <Compile Include="ViewModels\ApplicationSessionViewModel.cs" />
-    <Compile Include="ViewModels\NextTaskFactoryViewModel.cs" />
-    <Compile Include="ViewModels\NextTaskManagerViewModel.cs" />
+    <Compile Include="ViewModels\NextCommentItem.cs" />
+    <Compile Include="ViewModels\NextTaskItem.cs" />
+    <Compile Include="ViewModels\OpenTaskItem.cs" />
     <Compile Include="ViewModels\SearchResultViewModel.cs" />
+    <Compile Include="ViewModels\TaskEditorViewModel.cs" />
     <Compile Include="ViewModels\TaskListViewModel.cs" />
+    <Compile Include="ViewModels\TaskManagerViewModel.cs" />
     <Compile Include="ViewModels\TextSearchViewModel.cs" />
     <Compile Include="ViewModels\VisualNotificationQueue.cs" />
     <Compile Include="ViewModels\VisualNotificationSystemViewModel.cs" />

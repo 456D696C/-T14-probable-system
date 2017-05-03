@@ -59,19 +59,9 @@ namespace Simple.TaskManagement.ViewModels
                 .Do(x=>Console.WriteLine($"Received:{x}"))
                 .ObserveOnDispatcher()
                 .Select(found => found?.Tasks.OfType<DataTypes.Task>().ToArray())
-                .ToReactiveProperty(new DataTypes.Mockups.MockupTasks().TaskList.Skip(1).Take(2).ToArray());
+                .ToReactiveProperty();
 
 
-#if DEBUG
-
-            var report = new TasksReport()
-            {
-                Tasks = new DataTypes.Mockups.MockupTasks().TaskList.ToList()
-
-            };
-
-            EventAggregator.Publish(report);
-#endif
 
         }
 
