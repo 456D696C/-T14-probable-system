@@ -20,10 +20,7 @@ using Simple.TaskManagement.Converters.Extensions;
 
 namespace Simple.TaskManagement.Converters
 {
-    class EnumConverters
-    {
-        MaterialDesignThemes.Wpf.PackIconKind _Icon;
-    }
+    
 
     /// <summary>
     /// Converter to show description of an enum, and convert back to enum value on selecting an item from combo box in wpf.

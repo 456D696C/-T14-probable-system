@@ -29,11 +29,11 @@ namespace Simple.TaskManagement.ViewModels
             var query =
             from comment in InputCommentary
             from type in InputCommentType
-            select String.IsNullOrWhiteSpace(comment) | null == type
+            select String.IsNullOrWhiteSpace(comment) 
 
             ;
 
-            HasErrors = query.ToReactiveProperty();
+            HasErrors = query.ToReactiveProperty(mode:ReactivePropertyMode.RaiseLatestValueOnSubscribe);
                     
         }
 

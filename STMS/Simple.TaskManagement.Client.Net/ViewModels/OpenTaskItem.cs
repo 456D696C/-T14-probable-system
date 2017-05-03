@@ -30,7 +30,7 @@ namespace Simple.TaskManagement.ViewModels
         public ReactiveProperty<DataTypes.TaskType?> InputTaskType { get; }
         public ReactiveCollection<DataTypes.Comment> InputComments { get; } = new ReactiveCollection<DataTypes.Comment>();
         public ReactiveProperty<NextCommentItem> InputNextComment { get; } 
-        public ReactiveCommand AddCommentCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand AddCommentCommand { get; } 
 
         public OpenTaskItem(IEventAggregator eventAggregator, DataTypes.Task task)
         {
@@ -46,21 +46,16 @@ namespace Simple.TaskManagement.ViewModels
 
             InputNextComment = new ReactiveProperty<NextCommentItem>(
                 initialValue: new NextCommentItem(),
-                mode: ReactivePropertyMode.DistinctUntilChanged | ReactivePropertyMode.RaiseLatestValueOnSubscribe
+                mode:ReactivePropertyMode.DistinctUntilChanged | ReactivePropertyMode.RaiseLatestValueOnSubscribe
                 );
 
 
             InputTaskType.Do(x => Console.WriteLine($"INPUT TASK TYPE:{x}"));
             InputTaskDescription.Do(x => Console.WriteLine($"INPUT TASK DESCRIPTION:{x}"));
 
-            AddCommentCommand =
-            InputNextComment
-                 .Select(x => x.InputCommentary.Value != null)
-                 .ToReactiveCommand()
-                 ;
 
+            AddCommentCommand = new ReactiveCommand();
             AddCommentCommand
-                
                 .Subscribe(x =>
                 {
                     InputComments.Add(new DataTypes.Comment()
@@ -71,13 +66,21 @@ namespace Simple.TaskManagement.ViewModels
 
                     InputNextComment.Value = new NextCommentItem();
                 });
-                
 
 
 
+            var query =
+                from comment in InputNextComment.Value.InputCommentary
+                from type in InputNextComment.Value.InputCommentType
+                select new DataTypes.Comment()
+                {
+                    Commentary = comment,
+                    CommentType = type,
+                };
 
 
-
+            query.Subscribe(x=>Console.WriteLine($"NEXT COMMENT:{x}"));
+            
         }
 
         #region Comment Types

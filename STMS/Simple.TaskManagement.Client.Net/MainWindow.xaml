@@ -363,14 +363,14 @@
                                                                                
                                                                             </ListBox>
                                                                             <TextBox Grid.Row="1" Grid.ColumnSpan="2" x:Name="WriteCommenatryOrNoteTextBox" TextWrapping="Wrap" VerticalAlignment="Stretch" MinHeight="48" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" 
-                                                                                     materialDesign:HintAssist.Hint="{Binding}" 
+                                                                                     materialDesign:HintAssist.Hint="{Binding InputNextComment.Value.InputCommentType.Value}"
                                                                                      materialDesign:HintAssist.IsFloating="True" 
-                                                                                     Text="{Binding InputNextComment.Value.InputCommentary.Value}"
+                                                                                     Text="{Binding InputNextComment.Value.InputCommentary.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                                      Padding="16 0 8 0" />
                                                                             <!---->
                                                                             <StackPanel  Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3"  Orientation="Horizontal" Margin="8">
                                                                                 <Button Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" materialDesign:RippleAssist.IsCentered="True"
-                                                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListView}}, Path=DataContext.AddCommentCommand}" 
+                                                                                        Command="{Binding AddCommentCommand}" 
                                                                                         
                                                                                         >
                                                                                     <materialDesign:PackIcon Kind="Send" />
