@@ -26,7 +26,7 @@ namespace Simple.TaskManagement.Services.Tasks
 
             var comparison = StringComparison.InvariantCultureIgnoreCase;
 
-            var tasks = from item in all
+            var rename = from item in all
                            where item?.Comments?.Any(c=>c?.Commentary?.IndexOf(query.Query, comparison)>=0)==true
                             |query?.Query?.Split(new char[] { ' ' }).Select(x=>x??"").Select(x=>x?.Trim())
                                 .Any(i=>item.Comments.Any(c=>c?.Commentary?.IndexOf(i)>=0))==true
@@ -35,7 +35,7 @@ namespace Simple.TaskManagement.Services.Tasks
 
 
 
-            tasks = tasks.ToArray();
+            rename = rename.ToArray();
 
             return new TasksSearchOnCommentsReport()
             {
