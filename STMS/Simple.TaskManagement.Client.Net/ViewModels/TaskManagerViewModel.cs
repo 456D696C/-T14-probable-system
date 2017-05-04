@@ -95,17 +95,7 @@ namespace Simple.TaskManagement.ViewModels
                 EventAggregator.Publish(Commands.Open.Create(x?.Object));
             });
 
-#if DEBUG
 
-
-            var report = new TasksReport()
-            {
-                Tasks = new DataTypes.Mockups.MockupTasks().TaskList.ToList()
-
-            };
-
-            EventAggregator.Publish(report);
-#endif
            
         }
 
