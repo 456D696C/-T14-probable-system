@@ -74,8 +74,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 contracts", "0 contracts"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 tests", "5 tests", "{312CF0C6-8FC9-49F1-80B7-A1455CC652C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.TaskManagement.Launcher.NetTests", "Simple.TaskManagement.Launcher.NetTests\Simple.TaskManagement.Launcher.NetTests.csproj", "{B8D1CA3B-9B70-4B02-9FCB-B74A1E97AD84}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems*{071f0f4b-aff6-4854-abad-18794bb8ce5e}*SharedItemsImports = 4
@@ -155,10 +153,6 @@ Global
 		{536AE0BD-5C2A-4C26-92E1-3895718D3258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{536AE0BD-5C2A-4C26-92E1-3895718D3258}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{536AE0BD-5C2A-4C26-92E1-3895718D3258}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8D1CA3B-9B70-4B02-9FCB-B74A1E97AD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8D1CA3B-9B70-4B02-9FCB-B74A1E97AD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8D1CA3B-9B70-4B02-9FCB-B74A1E97AD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8D1CA3B-9B70-4B02-9FCB-B74A1E97AD84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,6 +180,5 @@ Global
 		{536AE0BD-5C2A-4C26-92E1-3895718D3258} = {0E902339-F85B-4C69-A41D-25EBFB3E9E07}
 		{3AF64F84-526C-4587-82A0-3CB3657C5F61} = {7BA37DA3-A661-4451-925C-EE16FE3DC308}
 		{8661E8FF-6F00-4418-9938-8CCD87BE7931} = {3191F09A-6E20-4294-9261-BF8B10D1027A}
-		{B8D1CA3B-9B70-4B02-9FCB-B74A1E97AD84} = {312CF0C6-8FC9-49F1-80B7-A1455CC652C7}
 	EndGlobalSection
 EndGlobal
