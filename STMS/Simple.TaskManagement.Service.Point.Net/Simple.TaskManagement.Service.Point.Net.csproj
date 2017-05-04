@@ -83,6 +83,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryProcessor.cs" />
+    <Compile Include="QueryProcessorExceptionPolicy.cs" />
+    <Compile Include="QueryProcessorLoggingPolicy.cs" />
     <Compile Include="Services\Comments\CommentStatusQueryService.cs" />
     <Compile Include="Services\Tasks\TasksByCommentsQueryService.cs" />
     <Compile Include="Services\Tasks\TasksQueryService.cs" />
