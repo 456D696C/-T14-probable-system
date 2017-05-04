@@ -22,13 +22,26 @@ namespace Simple.TaskManagement.Services.Tasks
 
         public TasksSearchOnCommentsReport Handle(TasksSearchOnCommentsQuery query)
         {
-            var found = TaskStorage.Get().Result;
+            var all = TaskStorage.Get().Result;
+
+            var comparison = StringComparison.InvariantCultureIgnoreCase;
+
+            var tasks = from item in all
+                           where item?.Comments?.Any(c=>c?.Commentary?.IndexOf(query.Query, comparison)>=0)==true
+                            |query?.Query?.Split(new char[] { ' ' }).Select(x=>x??"").Select(x=>x?.Trim())
+                                .Any(i=>item.Comments.Any(c=>c?.Commentary?.IndexOf(i)>=0))==true
+                                 |string.IsNullOrWhiteSpace(query.Query)
+                           select item;
+
+
+
+            tasks = tasks.ToArray();
 
             return new TasksSearchOnCommentsReport()
             {
                 Query = query.Query,
                 Reference = query.Reference,
-                Tasks = found.ToList(),
+                Tasks = all.ToList(),
             };
         }
     }
