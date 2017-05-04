@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:Simple.TaskManagement" 
         xmlns:domain="clr-namespace:Simple.TaskManagement.ViewModels"
         xmlns:datatypes="clr-namespace:Simple.TaskManagement.DataTypes;assembly=Simple.TaskManagement.DataTypes"
-        xmlns:mockups="clr-namespace:Simple.TaskManagement.DataTypes.Mockups"
         xmlns:validation="clr-namespace:Simple.TaskManagement.Validators" 
         xmlns:convert="clr-namespace:Simple.TaskManagement.Converters"
         xmlns:system="clr-namespace:System;assembly=mscorlib" 

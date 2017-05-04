@@ -56,9 +56,24 @@ namespace Simple.TaskManagement
         public static IUnityContainer RegisterTypes(IUnityContainer container)
         {
             container
-                .RegisterType<ISimpleLoggerFactory, Simple.Logging.ConsoleLoggerFactory>(new ContainerControlledLifetimeManager())
+                .RegisterType<ISimpleLoggerFactory, Simple.Logging.NullLoggerFactory>(new ContainerControlledLifetimeManager())
                 .RegisterType<ITaskStorage, InMemoryTaskStorageMockup>(new ContainerControlledLifetimeManager())
-                .RegisterType<IQueryProcessor, QueryProcessor>()
+                .RegisterType<IQueryProcessor, QueryProcessor>(nameof(QueryProcessor))
+
+                .RegisterType<IQueryProcessor, QueryProcessorLoggingPolicy>(
+                                                               nameof(QueryProcessorLoggingPolicy),
+                                                               new InjectionConstructor(
+                                                                   new ResolvedParameter<IQueryProcessor>(nameof(QueryProcessor)),
+                                                                   new ResolvedParameter<ISimpleLoggerFactory>()
+                                                                   ))
+
+                .RegisterType<IQueryProcessor, QueryProcessorExceptionPolicy>(
+                                                               new InjectionConstructor(
+                                                                   new ResolvedParameter<IQueryProcessor>(nameof(QueryProcessorLoggingPolicy)),
+                                                                   new ResolvedParameter<ISimpleLoggerFactory>()
+                                                                   ))
+                                        
+  
                 .RegisterTypes(
                         types:typeof(Bootstrapper).Assembly.GetTypes()
                         .Where(type=>type.IsAbstract == false)

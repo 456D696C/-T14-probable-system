@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Simple.TaskManagement.Launcher"
         mc:Ignorable="d"
         Icon="launcher.ico"
-        Title="MainWindow" Height="350" Width="525">
+        Title="T14" Height="350" Width="525">
     <Grid>
-        
+        <TextBlock>simple task management sytem demo</TextBlock>
     </Grid>
 </Window>
