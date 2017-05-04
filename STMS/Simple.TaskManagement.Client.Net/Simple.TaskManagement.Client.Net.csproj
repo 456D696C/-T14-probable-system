@@ -226,7 +226,6 @@
   <Import Project="..\..\SharedCode\Simple.Reactive.EventAggregator\Simple.Reactive.EventAggregator.projitems" Label="Shared" />
   <Import Project="..\..\SharedCode\Simple.Rebus.Extensions\Simple.Rebus.Extensions.projitems" Label="Shared" />
   <Import Project="..\..\SharedCode\Simple.Contract.Conventions\Simple.Contract.Conventions.projitems" Label="Shared" />
-  <Import Project="..\Simple.TaskManagement.DataTypes.Mockups\Simple.TaskManagement.DataTypes.Mockups.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
