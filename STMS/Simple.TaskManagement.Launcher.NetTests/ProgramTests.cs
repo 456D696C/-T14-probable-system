@@ -15,7 +15,7 @@ namespace Simple.TaskManagement.Launcher.Tests
         [TestMethod()]
         public void MainTest()
         {
-            var expected =Program.Run().Wait(TimeSpan.FromSeconds(17));
+            var expected =Program.Run(7).Wait(TimeSpan.FromSeconds(17));
             Assert.IsTrue(expected,"App killed from the task manager");
         }
     }

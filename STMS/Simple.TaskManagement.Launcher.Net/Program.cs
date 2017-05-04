@@ -19,12 +19,13 @@ namespace Simple.TaskManagement.Launcher
         }
 
 
-        public static async Task Run()
+        public static async Task Run(int? timeToCompleteInSeconds=null)
         {
 
             await Task.Factory.StartNew(async () =>
             {
-                await Task.Delay(TimeSpan.FromSeconds(7));
+                if(timeToCompleteInSeconds > 0)
+                await Task.Delay(TimeSpan.FromSeconds(timeToCompleteInSeconds.Value));
                 //
                 // Summary:
                 //     Closes a process that has a user interface by sending a close message to its
