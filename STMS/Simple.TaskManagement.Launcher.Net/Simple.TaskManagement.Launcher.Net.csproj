@@ -102,6 +102,20 @@
   <ItemGroup>
     <Resource Include="launcher.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Simple.TaskManagement.Client.Net\Simple.TaskManagement.Client.Net.csproj">
+      <Project>{071f0f4b-aff6-4854-abad-18794bb8ce5e}</Project>
+      <Name>Simple.TaskManagement.Client.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.TaskManagement.Coordinator.NetTests\Simple.TaskManagement.Coordinator.NetTests.csproj">
+      <Project>{5852626f-7a69-4542-913e-aa1d0dfa0733}</Project>
+      <Name>Simple.TaskManagement.Coordinator.NetTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.TaskManagement.Service.Point.Net\Simple.TaskManagement.Service.Point.Net.csproj">
+      <Project>{3b0ceddd-4f94-45e3-90fc-4d95c6da0ec5}</Project>
+      <Name>Simple.TaskManagement.Service.Point.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
