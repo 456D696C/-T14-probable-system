@@ -7,20 +7,27 @@ namespace Simple.TaskManagement.Coordinator
     {
         static void Main(string[] args)
         {
-            using (Bootstrapper.Start())
+            try
             {
-                Console.WriteLine($@"
+                using (Bootstrapper.Start())
+                {
+                    Console.WriteLine($@"
                     {typeof(Program).Namespace} up and runnig.
                     Press any key to stop!
                     "
-                    );
+                        );
 
-                Console.ReadLine();
+                    Console.ReadLine();
 
-                Console.WriteLine($@"
+                    Console.WriteLine($@"
                     {typeof(Program).Namespace} stopping...
                     "
-                   );
+                       );
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine($"ERROR:{new { exception.Message }}\n{exception}\n");
             }
 
             Console.WriteLine($@"
