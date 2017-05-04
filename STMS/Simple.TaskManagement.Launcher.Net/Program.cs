@@ -20,16 +20,16 @@ namespace Simple.TaskManagement.Launcher
             });
 
 
-            //var service = Process.Start(new ProcessStartInfo()
-            //{
-            //    WindowStyle = ProcessWindowStyle.Maximized,
-            //    FileName = typeof(Service.Point.Program).Assembly.CodeBase
-            //});
-
-            
+            var service = Process.Start(new ProcessStartInfo()
+            {
+                WindowStyle = ProcessWindowStyle.Maximized,
+                FileName = typeof(Service.Point.Program).Assembly.CodeBase
+            });
 
 
-           
+
+
+
             App.Main();
   
         }
